@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "vendor_reference": "E:\\EE design\\FPGA\\\u5d4c\u5165\u5f0f\u6bd4\u8d5b 4\\contest4_work\\efinity2025_clean\\PFiles\\Efinity\\2025.1\\ipm\\ip\\efx_dsi\\fpga\\constraint\\ti60f225_demo.sdc",
+  "vendor_reference_sha256": "C7E778BF1CAEF44C56EE0E38F16C8F5C3ED1D7006425A6BDF4DB83C1542AE745",
+  "clock_period_phase_ns": {
+    "i_mipi_tx_pclk": [
+      8.0,
+      0.0
+    ],
+    "i_mipi_txd_sclk": [
+      2.0,
+      0.5
+    ],
+    "i_mipi_txc_sclk": [
+      2.0,
+      1.0
+    ]
+  },
+  "exception_scope": [
+    "set_multicycle_path 3 -setup -from [get_clocks {i_mipi_tx_pclk}] -to [get_ports {mipi_dp_clk_HS_OUT[*] mipi_dp_clk1_HS_OUT[*]}] -end",
+    "set_multicycle_path 2 -hold -from [get_clocks {i_mipi_tx_pclk}] -to [get_ports {mipi_dp_clk_HS_OUT[*] mipi_dp_clk1_HS_OUT[*]}] -end"
+  ],
+  "setup_edge_ns_before": 0.5,
+  "setup_edge_ns_after": 4.5,
+  "hold_edge_ns_before_and_after": -1.5,
+  "scope_limit": "Constraint adoption from matching vendor example; not a panel waveform or encrypted IP functional simulation"
+}

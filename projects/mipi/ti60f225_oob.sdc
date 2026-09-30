@@ -22,6 +22,12 @@ create_clock -period 10.000 -name clk_100m [get_ports {clk_100m}]
 create_clock -period 10.0000 axi_clk
 create_clock -period 10.0000 i_soc_clk
 
+# Efinity 2025.1 bundled Ti60F225 DSI example, fpga/constraint/ti60f225_demo.sdc:
+# same 8 ns byte clock and 2 ns / 0.5 ns phase clock-lane SLOWCLK.
+# Apply its paired setup/hold exception only to clock-lane HS data from the byte clock.
+set_multicycle_path 3 -setup -from [get_clocks {i_mipi_tx_pclk}] -to [get_ports {mipi_dp_clk_HS_OUT[*] mipi_dp_clk1_HS_OUT[*]}] -end
+set_multicycle_path 2 -hold -from [get_clocks {i_mipi_tx_pclk}] -to [get_ports {mipi_dp_clk_HS_OUT[*] mipi_dp_clk1_HS_OUT[*]}] -end
+
 
 
 set_clock_groups -exclusive  -group {i_soc_clk} -group {i_mipi_rx_pclk} -group {jtag_inst1_TCK}

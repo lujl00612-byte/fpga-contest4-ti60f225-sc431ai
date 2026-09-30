@@ -7,6 +7,10 @@ $ErrorActionPreference='Stop'
 $repoRoot=Split-Path $PSScriptRoot -Parent
 $toolRoot=Join-Path (Split-Path $repoRoot -Parent) 'efinity2025_clean\PFiles\Efinity\2025.1'
 $projectDir=Join-Path $repoRoot ('projects\'+$Target)
+if($Target -eq 'mipi'){
+    & 'C:\Python314\python.exe' (Join-Path $PSScriptRoot 'check_dsi_constraints.py')
+    if($LASTEXITCODE -ne 0){throw 'DSI clock-lane constraint applicability check failed'}
+}
 $out=Join-Path $repoRoot ('builds\'+$Version+'\'+$Target)
 $release=Join-Path $repoRoot ('releases\'+$Version+'\'+$Target)
 if((Test-Path -LiteralPath $release) -and (($ResumeFrom -ne 'pgm') -or (Test-Path -LiteralPath (Join-Path $release 'manifest.json')))){
@@ -57,7 +61,7 @@ try {
         }
         $info=Get-Content -LiteralPath (Join-Path $out 'ti60f225_oob.info.log') -Raw
         $resources=[ordered]@{}
-        foreach($resource in @('EFX_LUT4','EFX_FF','EFX_RAM10','EFX_DPRAM10','EFX_DSP24')){
+        foreach($resource in @('EFX_LUT4','EFX_FF','EFX_RAM10','EFX_DPRAM10','EFX_DSP24','EFX_DSP48')){
             $match=[regex]::Match($info,$resource+'\s*:\s*(\d+)')
             if($match.Success){$resources[$resource]=[int]$match.Groups[1].Value}
         }

@@ -1,0 +1,2 @@
+PASS white balance: 4423 pixel/sync checks, divider, neutral scene, clipping, bypass, bars
+tests\tb_white_balance.sv:99: $finish called at 44320000 (1ps)

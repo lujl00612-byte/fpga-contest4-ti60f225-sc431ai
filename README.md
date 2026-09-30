@@ -13,6 +13,7 @@
 | `A7` | 基础 L1 Sobel、原灰度 / 二值对照、整帧冻结、圆形 / 矩形文字 | 92,222 项检查 PASS；生成位流；像素时钟 setup +1.633 ns；HDMI 实测待完成 |
 | `A8-attempt`、`A8R1-attempt` | 完整连接开发中的两次硬件映射失败 | 算法仿真通过，保留失败源码和日志；无下载文件 |
 | `A8R2` | 冻结 640×480 完整 8 邻域连接、打包 RAM、独立边缘标记 | 生成位流；像素时钟 setup +0.435 ns；全尺寸算法和跨 RAM 块测试通过；HDMI 实测待完成 |
+| `WB02` | 按匹配的供应商示例补齐 DSI 时钟通道约束，增加适用配置检查 | 4,423 项白平衡检查；生成新位流；14 组 setup / 14 组 hold 均为正裕量；屏幕实测待完成 |
 
 每个发布版本保存源码 Git 提交、位流、报告、SHA256 清单。工具产生的临时文件位于 `builds/`，不进入 Git。
 
@@ -33,6 +34,8 @@ WB01 在 2026-09-30 通过 SRAM JTAG 下载，IDCODE 为 `0x10660A79`，下载�
 
 DSI 路径 `i_mipi_tx_pclk → i_mipi_txd_sclk`：setup 裕量 **−0.900 ns**。WB01 是候选版本，不能标为全部时序通过；后续须检查原厂 DSI 时钟通道和约束依据。
 
+WB02 已核对 Efinity 自带 Ti60F225 DSI 示例并补齐成对多周期约束：上述 DSI setup 为 +2.437 ns、hold 为 +1.842 ns，全报告静态时序通过。详见 `docs/WB02.md`。板上保留 WB01；WB02 尚未下载和现场观察。
+
 ## 本地工具
 
 - MSYS2：`E:\msys2`。
@@ -44,13 +47,15 @@ DSI 路径 `i_mipi_tx_pclk → i_mipi_txd_sclk`：setup 裕量 **−0.900 ns**�
 
 ```powershell
 .\tools\test.ps1
-.\tools\build.ps1 -Target mipi -Version WB02
-.\tools\build.ps1 -Target hdmi -Version A7
+.\tools\build.ps1 -Target mipi -Version WB03
+.\tools\build.ps1 -Target hdmi -Version A9
 & 'C:\Python314\python.exe' .\tools\jtag_load_sram.py --status
 & 'C:\Python314\python.exe' .\tools\jtag_load_sram.py --status --program --bit .\releases\WB01\mipi\WB01.bit
 ```
 
 构建脚本临时创建 H:（开发目录）和 V:（工具目录），正常完成或异常退出时解除映射。脚本会拒绝覆盖已存在的完整发布版本，并检查实际位流文件和时序，避免把工具空执行误认为构建成功。
+
+MIPI 构建先检查供应商多周期约束的适用配置。上述构建命令中的版本号须为未占用名称；完成实质改进和验证后再建立发布标签。
 
 赛题各项实现和缺口见 `docs/requirements.md`，迭代工作见 `docs/iteration-plan.md`。
 
