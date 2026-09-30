@@ -1,0 +1,26 @@
+{
+  "name": "A5_shape_pipeline",
+  "label": "进阶优化 A5",
+  "features": "A4 全部功能 + 形状判定分级流水",
+  "project": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_advanced\\A5_shape_pipeline",
+  "bit": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A5_shape_pipeline\\A5_shape_pipeline.bit",
+  "hex": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A5_shape_pipeline\\A5_shape_pipeline.hex",
+  "bit_sha256": "C25D4F83A64BF318CFF85D964707DD206929A8CD4E7B29F973F957DD77C102BC",
+  "hex_sha256": "B7DBBF44D12251B424553152EB17D47A5D9DC846A54BE5281BFB2DDF756A30AE",
+  "resources": {
+    "EFX_LUT4": 11387,
+    "EFX_FF": 9369,
+    "EFX_RAM10": 134,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 3
+  },
+  "hdmi_148_5mhz_setup_slack_ns": 1.922,
+  "hdmi_148_5mhz_hold_slack_ns": 0.028,
+  "build": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "hardware_video_validation": "未进行；当前未连接 HDMI 显示器"
+}
