@@ -1,0 +1,52 @@
+{
+  "date_local": "2026-09-30",
+  "timezone": "Asia/Shanghai",
+  "board": "Ti60F225, actual PCB version and pin mapping to verify from the received photo",
+  "screen": "3.5 inch MIPI",
+  "HDMI_connected": false,
+  "configuration": "volatile JTAG SRAM; no SPI flash programming",
+  "IDCODE": "0x10660A79",
+  "WB02_bit_sha256": "214B75330CCDDC543185F6C0A9E9CDB00A44DBAA277C8D050FD790E343328E94",
+  "factory_3_5_bit_sha256": "D4378CD3F914504557552D0A180B10B82EA5CDB9166B0A8A4B97FA5791EA88CE",
+  "observations": [
+    {
+      "version": "WB02",
+      "user_report": "没有摄像头画面",
+      "post_JTAG_status": "0x0002D797"
+    },
+    {
+      "version": "factory 3.5, reconfiguration",
+      "user_report": "仍没有画面，但屏幕亮着",
+      "post_JTAG_status": "0x0002D797"
+    },
+    {
+      "version": "factory 3.5, power disconnected for about 5 seconds, reloaded",
+      "user_report": "仍亮着但没有画面",
+      "pre_JTAG_status": "0x00028000",
+      "post_JTAG_status": "0x0002D797"
+    }
+  ],
+  "current_config": "factory 3.5 diagnostic baseline",
+  "white_balance_visual_acceptance": "not passed; display fault unresolved",
+  "cause": "undetermined; identical lack of picture on WB02 and factory does not isolate software vs hardware",
+  "photo_received": true,
+  "user_availability": "用户暂时没空看板子；继续电脑上的迭代，现场验收保留待验证",
+  "log_files": [
+    {
+      "path": "WB02-jtag-20260930.txt",
+      "sha256": "3A908F65AB2476E01F683C3D3A8A8D24DB6ECE1A9595DC88F4E2591BEEA3E232"
+    },
+    {
+      "path": "WB02-jtag-reload-20260930.txt",
+      "sha256": "3A908F65AB2476E01F683C3D3A8A8D24DB6ECE1A9595DC88F4E2591BEEA3E232"
+    },
+    {
+      "path": "factory-jtag-diagnosis-20260930.txt",
+      "sha256": "EB4C95BFD3FD905D5F0DFD065BABF8D0DA98C3595389CA7829D9058EA2E77CB3"
+    },
+    {
+      "path": "factory-jtag-cold-20260930.txt",
+      "sha256": "D3E115A1EB897453A8D75CD96B95B752B843774EC23625DCB2B83B11DAFB52A4"
+    }
+  ]
+}

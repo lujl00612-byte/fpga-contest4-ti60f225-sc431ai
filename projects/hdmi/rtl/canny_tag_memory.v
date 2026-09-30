@@ -16,6 +16,7 @@ module canny_tag_memory #(
     reg [WORD_BITS-1:0] word_addr;
     reg [ADDR_BITS-1:0] cell_addr;
     reg write_latched;reg [3:0] tag_latched;
+    reg [19:0] write_word_q;
     localparam integer BANKS=(WORDS+511)/512;
     localparam integer BANK_BITS=(BANKS>1)?$clog2(BANKS):1;
     wire [19:0] bank_data[0:BANKS-1];
@@ -25,9 +26,11 @@ module canny_tag_memory #(
     assign video_word=read_word;
     wire ram_re=(state==READ_WORD)||video_en;
     wire [WORD_BITS-1:0] ram_raddr=(state==READ_WORD)?word_addr:video_addr;
-    wire ram_we=capture_we||((state==RESPOND)&&write_latched);
+    // Commit on the edge on which the requester consumes req_ready. The existing
+    // ACK cycle separates the bank mux/RMW from RAM write data without a new wait.
+    wire ram_we=capture_we||((state==ACK)&&write_latched);
     wire [WORD_BITS-1:0] ram_waddr=capture_we?capture_addr:word_addr;
-    wire [19:0] ram_wdata=capture_we?capture_word:updated_word;
+    wire [19:0] ram_wdata=capture_we?capture_word:write_word_q;
     wire [BANK_BITS-1:0] read_bank=ram_raddr>>9,write_bank=ram_waddr>>9;
     wire [8:0] read_row=ram_raddr,write_row=ram_waddr;
     wire [2:0] lane=cell_addr-word_addr*5;
@@ -57,7 +60,7 @@ module canny_tag_memory #(
     end
     always @(posedge clk or negedge rst_n)begin
         if(!rst_n)begin
-            state<=IDLE;word_addr<=0;cell_addr<=0;write_latched<=0;tag_latched<=0;req_ready<=0;req_rdata<=0;
+            state<=IDLE;word_addr<=0;cell_addr<=0;write_latched<=0;tag_latched<=0;write_word_q<=0;req_ready<=0;req_rdata<=0;
         end else begin
             req_ready<=0;
             case(state)
@@ -66,7 +69,7 @@ module canny_tag_memory #(
                     state<=READ_WORD;
                 end
                 READ_WORD:state<=RESPOND;
-                RESPOND:begin req_rdata<=selected_tag;req_ready<=1;state<=ACK;end
+                RESPOND:begin req_rdata<=selected_tag;write_word_q<=updated_word;req_ready<=1;state<=ACK;end
                 ACK:state<=IDLE;
             endcase
         end

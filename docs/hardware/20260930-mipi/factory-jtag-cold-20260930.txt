@@ -1,0 +1,5 @@
+Ti60 IDCODE before: 0x10660A79
+Ti60 JTAG status: 0x00028000
+Sending volatile JTAG configuration from releases\vendor-mipi-3.5\vendor_color.bit
+Ti60 IDCODE after: 0x10660A79
+Ti60 JTAG status after: 0x0002D797

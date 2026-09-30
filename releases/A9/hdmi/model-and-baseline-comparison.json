@@ -1,0 +1,17 @@
+{
+  "vendor_and_fast_40x80": "PASS, identical checks / cycles / transactions / writes",
+  "A8R2_and_A9_640x480": "PASS, identical checks / cycles / transactions / writes",
+  "production_RAM_response_cycles": 4,
+  "small_scene_PASS_lines": [
+    "PASS production RAM scene=0 pixels=3200 accepted=0 cycles=16000 transactions=3200 writes=0",
+    "PASS production RAM scene=1 pixels=3200 accepted=3200 cycles=169936 transactions=34484 writes=3200",
+    "PASS production RAM scene=2 pixels=3200 accepted=1718 cycles=98582 transactions=19980 writes=1718",
+    "PASS production RAM scene=3 pixels=3200 accepted=860 cycles=56460 transactions=11380 writes=860",
+    "PASS production RAM total: 12800 packed-cell checks, BFS, four-cycle handshake and linear bounds"
+  ],
+  "full_scene_PASS_lines": [
+    "PASS production RAM scene=0 pixels=307200 accepted=0 cycles=1536000 transactions=307200 writes=0",
+    "PASS production RAM scene=1 pixels=307200 accepted=307200 cycles=16561936 transactions=3372484 writes=307200",
+    "PASS production RAM total: 614400 packed-cell checks, BFS, four-cycle handshake and linear bounds"
+  ]
+}

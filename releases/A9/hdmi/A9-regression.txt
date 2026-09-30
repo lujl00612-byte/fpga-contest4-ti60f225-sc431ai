@@ -1,0 +1,38 @@
+PASS white balance: 4423 pixel/sync checks, divider, neutral scene, clipping, bypass, bars
+tests/tb_white_balance.sv:99: $finish called at 44320000 (1ps)
+PASS filters: 19608 checks; independent median, Gaussian and L1 Sobel references
+tests/tb_filters.sv:74: $finish called at 65406000 (1ps)
+PASS controls: 71 checks; debounce, limits, chords, complete frames and VS pulses
+tests/tb_controls.sv:40: $finish called at 18060000 (1ps)
+PASS shapes: 68120 checks; first-frame circle/rectangle, empty frame, explicit text
+tests/tb_shapes.sv:38: $finish called at 681246000 (1ps)
+hysteresis frame=0 accepted=0 cycles=4251 transactions=768
+hysteresis frame=1 accepted=0 cycles=4248 transactions=768
+hysteresis frame=2 accepted=768 cycles=44204 transactions=8116
+hysteresis frame=3 accepted=24 cycles=5524 transactions=1002
+hysteresis frame=4 accepted=76 cycles=8337 transactions=1528
+hysteresis frame=5 accepted=24 cycles=5415 transactions=1000
+hysteresis frame=6 accepted=443 cycles=27412 transactions=5019
+hysteresis frame=7 accepted=433 cycles=26670 transactions=4923
+hysteresis frame=8 accepted=430 cycles=26706 transactions=4924
+hysteresis frame=9 accepted=407 cycles=25504 transactions=4680
+hysteresis frame=10 accepted=455 cycles=27884 transactions=5124
+hysteresis frame=11 accepted=435 cycles=26972 transactions=4928
+hysteresis frame=12 accepted=416 cycles=25999 transactions=4771
+hysteresis frame=13 accepted=407 cycles=25537 transactions=4696
+hysteresis frame=14 accepted=420 cycles=26089 transactions=4787
+hysteresis frame=15 accepted=420 cycles=26143 transactions=4804
+hysteresis frame=16 accepted=410 cycles=25502 transactions=4678
+hysteresis frame=17 accepted=406 cycles=25453 transactions=4667
+hysteresis frame=18 accepted=440 cycles=27182 transactions=4991
+hysteresis frame=19 accepted=459 cycles=28139 transactions=5168
+hysteresis frame=20 accepted=440 cycles=26944 transactions=4977
+hysteresis frame=21 accepted=404 cycles=25088 transactions=4647
+hysteresis frame=22 accepted=422 cycles=26267 transactions=4836
+hysteresis frame=23 accepted=437 cycles=27027 transactions=4959
+PASS exact hysteresis: 18432 pixels, 24 frames; BFS reference, chains, loops, diagonals and stalls
+tests/tb_hysteresis_exact.sv:81: $finish called at 5486690000 (1ps)
+snapshot scenario=0 accepted=57 processing_cycles=7573 frames=9
+snapshot scenario=1 accepted=172 processing_cycles=12916 frames=12
+PASS snapshot: 52059 timing checks, 13440 colored-output checks, packed RAM, recapture and frame publication
+tests/tb_snapshot.sv:79: $finish called at 520636000 (1ps)
