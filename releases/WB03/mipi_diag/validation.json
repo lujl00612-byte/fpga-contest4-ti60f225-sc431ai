@@ -1,0 +1,33 @@
+{
+  "version": "WB03",
+  "git_tag": "WB03-attempt",
+  "status": "REJECTED_PANEL_DELAY_WIDTH",
+  "functional_failure": "22-bit panel timer discards ROM delay high bits; bit22 test gives second-AW difference 0 instead of 4194304",
+  "pattern_simulation": {
+    "small_clock_checks": 3121,
+    "full_clock_checks": 3614865,
+    "full_pixels_checked": 6220806,
+    "status": "PASS"
+  },
+  "AXI_simulation": {
+    "completed_runs": 3,
+    "writes_per_run": 119,
+    "reads_per_run": 357,
+    "stall_cycles": 1472,
+    "status": "PASS",
+    "reset_during_read": "PASS"
+  },
+  "delay_width_simulation": {
+    "status": "FAIL",
+    "expected_difference_clocks": 4194304,
+    "observed_difference_clocks": 0
+  },
+  "regular_regression_checks": 254437,
+  "regular_regression_status": "PASS",
+  "timing_status": "PASS",
+  "hardware_programmed": false,
+  "physical_display_validation": "pending",
+  "actual_PCB_version_confirmed": false,
+  "hardware_levels_measured": false,
+  "scope": "Internal RGB, protocol and boundary tests only; panel behavior, physical RGB order, PHY startup, measured frame rate and contest hardware acceptance remain pending."
+}

@@ -1,0 +1,662 @@
+{
+  "version": "WB03",
+  "target": "mipi_diag",
+  "tool": "Efinity 2025.1.110",
+  "device": "Ti60F225I3",
+  "stages": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "resources": {
+    "EFX_LUT4": 14394,
+    "EFX_FF": 9218,
+    "EFX_RAM10": 179
+  },
+  "bit_sha256": "89E42985A43A2E023064864FAA516B631991FA1FA605EBF783AC929F51821B96",
+  "hex_sha256": "FEE9505DBCA76FD5C3C2562E9066E32D1D18480982122FC1EB43B8A98341F201",
+  "timing_status": "PASS",
+  "setup_paths": [
+    {
+      "launch": "vid_clk_dvi2",
+      "capture": "vid_clk_dvi2",
+      "slack_ns": 9.887
+    },
+    {
+      "launch": "CLK_5M",
+      "capture": "CLK_5M",
+      "slack_ns": 196.722
+    },
+    {
+      "launch": "i_mipi_rx_pclk",
+      "capture": "i_mipi_rx_pclk",
+      "slack_ns": 13.277
+    },
+    {
+      "launch": "core_clk",
+      "capture": "core_clk",
+      "slack_ns": 4.24
+    },
+    {
+      "launch": "core_clk",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 1.019
+    },
+    {
+      "launch": "i_mipi_tx_pclk",
+      "capture": "i_mipi_txd_sclk",
+      "slack_ns": 2.396
+    },
+    {
+      "launch": "i_mipi_tx_pclk",
+      "capture": "i_mipi_tx_pclk",
+      "slack_ns": 2.525
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "core_clk",
+      "slack_ns": 1.869
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.468
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "tx_cal_clk",
+      "slack_ns": 1.428
+    },
+    {
+      "launch": "sdram_clk",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.643
+    },
+    {
+      "launch": "sdram_clk",
+      "capture": "sdram_clk",
+      "slack_ns": 0.362
+    },
+    {
+      "launch": "rx_cal_clk",
+      "capture": "rx_cal_clk",
+      "slack_ns": 0.5
+    },
+    {
+      "launch": "tx_cal_clk",
+      "capture": "tx_cal_clk",
+      "slack_ns": 0.592
+    }
+  ],
+  "negative_setup_paths": [],
+  "hold_paths": [
+    {
+      "launch": "vid_clk_dvi2",
+      "capture": "vid_clk_dvi2",
+      "slack_ns": 0.045
+    },
+    {
+      "launch": "CLK_5M",
+      "capture": "CLK_5M",
+      "slack_ns": 0.09
+    },
+    {
+      "launch": "i_mipi_rx_pclk",
+      "capture": "i_mipi_rx_pclk",
+      "slack_ns": 0.026
+    },
+    {
+      "launch": "core_clk",
+      "capture": "core_clk",
+      "slack_ns": 0.035
+    },
+    {
+      "launch": "core_clk",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.13
+    },
+    {
+      "launch": "i_mipi_tx_pclk",
+      "capture": "i_mipi_txd_sclk",
+      "slack_ns": 1.797
+    },
+    {
+      "launch": "i_mipi_tx_pclk",
+      "capture": "i_mipi_tx_pclk",
+      "slack_ns": 0.035
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "core_clk",
+      "slack_ns": 0.077
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.07
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "tx_cal_clk",
+      "slack_ns": 0.406
+    },
+    {
+      "launch": "sdram_clk",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.547
+    },
+    {
+      "launch": "sdram_clk",
+      "capture": "sdram_clk",
+      "slack_ns": 0.093
+    },
+    {
+      "launch": "rx_cal_clk",
+      "capture": "rx_cal_clk",
+      "slack_ns": 0.027
+    },
+    {
+      "launch": "tx_cal_clk",
+      "capture": "tx_cal_clk",
+      "slack_ns": 0.097
+    }
+  ],
+  "negative_hold_paths": [],
+  "hardware_video_validation": "pending",
+  "source_files": [
+    {
+      "path": "all_sources.f",
+      "sha256": "9641BE6F7F15BEB4536AA2115BB4D9ACE9E5E178C65B0B06241D59FA3E9F022D"
+    },
+    {
+      "path": "debug_profile.wizard.json",
+      "sha256": "93B3D9BBD38CF43648D97C890A700D0A92A8C9F396EEBEB4DBFBA3FEE2C22FD2"
+    },
+    {
+      "path": "diagnostic-profile.json",
+      "sha256": "8F179CED520B9B1BBFA2B9EA713888A3CC9949814D238B3255CC04970B1D88E6"
+    },
+    {
+      "path": "Panel_1080p_reg.mem",
+      "sha256": "09FDA88756E62E10F7A3558D8CDA7DBB0E14B8F6E912FFAF14032E0EE907A32B"
+    },
+    {
+      "path": "ti60f225_oob.peri.xml",
+      "sha256": "C956CDD8F8D63E00D7EDBF98A1DF5D9782A2AEBC31E526FA7BF568AA9D5DC911"
+    },
+    {
+      "path": "ti60f225_oob.sdc",
+      "sha256": "4166CE8F3AAEA49F9D0AE0A5F09EBD9943253949E88A571A168C9C94E1F359F5"
+    },
+    {
+      "path": "ti60f225_oob.xml",
+      "sha256": "FD4160FDB18CDB4FBEE555687B35782B3E12572BB97D7C4852BD17809F5F86F9"
+    },
+    {
+      "path": "ip\\csi_rx_controller\\csi_rx_controller_define.svh",
+      "sha256": "3ED47611FEB9E41D9B4FAE8224F309AA92DB3CA8E902FB6A717C92D40CFCA784"
+    },
+    {
+      "path": "ip\\csi_rx_controller\\csi_rx_controller_define.vh",
+      "sha256": "149C14940BE1B2BB5F21F7475358E57481BF8BBB4D35929DE1F01E9B8B304FC1"
+    },
+    {
+      "path": "ip\\csi_rx_controller\\csi_rx_controller_tmpl.sv",
+      "sha256": "2106F9FA7C034C46A77CBB42E8CDA43C63E7A168D72C577057E2A441C2A1837E"
+    },
+    {
+      "path": "ip\\csi_rx_controller\\csi_rx_controller_tmpl.vhd",
+      "sha256": "4B6AE170A90EE7FAE6A13DFA29A42CF137CF3D164192D6482AAF4C37755B612D"
+    },
+    {
+      "path": "ip\\csi_rx_controller\\csi_rx_controller.sv",
+      "sha256": "7D05EFD004FE6BCF922CD55008D378876684C08904ADCD87FBD4811BEA93BCD9"
+    },
+    {
+      "path": "ip\\csi_rx_controller\\settings.json",
+      "sha256": "39C82EEFECABC4FCB9A8EB7CEB22E4C0A972E1A96B153D9584D0046FE688B6E2"
+    },
+    {
+      "path": "ip\\csi_rx_controller\\ipm\\component.pickle",
+      "sha256": "262944A871B086C0E84538BE8A444785124DDADAA1ACA01FB1BE863F3B7F520F"
+    },
+    {
+      "path": "ip\\csi_rx_controller\\ipm\\graph.pickle",
+      "sha256": "AF8C7AA41C2A9413146DD8A8B59B7FD410B78A6335B8694DDA2995AF09F7239F"
+    },
+    {
+      "path": "ip\\dsi_tx\\dsi_tx_define.svh",
+      "sha256": "60463C97073C19CADBAE112B347DC1D46B9E3D19BD6FF18740344BE5CDDC77B7"
+    },
+    {
+      "path": "ip\\dsi_tx\\dsi_tx_define.vh",
+      "sha256": "F24BF85C429CE6B48DA786924C16E52CFBDA9F8910BFF58E135617CCF6404688"
+    },
+    {
+      "path": "ip\\dsi_tx\\dsi_tx_tmpl.sv",
+      "sha256": "B4B6C9D46F7545D1AC8317E624E9101A859022023F3D37A210CD3D3E1191D4C1"
+    },
+    {
+      "path": "ip\\dsi_tx\\dsi_tx_tmpl.vhd",
+      "sha256": "4118182E46C1EF1ADC1A2E064166D2305632BEBA3615A7573880BDE2F9BFC5B1"
+    },
+    {
+      "path": "ip\\dsi_tx\\dsi_tx.sv",
+      "sha256": "AABA49FE9A61E5C443A1BB13A3A5E02D363550ECD4E575713B210233384D301D"
+    },
+    {
+      "path": "ip\\dsi_tx\\settings.json",
+      "sha256": "D21AAFE154A370E5F72DC33878307C2BE4C5E85D0AEA280667CD4264061C16BF"
+    },
+    {
+      "path": "ip\\dsi_tx\\ipm\\component.pickle",
+      "sha256": "3EAC909E93929686A010D0E5FC1205C599A0DBB2AD9870CB4C51802F269E2553"
+    },
+    {
+      "path": "ip\\dsi_tx\\ipm\\graph.pickle",
+      "sha256": "A0B353C32D3C27575BC08A46F0FA73393DEFDD43F3D4116BDF9B9FCC1037473A"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\data_pack.v",
+      "sha256": "B1A2CA1618135163B2C1300FAEBB25518E87E02A63CA0D4511B0302BB6DD1A34"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\dsi_hs_cmd_tb.mem",
+      "sha256": "32CA2E78299EDF699A178A7A39A9B6B001AFCACCDBCC4843DE9FDCC4485617B3"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\dsi_tb.mem",
+      "sha256": "016D8F6372AA3B34CAAAADB0D3E03402465ED06312FE1075DD751E0185676CB6"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\dsi_tx_define.svh",
+      "sha256": "60463C97073C19CADBAE112B347DC1D46B9E3D19BD6FF18740344BE5CDDC77B7"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\dsi_tx.sv",
+      "sha256": "AABA49FE9A61E5C443A1BB13A3A5E02D363550ECD4E575713B210233384D301D"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\dual_clock_fifo.v",
+      "sha256": "2D6F56DEDB23FB47E10D412E97E987F338A30FC39C86B1ADA4D356FB2F3893DD"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\modelsim.do",
+      "sha256": "84A2E7F88124D49CACAD1D8224B5F7C939469280C21A1E3A00ED8D2849064F17"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\panel_config.v",
+      "sha256": "75DB32BE0287C852EE6494E1F75187B552110B9BB4C9C4758010BF5D9C73B195"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\shift_reg.v",
+      "sha256": "A1A21DA34E65D5C1B841CA861D4DBDB7BBFAACC83D53F11B85D7C37D47F2FB78"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\simple_dual_port_ram.v",
+      "sha256": "01B74E74D39C4E4AE380BC7BE73329987B17FFFAEA58BC7C92A9B24E4A110C5D"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\TI60F225_MIPI_dsi_tb.v",
+      "sha256": "FAE6EBA99E97D897A63B937AA0A0A24CC7EF7077B5EFB0E9AD363016CEF216EA"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\true_dual_port_ram.v",
+      "sha256": "976FAA1FD1EDAC852D640BE16A328973D4EB5D20EC10D186F8B4D8150735A51A"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\vga_gen.v",
+      "sha256": "01468BF5381B009620D0BBF91F0A577EA00238CEE6FE2C6CF3AC3B3D2C79FD3B"
+    },
+    {
+      "path": "ip\\dsi_tx\\Testbench\\modelsim\\dsi_tx.sv",
+      "sha256": "C534D68E7D2906838205826EACE800F0FD739131BBAC1293CBEEAC7D0F9161DD"
+    },
+    {
+      "path": "rtl\\dual_clock_fifo.v",
+      "sha256": "2D6F56DEDB23FB47E10D412E97E987F338A30FC39C86B1ADA4D356FB2F3893DD"
+    },
+    {
+      "path": "rtl\\mipi_diagnostic_rgb2.v",
+      "sha256": "A6B59152E3055EC77F69257C73FC85C85C888B97C78A2E89559D99CFA3930095"
+    },
+    {
+      "path": "rtl\\ram_shift_reg.v",
+      "sha256": "96117FF91E7365E4BB0C7042FA7EB358CBB9FE7C5080273FE41B73BC28EC7237"
+    },
+    {
+      "path": "rtl\\reset.v",
+      "sha256": "126540013B52B8CAB339CDAF57B1A6947D3088E97EEB9CB84FB68448F8A2E978"
+    },
+    {
+      "path": "rtl\\sensor_clipper.v",
+      "sha256": "D6A2B191ACB512809B92E92B30350AA23D366C40B6195420F4256C43CB7332CB"
+    },
+    {
+      "path": "rtl\\simple_dual_port_ram.v",
+      "sha256": "01B74E74D39C4E4AE380BC7BE73329987B17FFFAEA58BC7C92A9B24E4A110C5D"
+    },
+    {
+      "path": "rtl\\ti60f225_oob_top.v",
+      "sha256": "181D03DD125E6E7B16DC9BCAD02C7A3435782D060BCA0B9F7913D8923B125A89"
+    },
+    {
+      "path": "rtl\\true_dual_port_ram.v",
+      "sha256": "44BFB696E997B4D31BFD3C414623623C9B60964BFE711C611CF80A39222E8E8F"
+    },
+    {
+      "path": "rtl\\cam\\i2c_phy.v",
+      "sha256": "E2D25E6720A52419B0F2EC1642350A46012C68B874862D994081FFA655FD7B56"
+    },
+    {
+      "path": "rtl\\cam\\imx185_1080p_reg.mem",
+      "sha256": "91A563349D23D90D5604E88E9986EC963CEF7D5872577CBEB194D296B227F830"
+    },
+    {
+      "path": "rtl\\cam\\imx185_config.v",
+      "sha256": "5B3D8D37275E87D24B429A4983898663C4D6851F6F9EA10FF86E97BFE6BBE8DD"
+    },
+    {
+      "path": "rtl\\cam\\piv2_1080p_reg.mem",
+      "sha256": "289DECD9B14F44496E74ECDE0BE82831FE3AD61EB3A098791B182AA0890475CC"
+    },
+    {
+      "path": "rtl\\cam\\piv2_config.v",
+      "sha256": "53496295E0CE4FBE5D4722DFBA93807E9EA57232B20D5DFACF4C8BFF0BDE33C8"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\I2C_Master.docx",
+      "sha256": "D994B6FD94F005BFBC26ED383F973A14B7B4F6530C2C71BD9E37920EB9AA369B"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c\\i2c_16addr_8data.v",
+      "sha256": "12210C511B52DCFDACA2F4CFFC0FAFB390AC87ED3B3C97DFA2C6008A339C4BB7"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c\\i2c_8addr_8data.v",
+      "sha256": "15C787D98CB272A155584941841C55DBB4A489A009CE79BC589C9CAB5E913159"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c\\i2c_master_ctrl_top.v",
+      "sha256": "C88ED549D7598D6BA8B1EC4AF70B0C699811F5BCC58D73B3025E89D6001317EA"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c\\i2c_master_reg_rom.v",
+      "sha256": "DA82D962F02D3E585C97BF81EA057A9E0E9766915449960F98EF6C903B695928"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c\\i2c_master_reg_set.v",
+      "sha256": "8BB2F5E862A606097F312BB90C2A501FC5F29E8A21737FFCD0A4AB62D90101EA"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c_master\\i2c_master_bit_ctrl.v",
+      "sha256": "2DF1F5D522725EA216385829A4DEC38FDD616E4979AAA0AEF7053AC34BF8AC8C"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c_master\\i2c_master_byte_ctrl.v",
+      "sha256": "442159006425FA36A946F67AFC62391F9F80142AAD379A640118A28CE67C9F80"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c_master\\i2c_master_defines.v",
+      "sha256": "B6DCF92C66C3DC80192206621E732F0474709579662EE09943E48DB0077F302E"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c_master\\i2c_master_top.v",
+      "sha256": "BF5DD12F2BF30DBC46A1D4CF1D3D1ACCC05106E14CA1CECF467FD09B46CD45C8"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c_master\\oc_i2c_master.v",
+      "sha256": "DDE241966DD153F0F65EB711D6C0B00B9DFC806A733C5F2BF5FF6255BC54AD29"
+    },
+    {
+      "path": "rtl\\cam_i2c_ctrl\\i2c_master\\timescale.v",
+      "sha256": "D98DD66323E809EE4BC88896063327802CA13241B5742A5E25DB17DB17A40A4C"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\color_bar_checker.v",
+      "sha256": "E8DD4AC5C17D077CE3C46C9D0E582C7C4FE3E52D4875FD7711D589092579AE0D"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\color_bar_rgb.v",
+      "sha256": "90797FCC45DAB752C01F4E05E09290DDA160A84D467AB7D2808E1D63793460A4"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\color_bar_tb.v",
+      "sha256": "B869108C7EC17F50AF594966FE00B42049580E578DC1B4740FC367ED660A6CD8"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\modelsim.ini",
+      "sha256": "F662AD920C4C9DABAA9E42CB866A3319B35BE523E7B8CFF9879AC7C6196F62B8"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\ser2par_pixel.v",
+      "sha256": "32D037E8CDCF11C05A51307189E0D2AE8CF4A9474B9E1DFC5F78E366E77808E9"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\sim.do",
+      "sha256": "974D1939B46542CB942289C044CC8CC16F80204337B7BE65D5F814F041FD9204"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\stm_color_bar_rgb_00.svg",
+      "sha256": "350E42A76992C47235FAF864297BFB958CD64F223F38FB0C29EC43B7FB9E88D0"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\stm_color_bar_rgb_11.svg",
+      "sha256": "F693AB1D78DB27E925EB4341A1795537AB8F49A207035F5C85A0DF332396B102"
+    },
+    {
+      "path": "rtl\\color_bar_v3.0\\video IP说明.docx",
+      "sha256": "3E6A6665DA89C6E9EEDDE0AE98A7AFFB1B85F90AA715271CBD7EFDCAB54067F0"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\ddr3_parameter.vh",
+      "sha256": "688995BA379237B1DAA428CCB119B564C3DCB760227F75F2FE86B8D50A41DE80"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\ddr3_top.v",
+      "sha256": "7D8D9CD8A2C69E44EBE9A143F91E6591136AA57F3BE22B2CFF76904F67D0236A"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\lb2_axi_clk.v",
+      "sha256": "9CEF7D5361E79D8C7F1DEEAB3AF981444941EA50447C6C7C8B782E381F41DC2D"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\axi4_bus_ctl\\axi_upsizer.v",
+      "sha256": "03C25E7276781D9C22F4CBD7B25B76B6317ED7083874A7C94B052A0ABD1188E0"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\axi4_bus_ctl\\axi4_bus_ctl.v",
+      "sha256": "E908D8045FE2332A1740F3ACA0226B5FE0BF4D03E25B040FE0F32015D573AD5B"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\common\\simple_dual_port_ram.v",
+      "sha256": "41DA4FB5D1E10B94A1F35DF8075A594071BDF154823FF4EDC87AC5F4E128D934"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\common\\efx_fifo_v2.3\\efx_fifo_wrapper.v",
+      "sha256": "040558D9DAFD6D7F4C6610B8CD8040CDEDC3F95B58A6F31F32DBD7429182EB98"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\local_bus_ctl\\local_bus_ctl.v",
+      "sha256": "822D5D0F54C7BA0EA8D66F19F1E97CDEA3A159932C64295DFE5CA86F9F814608"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\memory_bus_ctl\\memory_bus_ctl.v",
+      "sha256": "A12B886A37278BD44BC207C2DEBD11156EAB1D579E4E3AA7702B229508778882"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\phy_ctl\\ddr_calibration_ini.v",
+      "sha256": "7A6976BCECA5E4598ED9C53C17B522E7C86E07C97F0DBDA16F8286D321035522"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\phy_ctl\\ddr_mpr_rdlvl.v",
+      "sha256": "08446B90C5897750AE6214918981DE8262513745DA7F7D25850BA6A124B9763E"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\phy_ctl\\ddr_phy_if.v",
+      "sha256": "CE8DFD7600E8BE615611D353CC6B62E7CCF6411D22AC47C45F9B650AD908584B"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\phy_ctl\\ddr_phy_rdlvl_dqs.v",
+      "sha256": "BB5E2C9D76C2816164A9BFCBF51A3C2760D897C1340AE493D29867FEE601E31F"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\phy_ctl\\ddr_phy_wrcal.v",
+      "sha256": "50ACBB56F307A0FC9847981216389D41438649993908FDF96C09D823EE7E5CA9"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\phy_ctl\\ddr_phy_wrlvl.v",
+      "sha256": "AEC2C9677C03E1110C542CCC643C1EA0458F1F7FBB93DCAAD105A7623D4A8591"
+    },
+    {
+      "path": "rtl\\ddr3_controller\\phy_ctl\\phy_ctl.v",
+      "sha256": "2B106E88FB017CBCDA86A6ACE62F81049D9725A79D4A2FFE9B44672BB4DBC08B"
+    },
+    {
+      "path": "rtl\\debayer\\debayer_top_2to1.v",
+      "sha256": "057C243083FDC0ED61AC195E21E3B9AD795F98A6D8DD139689A826BEBB63E0B8"
+    },
+    {
+      "path": "rtl\\debayer\\line_buffer.v",
+      "sha256": "49A7BB3503F7D474F5DFAC17222588703464A6CA5D6EC4098A13202AEE1A041C"
+    },
+    {
+      "path": "rtl\\debayer\\raw_to_rgb.v",
+      "sha256": "8AB2512F618B5D101CF4575E2C1987227E1D5712DCCED56DD14A782549B370C8"
+    },
+    {
+      "path": "rtl\\debayer\\rgb_gain.v",
+      "sha256": "3E777094CCA542E3A84A0E5090E0C4C532CD73CF35C99AEA6FA44EFF173BAF79"
+    },
+    {
+      "path": "rtl\\debayer\\true_dual_port_ram.v",
+      "sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A"
+    },
+    {
+      "path": "rtl\\dsi_tx\\dsi_tx_top.v",
+      "sha256": "08F515DAC7498D98831CCACEA9D25F33259E35962D256DD38CCDECE0904A7361"
+    },
+    {
+      "path": "rtl\\frame_buffer\\调试总结 .docx",
+      "sha256": "913A52A6F418EF8CBBA87053FD97C27C8A7BD69D2456E0AE70F92FA113E56FB4"
+    },
+    {
+      "path": "rtl\\frame_buffer\\axi_ram.v",
+      "sha256": "A262C60912B260DEFB5338356395A4499AE725D90C442481C5D705B1BEFEC4A9"
+    },
+    {
+      "path": "rtl\\frame_buffer\\bank_switch.v",
+      "sha256": "47E886098C21EF3B0217F333EFE5573E7628DD65E8A0F02501ACA8C5B103D263"
+    },
+    {
+      "path": "rtl\\frame_buffer\\color_bar_rgb.v",
+      "sha256": "D8DA9192AB0284BBAB70C20971D362E33B02B7FEB5E021D8FE1848BDD0A65E12"
+    },
+    {
+      "path": "rtl\\frame_buffer\\data_tx.v",
+      "sha256": "5DC2CF6BA15EA207B79CB31D49B51A78EE0C2C8446811E714AC8F6916E2A1AD8"
+    },
+    {
+      "path": "rtl\\frame_buffer\\DC_FIFO.v",
+      "sha256": "ECC22C4E4CA706391B32ADE38D6D00332841DF5BE98C6A2F03A5A27EEE696796"
+    },
+    {
+      "path": "rtl\\frame_buffer\\ddr_buffer.v",
+      "sha256": "B9079ACD1C180599FBEC7896552D9C826369FB8A5123228BFD7F7FA42F80F6AF"
+    },
+    {
+      "path": "rtl\\frame_buffer\\ddr_rd_buffer.v",
+      "sha256": "711D99275CB984B2AA84B47248C7D5B55B99A9CE852044CEFB8CE7F5388A5AB0"
+    },
+    {
+      "path": "rtl\\frame_buffer\\ddr_wr_buffer_v1.v",
+      "sha256": "5C65081A3B683021126A4034A9D1B66080532AA4136377095200B39230FB6C9F"
+    },
+    {
+      "path": "rtl\\frame_buffer\\ddr_wr_buffer.v",
+      "sha256": "AB20336BDC277C642EDC82C436377314638054B8E12C219B66D4469E35A0D16C"
+    },
+    {
+      "path": "rtl\\frame_buffer\\frame_buffer.v",
+      "sha256": "1E451D5AC28B356D0F2AD371A4B48FE82FA294AD614A964B4FDCFFBE0AD492FF"
+    },
+    {
+      "path": "rtl\\frame_buffer\\frame_info_det.v",
+      "sha256": "D89BBDF4AE4BE112C49C5D5777FDBA85EB17A05B5411A0194DD4B30F8E9B5358"
+    },
+    {
+      "path": "rtl\\frame_buffer\\lpddr4_tb.v",
+      "sha256": "05DB94C6800C7171FB407A6651B2E4136B4DFEB7DB3343278619D41DCEB63A3E"
+    },
+    {
+      "path": "rtl\\frame_buffer\\par2ser_128_16_v1.v",
+      "sha256": "099F23A13B889EC051276BAEB6222CC8D4FBB03D3CB80F123F5515D6AA44A869"
+    },
+    {
+      "path": "rtl\\frame_buffer\\par2ser_128_24_v1.v",
+      "sha256": "C40D8538A51C24BB7C5BA470BE668D9FCE25E4E94EBD530B7F7725E53E1DAC73"
+    },
+    {
+      "path": "rtl\\frame_buffer\\par2ser_128_32_v1.v",
+      "sha256": "6DCB57270B41C046F8B206A7B3ACD4DECB51DB8193A83BD9EB3133D6AB373A37"
+    },
+    {
+      "path": "rtl\\frame_buffer\\par2ser_parse.v",
+      "sha256": "315A7F6C7BD9FBFB394E4EE0487D8E6E155E0F3FC37C8876C8620AA2546C084E"
+    },
+    {
+      "path": "rtl\\frame_buffer\\rst_n_piple.v",
+      "sha256": "2C127C90995A2B0E647DB1EEC3719C0E746A73DEF78D0C04BC7884195C2CA2D4"
+    },
+    {
+      "path": "rtl\\frame_buffer\\ser2par_16_128_v1.v",
+      "sha256": "CA294EB0D35C6301A7E3E0FE71D3065AE3EC8C7F6CCDE3E37C8CB59C53CC9854"
+    },
+    {
+      "path": "rtl\\frame_buffer\\ser2par_16_128.v",
+      "sha256": "A158EE6B4E2803A1C40E11BFBE0264E19A4A1D0F21B01D6D23C0592281B0178E"
+    },
+    {
+      "path": "rtl\\frame_buffer\\ser2par_24_128_v1.v",
+      "sha256": "34B701DE433CC210368E61A3A7CA3FEBDBA625AA55E1B5FA2B67998F2ACAE1F4"
+    },
+    {
+      "path": "rtl\\frame_buffer\\ser2par_32_128_v1.v",
+      "sha256": "7B5B50F33BB24808B7C190403D30D5DEC9982F43104577C682161E95A80CCD79"
+    },
+    {
+      "path": "rtl\\frame_buffer\\sim.do",
+      "sha256": "A7B139455EA9A24C187A96B4A51F5BDCBD94C1B38C47DDB920B9EC0DD01244AF"
+    },
+    {
+      "path": "rtl\\frame_buffer\\vid_check.v",
+      "sha256": "CBCF6DC3E6F875D57BBF2DE73DB16140E78F1AB6703BBAEBAB0F91310A84D2C0"
+    },
+    {
+      "path": "rtl\\frame_buffer\\vid_rx_align_v1.v",
+      "sha256": "3FB521E7B5A89E153A647074F893D422F3CFB80B1C57E3AED8BFC32730D799FD"
+    },
+    {
+      "path": "rtl\\frame_buffer\\wave.do",
+      "sha256": "30200C2D2794B0C3AE1903C3ACADF9605044EDACE58BE3F31D165566E766D726"
+    },
+    {
+      "path": "rtl\\mipi_config\\panel_config.v",
+      "sha256": "F29325697DEDAD619B5FF93BE7E80240D41162A3D47FD5A471FDD4947C786176"
+    },
+    {
+      "path": "rtl\\mipi_config\\true_dual_port_ram.v",
+      "sha256": "44BFB696E997B4D31BFD3C414623623C9B60964BFE711C611CF80A39222E8E8F"
+    }
+  ],
+  "candidate_status": "REJECTED_PANEL_DELAY_WIDTH",
+  "validation_report": "validation.json",
+  "generated_interface_files": [
+    {
+      "path": "outflow\\design_issue.xml",
+      "sha256": "D85E433A1EB6514A9474B09808CBDD73EDADB16B325E67ACA7D2EAEAF1A6EF63",
+      "release_path": "interface-generated/design_issue.xml"
+    }
+  ]
+}

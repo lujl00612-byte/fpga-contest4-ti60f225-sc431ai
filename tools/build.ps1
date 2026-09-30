@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('mipi','hdmi')][string]$Target='mipi',
+    [ValidateSet('mipi','mipi_diag','hdmi')][string]$Target='mipi',
     [Parameter(Mandatory)][ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Version,
     [ValidateSet('map','interface','pnr','pgm')][string]$ResumeFrom='map'
 )
@@ -7,8 +7,9 @@ $ErrorActionPreference='Stop'
 $repoRoot=Split-Path $PSScriptRoot -Parent
 $toolRoot=Join-Path (Split-Path $repoRoot -Parent) 'efinity2025_clean\PFiles\Efinity\2025.1'
 $projectDir=Join-Path $repoRoot ('projects\'+$Target)
-if($Target -eq 'mipi'){
-    & 'C:\Python314\python.exe' (Join-Path $PSScriptRoot 'check_dsi_constraints.py')
+$isMipi=$Target -in @('mipi','mipi_diag')
+if($isMipi){
+    & 'C:\Python314\python.exe' (Join-Path $PSScriptRoot 'check_dsi_constraints.py') --project $projectDir
     if($LASTEXITCODE -ne 0){throw 'DSI clock-lane constraint applicability check failed'}
 }
 $out=Join-Path $repoRoot ('builds\'+$Version+'\'+$Target)
@@ -34,7 +35,7 @@ try {
     try {
         $mapArgs=@('ti60f225_oob','-f','map','--family','Titanium','-d','Ti60F225','--timing_model','I3',
             '--flist',($shortProject+'\all_sources.f'),'--dir',($shortProject+'\ip\csi_rx_controller'))
-        if($Target -eq 'mipi'){$mapArgs+=@('--dir',($shortProject+'\ip\dsi_tx'))}
+        if($isMipi){$mapArgs+=@('--dir',($shortProject+'\ip\dsi_tx'))}
         $mapArgs+=@('--map_opts','veri_options=verilog_mode=sv_09,vhdl_mode=vhdl_2008','root=ti60f225_oob_top',
             '--output_dir',$shortOut,'--work_dir',($shortOut+'\work_syn'))
         if($ResumeFrom -eq 'map'){
@@ -77,9 +78,21 @@ try {
             [ordered]@{launch=$_.Groups[1].Value;capture=$_.Groups[2].Value;slack_ns=[double]$_.Groups[4].Value}
         })
         $negativeHoldPaths=@($holdPaths | Where-Object {$_.slack_ns -lt 0})
-        $sourceHashes=Get-ChildItem -LiteralPath $projectDir -File -Recurse|ForEach-Object {
+        $sourceHashes=Get-ChildItem -LiteralPath $projectDir -File -Recurse|Where-Object {
+            $_.FullName.Substring($projectDir.Length+1) -notmatch '(^|\\)(outflow[^\\]*|work_syn[^\\]*|work_pnr[^\\]*|work_pt[^\\]*|__pycache__)(\\|$)'
+        }|ForEach-Object {
             [ordered]@{path=$_.FullName.Substring($projectDir.Length+1);sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash}
         }
+        $generatedInterfaceFiles=@(Get-ChildItem -LiteralPath $projectDir -File -Recurse|Where-Object {
+            $_.FullName.Substring($projectDir.Length+1) -match '^outflow[^\\]*\\'
+        }|ForEach-Object {
+            $relative=$_.FullName.Substring($projectDir.Length+1)
+            $saved='interface-generated\'+($relative -replace '^outflow[^\\]*\\','')
+            $destination=Join-Path $release $saved
+            New-Item -ItemType Directory -Path (Split-Path $destination -Parent) -Force|Out-Null
+            Copy-Item -LiteralPath $_.FullName -Destination $destination
+            [ordered]@{path=$relative;release_path=$saved;sha256=(Get-FileHash -LiteralPath $destination -Algorithm SHA256).Hash}
+        })
         $manifest=[ordered]@{
             version=$Version;target=$Target;tool='Efinity 2025.1.110';device='Ti60F225I3';
             stages=@('map PASS','interface PASS','pnr PASS','pgm PASS');resources=$resources;
@@ -88,7 +101,8 @@ try {
             timing_status=$(if($setupPaths.Count -eq 0 -or $holdPaths.Count -eq 0){'unparsed'}elseif($negativePaths.Count -gt 0 -or $negativeHoldPaths.Count -gt 0){'FAIL'}else{'PASS'});
             setup_paths=$setupPaths;negative_setup_paths=$negativePaths;
             hold_paths=$holdPaths;negative_hold_paths=$negativeHoldPaths;
-            hardware_video_validation='pending';source_files=$sourceHashes
+            hardware_video_validation='pending';source_files=$sourceHashes;
+            generated_interface_files=$generatedInterfaceFiles
         }
         $manifest|ConvertTo-Json -Depth 6|Set-Content -LiteralPath (Join-Path $release 'manifest.json') -Encoding utf8
         Write-Output "Build complete: $release; timing: $($manifest.timing_status)"

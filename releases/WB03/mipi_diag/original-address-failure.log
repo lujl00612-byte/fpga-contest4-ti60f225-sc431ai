@@ -1,0 +1,3 @@
+WARNING: projects/mipi/rtl/true_dual_port_ram.v:52: $readmemh: The behaviour for reg[...] mem[N:0]; $readmemh("...", mem); changed in the 1364-2005 standard. To avoid ambiguity, use mem[0:N] or explicit range parameters $readmemh("...", mem, start, stop);. Defaulting to 1364-2005 behavior.
+FATAL: tests/tb_panel_axi.sv:72: Wrong AR address at handshake: got=00 expected=24 read=0
+       Time: 175000  Scope: tb_panel_axi

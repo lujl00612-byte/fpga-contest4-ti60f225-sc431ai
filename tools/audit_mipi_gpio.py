@@ -22,9 +22,10 @@ def profile(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--reference', type=Path, default=REFERENCE)
+    parser.add_argument('--project', type=Path, default=REPO / 'projects/mipi')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
-    current = profile(REPO / 'projects/mipi/ti60f225_oob.peri.xml')
+    current = profile(args.project / 'ti60f225_oob.peri.xml')
     reference = profile(args.reference)
     by_pin = {port['gpio_def']: port for port in reference['ports']}
     conflicts, shared_inputs = [], []

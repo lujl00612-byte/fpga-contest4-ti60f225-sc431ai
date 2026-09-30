@@ -1,4 +1,5 @@
 """Check that the bundled Ti60F225 DSI clock-lane exception applies to this build."""
+import argparse
 import hashlib
 import json
 import re
@@ -6,7 +7,9 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 repo = Path(__file__).resolve().parents[1]
-project = repo / "projects/mipi"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--project', type=Path, default=repo / 'projects/mipi')
+project = parser.parse_args().project.resolve()
 reference = (repo.parent / "efinity2025_clean/PFiles/Efinity/2025.1/ipm/ip/efx_dsi"
              / "fpga/constraint/ti60f225_demo.sdc")
 reference_hash = hashlib.sha256(reference.read_bytes()).hexdigest().upper()
@@ -43,7 +46,7 @@ for cycles, kind, line in zip((3, 2), ("setup", "hold"), exceptions):
     assert line == (f"set_multicycle_path {cycles} -{kind} -from [get_clocks {{i_mipi_tx_pclk}}] "
                     "-to [get_ports {mipi_dp_clk_HS_OUT[*] mipi_dp_clk1_HS_OUT[*]}] -end"), line
     assert f"set_multicycle_path {cycles} -{kind} -to [get_ports mipi_dp_clk_HS_OUT[*]] -end" in ref_sdc
-print(json.dumps({"status": "PASS", "vendor_reference": str(reference),
+print(json.dumps({"status": "PASS", "project": str(project), "vendor_reference": str(reference),
                   "vendor_reference_sha256": reference_hash, "clock_period_phase_ns": clocks,
                   "exception_scope": exceptions, "setup_edge_ns_before": 0.5,
                   "setup_edge_ns_after": 4.5, "hold_edge_ns_before_and_after": -1.5,

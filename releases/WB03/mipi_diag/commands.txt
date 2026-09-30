@@ -1,0 +1,9 @@
+tools/test_mipi_diag.ps1 -OriginalAddressRegression
+tools/test_mipi_diag.ps1 -FullFrame -OriginalAddressRegression
+tools/test.ps1
+C:\Python314\python.exe tools/check_mipi_diagnostic.py --output .cache/WB03-integration.json
+C:\Python314\python.exe tools/check_dsi_constraints.py --project projects/mipi_diag
+C:\Python314\python.exe tools/audit_mipi_gpio.py --project projects/mipi_diag --output .cache/WB03-gpio-audit.json
+tools/build.ps1 -Target mipi_diag -Version WB03
+E:\msys2\ucrt64\bin\iverilog.exe -g2012 -s tb_panel_delay -o .cache/panel_delay_22bit.vvp tests/tb_panel_delay.sv projects/mipi_diag/rtl/mipi_config/panel_config.v projects/mipi_diag/rtl/true_dual_port_ram.v
+E:\msys2\ucrt64\bin\vvp.exe .cache/panel_delay_22bit.vvp # EXPECTED FAIL: delay high bits lost

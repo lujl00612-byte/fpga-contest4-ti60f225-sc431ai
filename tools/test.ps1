@@ -28,4 +28,5 @@ try {
         & $vvp (Join-Path $cache ($name+'.vvp'))
         if($LASTEXITCODE -ne 0){throw "$name simulation failed"}
     }
+    & (Join-Path $PSScriptRoot 'test_mipi_diag.ps1')
 } finally {Pop-Location}

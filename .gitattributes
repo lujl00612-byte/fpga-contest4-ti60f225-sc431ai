@@ -2,3 +2,4 @@
 *.hex -text
 *.pdf -text
 *.png -text
+projects/mipi_diag/** -text -whitespace

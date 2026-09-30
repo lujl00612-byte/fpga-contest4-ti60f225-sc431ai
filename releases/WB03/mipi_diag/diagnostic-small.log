@@ -1,0 +1,10 @@
+Prepared panel fixture: 119 exact writes, 50 shortened delays; physical delays unverified
+PASS mipi_diagnostic W=40 H=24 HT=29 VT=33 checks=3121 pixels_checked=2886 distinct_pairs=555 frame_clocks=957
+tests/tb_mipi_diagnostic.sv:92: $finish called at 31266000 (1ps)
+WARNING: projects/mipi_diag/rtl/true_dual_port_ram.v:52: $readmemh: The behaviour for reg[...] mem[N:0]; $readmemh("...", mem); changed in the 1364-2005 standard. To avoid ambiguity, use mem[0:N] or explicit range parameters $readmemh("...", mem, start, stop);. Defaulting to 1364-2005 behavior.
+PASS panel_axi complete_runs=3 writes_per_run=119 status_reads_per_run=357 stalls=1472 checks=14911 aborted_read_reset=PASS
+tests/tb_panel_axi.sv:116: $finish called at 149340000 (1ps)
+WARNING: projects/mipi/rtl/true_dual_port_ram.v:52: $readmemh: The behaviour for reg[...] mem[N:0]; $readmemh("...", mem); changed in the 1364-2005 standard. To avoid ambiguity, use mem[0:N] or explicit range parameters $readmemh("...", mem, start, stop);. Defaulting to 1364-2005 behavior.
+FATAL: tests/tb_panel_axi.sv:72: Wrong AR address at handshake: got=00 expected=24 read=0
+       Time: 175000  Scope: tb_panel_axi
+PASS original-address regression reproduced the expected first-read address failure.

@@ -1,0 +1,43 @@
+{
+  "version": "WB03",
+  "status": "offline candidate; do not program before confirming actual PCB",
+  "actual_PCB_version_confirmed": false,
+  "hardware_levels_measured": false,
+  "reference": "E:\\EE design\\FPGA\\嵌入式比赛 4\\Ti60F225_DemoBoard_v4完整资料包\\Ti60F225_DemoBoard_v4\\01_Ti60F225_Key_led_osc_demo\\01_Ti60F225_key_demo\\LED_8bit_Test.peri.xml",
+  "reference_sha256": "021267A827233684FCE6109B6DD8755D95D77B85B5997F8F1FD0E150936CD67E",
+  "reset": {
+    "port": "i_arstn",
+    "pin": "GPIOL_07",
+    "source": "V4 KEY0/SW0 reference",
+    "voltage": "3.3 V LVCMOS",
+    "pull": "weak pullup"
+  },
+  "leds": [
+    {
+      "port": "led[0]",
+      "pin": "GPIOR_27",
+      "voltage": "3.3 V LVCMOS",
+      "meaning": "DSI channel 0 generator frame_count bit 5"
+    },
+    {
+      "port": "led[1]",
+      "pin": "GPIOR_24",
+      "voltage": "3.3 V LVCMOS",
+      "meaning": "DSI channel 1 generator frame_count bit 5"
+    }
+  ],
+  "mode_keys": [],
+  "pixel_bus": "{16 zero bits, pixel(x+1) RGB888, pixel(x) RGB888}; R high byte; physical color/rotation unverified",
+  "pixel_source_dependencies": [
+    "vid_clk_dvi2",
+    "carrier PLL lock reset",
+    "individual DSI panel configuration and startup delay"
+  ],
+  "pixel_source_independent_of": [
+    "camera",
+    "DDR video",
+    "debayer",
+    "white balance"
+  ],
+  "carrier_scope": "Original CSI/DDR/I2C carrier remains; synthesis can prune unused video logic. Not a standalone PHY design."
+}
