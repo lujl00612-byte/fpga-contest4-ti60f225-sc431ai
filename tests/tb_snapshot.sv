@@ -1,11 +1,11 @@
 `timescale 1ns/1ps
-module tb_snapshot;
-    localparam W=80,H=28,RW=40,RH=24,P=RW*RH;
+module tb_snapshot #(parameter RW=40,RH=24);
+    localparam W=2*RW,H=RH+4,P=RW*RH;
     reg clk=0;always #5 clk=~clk;
     reg rst_n=0,enable=0,de=0,hs=0,vs=0;reg [10:0] threshold=96;
     reg [1:0] classification=0;reg [23:0] rgb=0;
-    wire [23:0] out_rgb;wire od,oh,ov,ready,busy,error;wire [31:0] cycles;wire [10:0] accepted;
-    canny_snapshot_exact #(.WIDTH(W),.ROI_WIDTH(RW),.ROI_HEIGHT(RH),.X_BITS(7),.Y_BITS(6),.SETTLE_FRAMES(1)) dut(
+    wire [23:0] out_rgb;wire od,oh,ov,ready,busy,error;wire [31:0] cycles;wire [$clog2(P):0] accepted;
+    canny_snapshot_exact #(.WIDTH(W),.ROI_WIDTH(RW),.ROI_HEIGHT(RH),.X_BITS($clog2(W)),.Y_BITS($clog2(H)),.SETTLE_FRAMES(1)) dut(
         .clk(clk),.rst_n(rst_n),.enable_i(enable),.threshold_i(threshold),.class_i(classification),.rgb_i(rgb),
         .de_i(de),.hs_i(hs),.vs_i(vs),.rgb_o(out_rgb),.de_o(od),.hs_o(oh),.vs_o(ov),
         .result_ready(ready),.engine_busy(busy),.engine_error(error),.processing_cycles(cycles),.accepted_pixels(accepted));

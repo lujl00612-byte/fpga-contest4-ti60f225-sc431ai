@@ -15,15 +15,21 @@ module canny_tag_memory #(
     reg [1:0] state;
     reg [WORD_BITS-1:0] word_addr;
     reg [ADDR_BITS-1:0] cell_addr;
-    reg write_latched;reg [3:0] tag_latched;reg [19:0] read_word;
+    reg write_latched;reg [3:0] tag_latched;
+    localparam integer BANKS=(WORDS+511)/512;
+    localparam integer BANK_BITS=(BANKS>1)?$clog2(BANKS):1;
+    wire [19:0] bank_data[0:BANKS-1];
+    reg [BANK_BITS-1:0] read_bank_q;
+    wire [19:0] read_word=bank_data[read_bank_q];
     wire [19:0] engine_word=read_word;
     assign video_word=read_word;
-    reg [19:0] tags[0:WORDS-1];
     wire ram_re=(state==READ_WORD)||video_en;
     wire [WORD_BITS-1:0] ram_raddr=(state==READ_WORD)?word_addr:video_addr;
     wire ram_we=capture_we||((state==RESPOND)&&write_latched);
     wire [WORD_BITS-1:0] ram_waddr=capture_we?capture_addr:word_addr;
     wire [19:0] ram_wdata=capture_we?capture_word:updated_word;
+    wire [BANK_BITS-1:0] read_bank=ram_raddr>>9,write_bank=ram_waddr>>9;
+    wire [8:0] read_row=ram_raddr,write_row=ram_waddr;
     wire [2:0] lane=cell_addr-word_addr*5;
     reg [19:0] updated_word;reg [3:0] selected_tag;
     always @* begin
@@ -37,10 +43,17 @@ module canny_tag_memory #(
             default:begin end
         endcase
     end
-    // No reset on the memory array: every word is initialized by a complete capture.
+    // Explicit 512x20 banks preserve all parity bits. Automatic inference split 20
+    // into 16+4 and used 150 blocks; this packing uses exactly 120 for 640x480.
+    genvar b;
+    generate for(b=0;b<BANKS;b=b+1)begin:bank
+        EFX_RAM10 #(.READ_WIDTH(20),.WRITE_WIDTH(20),.OUTPUT_REG(0),.WRITE_MODE("READ_FIRST")) ram(
+            .WCLK(clk),.WE({2{ram_we&&(write_bank==b)}}),.WCLKE(1'b1),.WADDREN(1'b1),
+            .WDATA(ram_wdata),.WADDR(write_row),.RCLK(clk),.RE(ram_re&&(read_bank==b)),
+            .RST(1'b0),.RADDREN(1'b1),.RDATA(bank_data[b]),.RADDR(read_row));
+    end endgenerate
     always @(posedge clk)begin
-        if(ram_re)read_word<=tags[ram_raddr];
-        if(ram_we)tags[ram_waddr]<=ram_wdata;
+        if(ram_re)read_bank_q<=read_bank;
     end
     always @(posedge clk or negedge rst_n)begin
         if(!rst_n)begin

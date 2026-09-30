@@ -11,6 +11,8 @@
 | `baseline-20260930` | 从 A6 和原厂 3.5 寸彩色 Demo 建立的开发基线 | 原厂位流已核对 SHA256 |
 | `WB01` | 3.5 寸 MIPI 屏白平衡、色彩增强、原色直通、彩条 | 4,423 项仿真检查；生成位流；JTAG 配置成功；DSI 时序有负裕量，画面待实测 |
 | `A7` | 基础 L1 Sobel、原灰度 / 二值对照、整帧冻结、圆形 / 矩形文字 | 92,222 项检查 PASS；生成位流；像素时钟 setup +1.633 ns；HDMI 实测待完成 |
+| `A8-attempt`、`A8R1-attempt` | 完整连接开发中的两次硬件映射失败 | 算法仿真通过，保留失败源码和日志；无下载文件 |
+| `A8R2` | 冻结 640×480 完整 8 邻域连接、打包 RAM、独立边缘标记 | 生成位流；像素时钟 setup +0.435 ns；全尺寸算法和跨 RAM 块测试通过；HDMI 实测待完成 |
 
 每个发布版本保存源码 Git 提交、位流、报告、SHA256 清单。工具产生的临时文件位于 `builds/`，不进入 Git。
 
@@ -53,3 +55,7 @@ DSI 路径 `i_mipi_tx_pclk → i_mipi_txd_sclk`：setup 裕量 **−0.900 ns**�
 赛题各项实现和缺口见 `docs/requirements.md`，迭代工作见 `docs/iteration-plan.md`。
 
 A7 的具体功能、操作和资源对比见 `docs/A7.md`。
+
+A8R2 的完整连接范围、O(P) 复杂度证明、RAM 优化和验证结果见 `docs/A8R2.md`。本机 MSYS2 / Efinity / Git / JTAG 核对结果见 `docs/environment.md`。
+
+“赛题4持续迭代”后台续跑已启用，每 30 分钟接续本聊天；运行条件和后续优先级见 `docs/iteration-plan.md`。

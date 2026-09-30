@@ -1,0 +1,3 @@
+PASS full-size scene=0 pixels=307200 accepted=0 cycles=921600 transactions=307200
+PASS full-size scene=1 pixels=307200 accepted=307200 cycles=9816968 transactions=3372484
+.\tests\tb_hysteresis_scale.sv:35: $finish called at 107385860000 (1ps)
