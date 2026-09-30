@@ -1,0 +1,26 @@
+{
+  "name": "A1_median_color_overlay",
+  "label": "进阶 A1",
+  "features": "3×3 中值排序网络 + 红色边缘叠加",
+  "project": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_advanced\\A1_median_color_overlay",
+  "bit": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A1_median_color_overlay\\A1_median_color_overlay.bit",
+  "hex": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A1_median_color_overlay\\A1_median_color_overlay.hex",
+  "bit_sha256": "9C67E5F676799F91F7781FE84498F8AEF4AA9B39B92E773E9A42BE846BAD9403",
+  "hex_sha256": "6B3081954EACC5D57252FEB0CCB36960FCF75BF0579E9B1E856D3911A62C3D0B",
+  "resources": {
+    "EFX_LUT4": 10872,
+    "EFX_FF": 8424,
+    "EFX_RAM10": 102,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 3
+  },
+  "hdmi_148_5mhz_setup_slack_ns": 1.581,
+  "hdmi_148_5mhz_hold_slack_ns": 0.026,
+  "build": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "hardware_video_validation": "未进行；当前未连接 HDMI 显示器"
+}
