@@ -690,5 +690,116 @@
     "shapes": 68120,
     "total": 92222,
     "result": "PASS"
-  }
+  },
+  "hold_paths": [
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.076,
+      "edge": "R-R"
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "tx_cal_clk",
+      "slack_ns": 0.402,
+      "edge": "R-R"
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "core_clk",
+      "slack_ns": 0.077,
+      "edge": "R-R"
+    },
+    {
+      "launch": "sdram_clk",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.565,
+      "edge": "R-R"
+    },
+    {
+      "launch": "sdram_clk",
+      "capture": "sdram_clk",
+      "slack_ns": 0.094,
+      "edge": "R-R"
+    },
+    {
+      "launch": "rx_cal_clk",
+      "capture": "rx_cal_clk",
+      "slack_ns": 0.028,
+      "edge": "R-R"
+    },
+    {
+      "launch": "tx_cal_clk",
+      "capture": "tx_cal_clk",
+      "slack_ns": 0.097,
+      "edge": "R-R"
+    },
+    {
+      "launch": "vid_clk_dvi2",
+      "capture": "vid_clk_dvi2",
+      "slack_ns": 0.046,
+      "edge": "R-R"
+    },
+    {
+      "launch": "vid_clk_dvi2",
+      "capture": "hdmi_tx_slow_clk",
+      "slack_ns": 0.129,
+      "edge": "R-R"
+    },
+    {
+      "launch": "hdmi_tx_slow_clk",
+      "capture": "hdmi_tx_slow_clk",
+      "slack_ns": 0.026,
+      "edge": "R-R"
+    },
+    {
+      "launch": "core_clk",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.125,
+      "edge": "R-R"
+    },
+    {
+      "launch": "core_clk",
+      "capture": "core_clk",
+      "slack_ns": 0.035,
+      "edge": "R-R"
+    },
+    {
+      "launch": "core_clk",
+      "capture": "i_cam_ck_CLKOUT",
+      "slack_ns": 0.122,
+      "edge": "R-R"
+    },
+    {
+      "launch": "i_mipi_rx_pclk",
+      "capture": "i_mipi_rx_pclk",
+      "slack_ns": 0.026,
+      "edge": "R-R"
+    },
+    {
+      "launch": "i_mipi_rx_pclk",
+      "capture": "i_cam_ck_CLKOUT",
+      "slack_ns": 0.137,
+      "edge": "R-R"
+    },
+    {
+      "launch": "CLK_5M",
+      "capture": "CLK_5M",
+      "slack_ns": 0.077,
+      "edge": "R-R"
+    },
+    {
+      "launch": "i_cam_ck_CLKOUT",
+      "capture": "i_mipi_rx_pclk",
+      "slack_ns": 0.089,
+      "edge": "R-R"
+    },
+    {
+      "launch": "i_cam_ck_CLKOUT",
+      "capture": "i_cam_ck_CLKOUT",
+      "slack_ns": 0.061,
+      "edge": "R-R"
+    }
+  ],
+  "negative_hold_paths": []
 }

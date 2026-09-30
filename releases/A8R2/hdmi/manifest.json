@@ -714,5 +714,116 @@
     "continuous_video": "local approximation",
     "hardware_validation": "pending",
     "pcb_gpio_verification": "pending"
-  }
+  },
+  "hold_paths": [
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.063,
+      "edge": "R-R"
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "tx_cal_clk",
+      "slack_ns": 0.681,
+      "edge": "R-R"
+    },
+    {
+      "launch": "tx_cal_clk_90edge",
+      "capture": "core_clk",
+      "slack_ns": 0.071,
+      "edge": "R-R"
+    },
+    {
+      "launch": "sdram_clk",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.402,
+      "edge": "R-R"
+    },
+    {
+      "launch": "sdram_clk",
+      "capture": "sdram_clk",
+      "slack_ns": 0.05,
+      "edge": "R-R"
+    },
+    {
+      "launch": "rx_cal_clk",
+      "capture": "rx_cal_clk",
+      "slack_ns": 0.027,
+      "edge": "R-R"
+    },
+    {
+      "launch": "tx_cal_clk",
+      "capture": "tx_cal_clk",
+      "slack_ns": 0.097,
+      "edge": "R-R"
+    },
+    {
+      "launch": "vid_clk_dvi2",
+      "capture": "vid_clk_dvi2",
+      "slack_ns": 0.05,
+      "edge": "R-R"
+    },
+    {
+      "launch": "vid_clk_dvi2",
+      "capture": "hdmi_tx_slow_clk",
+      "slack_ns": 0.123,
+      "edge": "R-R"
+    },
+    {
+      "launch": "hdmi_tx_slow_clk",
+      "capture": "hdmi_tx_slow_clk",
+      "slack_ns": 0.028,
+      "edge": "R-R"
+    },
+    {
+      "launch": "core_clk",
+      "capture": "tx_cal_clk_90edge",
+      "slack_ns": 0.13,
+      "edge": "R-R"
+    },
+    {
+      "launch": "core_clk",
+      "capture": "core_clk",
+      "slack_ns": 0.028,
+      "edge": "R-R"
+    },
+    {
+      "launch": "core_clk",
+      "capture": "i_cam_ck_CLKOUT",
+      "slack_ns": 0.136,
+      "edge": "R-R"
+    },
+    {
+      "launch": "i_mipi_rx_pclk",
+      "capture": "i_mipi_rx_pclk",
+      "slack_ns": 0.026,
+      "edge": "R-R"
+    },
+    {
+      "launch": "i_mipi_rx_pclk",
+      "capture": "i_cam_ck_CLKOUT",
+      "slack_ns": 0.137,
+      "edge": "R-R"
+    },
+    {
+      "launch": "CLK_5M",
+      "capture": "CLK_5M",
+      "slack_ns": 0.089,
+      "edge": "R-R"
+    },
+    {
+      "launch": "i_cam_ck_CLKOUT",
+      "capture": "i_mipi_rx_pclk",
+      "slack_ns": 0.092,
+      "edge": "R-R"
+    },
+    {
+      "launch": "i_cam_ck_CLKOUT",
+      "capture": "i_cam_ck_CLKOUT",
+      "slack_ns": 0.026,
+      "edge": "R-R"
+    }
+  ],
+  "negative_hold_paths": []
 }

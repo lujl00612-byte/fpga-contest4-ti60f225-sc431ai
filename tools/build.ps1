@@ -63,10 +63,16 @@ try {
         }
         $timing=Get-Content -LiteralPath (Join-Path $out 'ti60f225_oob.timing.rpt') -Raw
         $setupSection=($timing -split 'Setup \(Max\) Clock Relationship')[1] -split 'Hold \(Min\) Clock Relationship' | Select-Object -First 1
-        $setupPaths=@([regex]::Matches($setupSection,'(?m)^\s*(\S+)\s+(\S+)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+)\s+\(R-R\)') | ForEach-Object {
+        $pathPattern='(?m)^\s*(\S+)\s+(\S+)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+)\s+\(([RF]-[RF])\)'
+        $setupPaths=@([regex]::Matches($setupSection,$pathPattern) | ForEach-Object {
             [ordered]@{launch=$_.Groups[1].Value;capture=$_.Groups[2].Value;slack_ns=[double]$_.Groups[4].Value}
         })
         $negativePaths=@($setupPaths | Where-Object {$_.slack_ns -lt 0})
+        $holdSection=($timing -split 'Hold \(Min\) Clock Relationship')[1] -split 'NOTE: Values' | Select-Object -First 1
+        $holdPaths=@([regex]::Matches($holdSection,$pathPattern) | ForEach-Object {
+            [ordered]@{launch=$_.Groups[1].Value;capture=$_.Groups[2].Value;slack_ns=[double]$_.Groups[4].Value}
+        })
+        $negativeHoldPaths=@($holdPaths | Where-Object {$_.slack_ns -lt 0})
         $sourceHashes=Get-ChildItem -LiteralPath $projectDir -File -Recurse|ForEach-Object {
             [ordered]@{path=$_.FullName.Substring($projectDir.Length+1);sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash}
         }
@@ -75,12 +81,13 @@ try {
             stages=@('map PASS','interface PASS','pnr PASS','pgm PASS');resources=$resources;
             bit_sha256=(Get-FileHash -LiteralPath (Join-Path $release ($Version+'.bit')) -Algorithm SHA256).Hash;
             hex_sha256=(Get-FileHash -LiteralPath (Join-Path $release ($Version+'.hex')) -Algorithm SHA256).Hash;
-            timing_status=$(if($setupPaths.Count -eq 0){'unparsed'}elseif($negativePaths.Count -gt 0){'FAIL'}else{'PASS'});
+            timing_status=$(if($setupPaths.Count -eq 0 -or $holdPaths.Count -eq 0){'unparsed'}elseif($negativePaths.Count -gt 0 -or $negativeHoldPaths.Count -gt 0){'FAIL'}else{'PASS'});
             setup_paths=$setupPaths;negative_setup_paths=$negativePaths;
+            hold_paths=$holdPaths;negative_hold_paths=$negativeHoldPaths;
             hardware_video_validation='pending';source_files=$sourceHashes
         }
         $manifest|ConvertTo-Json -Depth 6|Set-Content -LiteralPath (Join-Path $release 'manifest.json') -Encoding utf8
-        Write-Output "Build complete: $release"
+        Write-Output "Build complete: $release; timing: $($manifest.timing_status)"
     } finally {Pop-Location}
 } finally {
     if($vCreated){& subst V: /D}
