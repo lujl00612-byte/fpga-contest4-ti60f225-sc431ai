@@ -1,0 +1,26 @@
+{
+  "name": "V1_complete_baseline",
+  "label": "基础一版",
+  "features": "灰度 + 3×3 Sobel + 灰度/边缘分屏",
+  "project": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_versions\\V1_complete_baseline",
+  "bit": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\V1_complete_baseline\\V1_complete_baseline.bit",
+  "hex": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\V1_complete_baseline\\V1_complete_baseline.hex",
+  "bit_sha256": "046FA3D95B656029364D01FF760B238675B12B7884676B0183590BAA2B8BB83A",
+  "hex_sha256": "B4E8055980F3B42707711F88AAEAB76E080E9BB04D88C5B10B3C2758AD1360B0",
+  "resources": {
+    "EFX_LUT4": 10313,
+    "EFX_FF": 7899,
+    "EFX_RAM10": 88,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 3
+  },
+  "hdmi_148_5mhz_setup_slack_ns": 2.731,
+  "hdmi_148_5mhz_hold_slack_ns": 0.044,
+  "build": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "hardware_video_validation": "未进行；当前未连接 HDMI 显示器"
+}

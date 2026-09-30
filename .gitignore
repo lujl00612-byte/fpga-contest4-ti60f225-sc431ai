@@ -1,0 +1,10 @@
+builds/
+.cache/
+**/__pycache__/
+**/work_syn*/
+**/work_pnr*/
+**/work_pt*/
+**/outflow*/
+*.vcd
+*.fst
+*.vvp
