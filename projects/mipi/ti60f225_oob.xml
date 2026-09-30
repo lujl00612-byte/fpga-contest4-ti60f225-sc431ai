@@ -61,6 +61,8 @@
         <efx:design_file name="rtl/dsi_tx/dsi_tx_top.v" version="default" library="default"/>
         <efx:design_file name="rtl/frame_buffer/DC_FIFO.v" version="default" library="default"/>
         <efx:top_vhdl_arch name=""/>
+    <efx:design_file name="rtl/video_white_balance.v" version="default" library="default"/>
+    <efx:design_file name="rtl/screen_color_control.v" version="default" library="default"/>
     </efx:design_info>
     <efx:constraint_info>
         <efx:sdc_file name="ti60f225_oob.sdc"/>

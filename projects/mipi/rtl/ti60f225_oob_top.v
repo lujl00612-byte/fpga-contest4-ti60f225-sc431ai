@@ -41,6 +41,7 @@ module ti60f225_oob_top #(
 )
 (
   (* syn_peri_port = 0 *) input i_arstn,
+  (* syn_peri_port = 0 *) input [1:0] color_keys,
   (* syn_peri_port = 0 *) input io_cam_scl_IN,
   (* syn_peri_port = 0 *) input io_cam_sda_IN,
   (* syn_peri_port = 0 *) input clk_100m,
@@ -751,6 +752,21 @@ wire        rgb_de;
 wire        rgb_valid;
 wire [47:0] rgb_datax2;
 
+wire [47:0] balanced_rgb;
+wire balanced_vs,balanced_hs,balanced_de;
+wire [1:0] color_mode,color_enhance;
+wire [9:0] color_gain_r,color_gain_b;
+screen_color_control color_keys_control (
+    .clk(vid_clk_dvi2),.rst_n(pixel_data_en),.vs(rgb_vs),.key_n(color_keys),
+    .mode(color_mode),.enhance(color_enhance)
+);
+video_white_balance #(.PIXELS(2),.WIDTH(1920)) display_white_balance (
+    .clk(vid_clk_dvi2),.rst_n(pixel_data_en),.rgb_i(rgb_datax2),
+    .de_i(rgb_de),.hs_i(rgb_hs),.vs_i(rgb_vs),.mode_i(color_mode),.enhance_i(color_enhance),
+    .rgb_o(balanced_rgb),.de_o(balanced_de),.hs_o(balanced_hs),.vs_o(balanced_vs),
+    .gain_r(color_gain_r),.gain_b(color_gain_b)
+);
+
 
 debayer_top_2to1 debayer_top
 (
@@ -827,10 +843,10 @@ dsi_tx_top # (
     .i_mipi_tx_pclk(i_mipi_tx_pclk),
     .i_sysclk_div_2(vid_clk_dvi2),
 
-   /*i*/.pixel_vs_i  (rgb_vs								),//(o_vs),                //
-   /*i*/.pixel_hs_i  (rgb_hs								),//(o_hs),                //
-   /*i*/.pixel_de_i  (rgb_de								),//(o_de),                //
-   /*i*/.pixel_data_i({16'd0,rgb_datax2}	  ),//({16'd0,dout}),        //
+   /*i*/.pixel_vs_i  (balanced_vs								),//(o_vs),                //
+   /*i*/.pixel_hs_i  (balanced_hs								),//(o_hs),                //
+   /*i*/.pixel_de_i  (balanced_de								),//(o_de),                //
+   /*i*/.pixel_data_i({16'd0,balanced_rgb}	  ),//({16'd0,dout}),        //
    /*o*/.pixel_data_en(pixel_data_en),
 
 
@@ -896,10 +912,10 @@ dsi_tx_top # (
     .i_mipi_tx_pclk(i_mipi_tx_pclk),
     .i_sysclk_div_2(vid_clk_dvi2),
 
-   /*i*/.pixel_vs_i  (rgb_vs								),//(o_vs),                //
-   /*i*/.pixel_hs_i  (rgb_hs								),//(o_hs),                //
-   /*i*/.pixel_de_i  (rgb_de								),//(o_de),                //
-   /*i*/.pixel_data_i({16'd0,rgb_datax2}	  ),//({16'd0,dout}),        //
+   /*i*/.pixel_vs_i  (balanced_vs								),//(o_vs),                //
+   /*i*/.pixel_hs_i  (balanced_hs								),//(o_hs),                //
+   /*i*/.pixel_de_i  (balanced_de								),//(o_de),                //
+   /*i*/.pixel_data_i({16'd0,balanced_rgb}	  ),//({16'd0,dout}),        //
    /*o*/.pixel_data_en(),
 
 

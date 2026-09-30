@@ -53,3 +53,5 @@ H:\projects\mipi\rtl\dsi_tx\dsi_tx_top.v
 H:\projects\mipi\rtl\frame_buffer\DC_FIFO.v
 H:\projects\mipi\ip\csi_rx_controller\csi_rx_controller.sv
 H:\projects\mipi\ip\dsi_tx\dsi_tx.sv
+H:/projects/mipi/rtl/video_white_balance.v
+H:/projects/mipi/rtl/screen_color_control.v
