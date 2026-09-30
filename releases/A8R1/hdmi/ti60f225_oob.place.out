@@ -1,0 +1,124 @@
+           
+           Efinix FPGA Placement and Routing.
+           Version: 2025.1.110 
+           Compiled: May  7 2025.
+           
+           Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
+
+           
+           The Tool Is Based on VPR of University of Toronto,
+           a free open source code under MIT license.
+           
+           ***** Beginning stage netlist pre-processing ... *****
+INFO     : Successfully Read in Verific binary Netlist dump file "H:\builds\A8R1\hdmi\ti60f225_oob.vdb".
+INFO     : ***** Beginning VDB Netlist Checker ... *****
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(46): Input/inout port jtag_inst1_DRCK is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(48): Input/inout port jtag_inst1_RUNTEST is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(53): Input/inout port jtag_inst1_TMS is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(64): Input/inout port CLK_25M is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(69): Input/inout port pll_inst4_LOCKED is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(169): Input/inout port i_mipi_tx_pclk is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(207): Input/inout port mipi_dp_data0_LP_P_IN is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(208): Input/inout port mipi_dp_data0_LP_N_IN is unconnected and will be removed. [VDB-8003]
+WARNING  : CE port of EFX_DSP48 instance debayer_top/inst_rgb_gain/mult_27 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP48 instance debayer_top/inst_rgb_gain/mult_28 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP48 instance debayer_top/inst_rgb_gain/mult_29 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP48 instance debayer_top/inst_rgb_gain/mult_30 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_3 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_4 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_6 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_61 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_62 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_64 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_hysteresis/mult_22 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_hysteresis/mult_23 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_hysteresis/mult_25 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_exact/mult_188 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_exact/mult_189 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_exact/mult_191 is permanently disabled [VDB-8002]
+WARNING  : Found 24 warnings in the post-synthesis netlist.
+INFO     : VDB Netlist Checker took 0.059008 seconds.
+INFO     : 	VDB Netlist Checker took 0.078125 seconds (approximately) in total CPU time.
+INFO     : VDB Netlist Checker virtual memory usage: begin = 119.364 MB, end = 120.02 MB, delta = 0.656 MB
+INFO     : 	VDB Netlist Checker peak virtual memory usage = 120.028 MB
+INFO     : VDB Netlist Checker resident set memory usage: begin = 104.368 MB, end = 105.468 MB, delta = 1.1 MB
+INFO     : 	VDB Netlist Checker peak resident set memory usage = 105.468 MB
+INFO     : ***** Ending VDB Netlist Checker ... *****
+INFO     : Writing netlist 'ti60f225_oob_top' to Verilog file 'H:\builds\A8R1\hdmi\ti60f225_oob.prevpr.v' [VDB-1030]
+INFO     : Reading core interface constraints file "H:\builds\A8R1\hdmi\ti60f225_oob.interface.csv"
+INFO     : Successfully read core interface constraints file "H:\builds\A8R1\hdmi\ti60f225_oob.interface.csv"
+INFO     : Creating interface clock pin CLK_27M.
+INFO     : Creating interface clock pin clk_100m.
+INFO     : Creating interface clock pin fb.
+INFO     : Creating interface clock pin hdmi_tx_fast_clk.
+INFO     : Creating interface clock pin i_mipi_txc_sclk.
+INFO     : Creating interface clock pin i_mipi_txd_sclk.
+INFO     : Net CLK_27M promoted to global due to interface constraints.
+INFO     : Net fb promoted to global due to interface constraints.
+INFO     : Net CLK_25M promoted to global due to interface constraints.
+INFO     : Net i_mipi_txd_sclk promoted to global due to interface constraints.
+INFO     : Net i_mipi_tx_pclk promoted to global due to interface constraints.
+INFO     : Net i_mipi_txc_sclk promoted to global due to interface constraints.
+INFO     : Net clk_100m promoted to global due to interface constraints.
+INFO     : Net hdmi_tx_fast_clk promoted to global due to interface constraints.
+INFO     : Found 0 constant generator nets.
+INFO     : Pass 0: Swept away 0 nets with no fanout.
+INFO     : logical_block #1(jtag_inst1_DRCK) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #3(jtag_inst1_RUNTEST) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #8(jtag_inst1_TMS) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #23(pll_inst4_LOCKED) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #310(mipi_dp_data0_LP_P_IN) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #311(mipi_dp_data0_LP_N_IN) has no fanout.
+INFO     : Removing input.
+INFO     : Pass 0: Swept away 6 blocks with no fanout.
+INFO     : Pass 1: Swept away 0 nets with no fanout.
+INFO     : Pass 1: Swept away 0 blocks with no fanout.
+INFO     : Swept away 0 nets and 6 blocks in total.
+INFO     : Removed 0 LUT buffers
+INFO     : Sweept away 6 nodes
+INFO     : Successfully created VPR logical netlist from Verific binary DataBase file "H:\builds\A8R1\hdmi\ti60f225_oob.vdb".
+INFO     : Netlist pre-processing took 0.988642 seconds.
+INFO     : 	Netlist pre-processing took 0.796875 seconds (approximately) in total CPU time.
+INFO     : Netlist pre-processing virtual memory usage: begin = 119.364 MB, end = 1222.98 MB, delta = 1103.62 MB
+INFO     : 	Netlist pre-processing peak virtual memory usage = 1223.49 MB
+INFO     : Netlist pre-processing resident set memory usage: begin = 97.504 MB, end = 1234.98 MB, delta = 1137.47 MB
+INFO     : 	Netlist pre-processing peak resident set memory usage = 1235.15 MB
+           ***** Ending stage netlist pre-processing *****
+           
+INFO     : Load Global Network took 0.899721 seconds.
+INFO     : 	Load Global Network took 0.21875 seconds (approximately) in total CPU time.
+INFO     : Load Global Network virtual memory usage: begin = 1222.98 MB, end = 1223.49 MB, delta = 0.508 MB
+INFO     : 	Load Global Network peak virtual memory usage = 1223.49 MB
+INFO     : Load Global Network resident set memory usage: begin = 1235.06 MB, end = 1236.08 MB, delta = 1.024 MB
+INFO     : 	Load Global Network peak resident set memory usage = 1236.08 MB
+INFO     : Reading V://arch/.\rr_pb_hier_mapping.xml
+           ***** Beginning stage pre-packing ... *****
+           ***** Ending stage pre-packing *****
+           
+           ***** Beginning stage packing ... *****
+INFO     : 	[PrepackAnalyzer] Cannot pack adder chain size=16, contest4_processing/u_median/add_7/i9
+INFO     : Generate proto netlist for file "H:\builds\A8R1\hdmi\work_pnr\ti60f225_oob.net_proto" took 0.048 seconds
+INFO     : Creating IO constraints file 'H:\builds\A8R1\hdmi\work_pnr\ti60f225_oob.io_place'
+INFO     : Packing took 0.136301 seconds.
+INFO     : 	Packing took 0.140625 seconds (approximately) in total CPU time.
+INFO     : Packing virtual memory usage: begin = 1223.52 MB, end = 1223.52 MB, delta = 0 MB
+INFO     : 	Packing peak virtual memory usage = 1223.52 MB
+INFO     : Packing resident set memory usage: begin = 1236.57 MB, end = 1237.03 MB, delta = 0.464 MB
+INFO     : 	Packing peak resident set memory usage = 1237.03 MB
+           ***** Ending stage packing *****
+           
+INFO     : Read proto netlist file H:\builds\A8R1\hdmi\work_pnr\ti60f225_oob.net_proto
+INFO     : Read proto netlist for file "H:\builds\A8R1\hdmi\work_pnr\ti60f225_oob.net_proto" took 0.016 seconds
+INFO     : Setup net and block data structure took 0.155 seconds
+INFO     : Reading core interface constraints file "H:\builds\A8R1\hdmi\ti60f225_oob.interface.csv"
+INFO     : Successfully read core interface constraints file "H:\builds\A8R1\hdmi\ti60f225_oob.interface.csv"
+INFO     : Counting 1 clocks that are not assigned to clock resources as global clocks.
+ERROR    : Too many netlist objects for this device, packer unable to complete.
+ERROR    : The following block types exceed device resources:
+INFO     : 	memory          : 284/256 resources used
+ERROR    : User Error: Device does not have enough resources for this netlist.

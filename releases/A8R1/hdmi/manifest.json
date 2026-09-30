@@ -1,0 +1,13 @@
+{
+  "version": "A8R1",
+  "status": "FAILED_CANDIDATE",
+  "stage": "pnr packing",
+  "reason": "Inferred 20-bit RAM split as 16+4, resulting in 284/256 physical RAM blocks",
+  "map": "PASS",
+  "interface": "PASS",
+  "programming_files_generated": false,
+  "simulation": "PASS",
+  "full_size_pixels": 307200,
+  "full_size_dense_cycles": 9816968,
+  "full_size_dense_transactions": 3372484
+}
