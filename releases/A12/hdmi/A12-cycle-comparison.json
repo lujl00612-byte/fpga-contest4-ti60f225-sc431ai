@@ -1,0 +1,30 @@
+[
+  {
+    "scene": 0,
+    "baseline_cycles": 1290240,
+    "cycles": 1290240,
+    "saved_cycles": 0,
+    "reduction_percent": 0.0,
+    "baseline_ram_reads": 61440,
+    "ram_reads": 61440,
+    "ram_read_reduction_percent": 0.0,
+    "cache_hits": 245760,
+    "transactions": 307200,
+    "writes": 0,
+    "at_148_5MHz_ms": 8.68848484848485
+  },
+  {
+    "scene": 1,
+    "baseline_cycles": 14842638,
+    "cycles": 14165428,
+    "saved_cycles": 677210,
+    "reduction_percent": 4.562598643179197,
+    "baseline_ram_reads": 1653186,
+    "ram_reads": 975976,
+    "ram_read_reduction_percent": 40.96393267303256,
+    "cache_hits": 2396508,
+    "transactions": 3372484,
+    "writes": 307200,
+    "at_148_5MHz_ms": 95.39008754208754
+  }
+]

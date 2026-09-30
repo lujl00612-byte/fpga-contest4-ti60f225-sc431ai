@@ -1,0 +1,2 @@
+PASS tag cache: 351 data/latency/coherence checks, hits=57 misses=97, words=1, capture/video/reset/eviction/aborted primary, displaced and miss writes
+tests/tb_tag_cache.sv:125: $finish called at 7850000 (1ps)

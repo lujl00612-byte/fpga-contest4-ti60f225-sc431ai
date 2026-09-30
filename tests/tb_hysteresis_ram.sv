@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 // Production controller/engine; independent BFS and readback of all packed cells.
-module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1);
+module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1,CACHE_WORDS=2);
     localparam P=W*H,WORDS=P/5,AB=$clog2(P),WB=$clog2(WORDS);
     reg clk=0;always #5 clk=~clk;
     reg rst_n=0,start=0,capture_we=0,video_en=0;
@@ -17,31 +17,43 @@ module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1);
         .video_en(video_en),.video_addr(video_addr),.video_word(video_word));
     integer source[0:P-1],queue[0:P-1];bit expected[0:P-1];
     integer scene,i,j,a,nx,ny,n,head,tail,timeout,transactions=0,writes=0,checks=0,request_wait=0;
-    integer hits=0,ram_reads=0,expected_cycles=4,model_word=0;
-    reg model_valid=0,previous_video=0;
+    integer hits=0,ram_reads=0,expected_cycles=4,recent_count=0,model_index,k;
+    integer recent_words[0:1];
+    reg model_hit,previous_video=0;
     reg pending=0,pwrite;reg [AB-1:0] paddr;reg [3:0] pdata;
     always @(posedge clk)begin
-        if(!rst_n)begin pending=0;request_wait=0;model_valid=0;previous_video=0;end
+        if(!rst_n)begin pending=0;request_wait=0;recent_count=0;previous_video=0;end
         else if(ready)begin
             if(!valid||!pending)$fatal(1,"RAM response without held request");
             if(addr!==paddr||write!==pwrite||(write&&wdata!==pdata))$fatal(1,"request changed at acknowledgement");
             if(request_wait+1!=expected_cycles)$fatal(1,"RAM response latency: expected=%0d actual=%0d",expected_cycles,request_wait+1);
             transactions=transactions+1;if(write)writes=writes+1;
             if(expected_cycles==3)hits=hits+1;
-            model_valid=1;model_word=addr/5;
+            // Independent bounded MRU list models the cache contract, without
+            // reading internal controller state, entry tags or swap controls.
+            if(CACHED)begin
+                model_index=recent_count;
+                for(k=0;k<recent_count;k=k+1)if(recent_words[k]==addr/5)model_index=k;
+                if(model_index==recent_count&&recent_count<CACHE_WORDS)recent_count=recent_count+1;
+                if(model_index>=CACHE_WORDS)model_index=CACHE_WORDS-1;
+                for(k=model_index;k>0;k=k-1)recent_words[k]=recent_words[k-1];
+                recent_words[0]=addr/5;
+            end
             pending=0;request_wait=0;
         end else if(valid)begin
             if(addr>=P)$fatal(1,"request outside ROI");
             if(!pending)begin
                 pending=1;paddr=addr;pwrite=write;pdata=wdata;request_wait=0;
-                expected_cycles=(CACHED&&model_valid&&model_word==addr/5&&!(capture_we||video_en||previous_video))?3:4;
+                model_hit=0;
+                for(k=0;k<recent_count;k=k+1)if(recent_words[k]==addr/5)model_hit=1;
+                expected_cycles=(CACHED&&model_hit&&!(capture_we||video_en||previous_video))?3:4;
             end
             else if(addr!==paddr||write!==pwrite||(write&&wdata!==pdata))$fatal(1,"request changed while waiting");
             request_wait=request_wait+1;
         end
         if(rst_n)begin
             if(memory.ram_re&&!video_en)ram_reads=ram_reads+1;
-            if(capture_we||video_en||previous_video)model_valid=0;
+            if(capture_we||video_en||previous_video)recent_count=0;
             previous_video=video_en;
         end
     end
@@ -63,6 +75,7 @@ module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1);
     reg [19:0] packed_input;reg [3:0] tag;
     initial begin
         if(P%5!=0)$fatal(1,"test requires complete packed words");
+        if(CACHE_WORDS<1||CACHE_WORDS>2)$fatal(1,"monitor supports one or two cached words");
         repeat(4)@(negedge clk);rst_n=1;
         for(scene=0;scene<SCENES;scene=scene+1)begin
             for(i=0;i<P;i=i+1)begin

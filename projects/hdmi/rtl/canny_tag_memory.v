@@ -16,10 +16,13 @@ module canny_tag_memory #(
     reg [WORD_BITS-1:0] word_addr;
     reg [ADDR_BITS-1:0] cell_addr;
     reg write_latched;reg [3:0] tag_latched;
-    // Reuse the writeback register as a single packed-word cache. A hit skips
-    // READ_WORD; writes still commit only on the requester's ACK edge.
+    // Keep the most recent word in the writeback register, and one displaced
+    // word in a victim entry. Either hit skips READ_WORD; writes commit on ACK.
     reg [19:0] write_word_q;
     reg cache_valid,use_cache_q;
+    reg [19:0] victim_word_q;
+    reg [WORD_BITS-1:0] victim_addr_q;
+    reg victim_valid;
     localparam integer BANKS=(WORDS+511)/512;
     localparam integer BANK_BITS=(BANKS>1)?$clog2(BANKS):1;
     wire [19:0] bank_data[0:BANKS-1];
@@ -27,7 +30,10 @@ module canny_tag_memory #(
     reg video_en_q;
     wire [19:0] read_word=bank_data[read_bank_q];
     wire [WORD_BITS-1:0] requested_word=req_addr/5;
-    wire cache_hit=cache_valid&&(requested_word==word_addr)&&!(capture_we||video_en||video_en_q);
+    wire cache_allowed=!(capture_we||video_en||video_en_q);
+    wire primary_hit=cache_valid&&(requested_word==word_addr)&&cache_allowed;
+    wire victim_hit=victim_valid&&(requested_word==victim_addr_q)&&cache_allowed;
+    wire cache_hit=primary_hit||victim_hit;
     wire [19:0] engine_word=use_cache_q?write_word_q:read_word;
     // Video retains its two-edge read latency, independently of cache hits.
     wire ram_re=(state==READ_WORD)||video_en;
@@ -73,10 +79,18 @@ module canny_tag_memory #(
         if(!rst_n)begin
             state<=IDLE;word_addr<=0;cell_addr<=0;write_latched<=0;tag_latched<=0;write_word_q<=0;
             cache_valid<=0;use_cache_q<=0;req_ready<=0;req_rdata<=0;
+            victim_word_q<=0;victim_addr_q<=0;victim_valid<=0;
         end else begin
             req_ready<=0;
             case(state)
                 IDLE:if(req_valid)begin
+                    if(!primary_hit)begin
+                        // On a victim hit these nonblocking assignments swap
+                        // words before RESPOND. On a miss retain the old MRU
+                        // while the new word is fetched from RAM.
+                        victim_word_q<=write_word_q;victim_addr_q<=word_addr;victim_valid<=cache_valid;
+                        if(victim_hit)write_word_q<=victim_word_q;
+                    end
                     word_addr<=requested_word;cell_addr<=req_addr;write_latched<=req_write;tag_latched<=req_wdata;
                     use_cache_q<=cache_hit;state<=cache_hit?RESPOND:READ_WORD;
                 end
@@ -91,7 +105,7 @@ module canny_tag_memory #(
             endcase
             // Capture can replace any word; display also changes the RAM bank
             // selection. Do not carry cache state across either ownership switch.
-            if(capture_we||video_en||video_en_q)cache_valid<=0;
+            if(capture_we||video_en||video_en_q)begin cache_valid<=0;victim_valid<=0;end
         end
     end
 endmodule

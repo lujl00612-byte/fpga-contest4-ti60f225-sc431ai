@@ -1,0 +1,12 @@
+Creating H:\builds\A12\hdmi\work_syn
+Running: efx_run_map.py ti60f225_oob --family Titanium --device Ti60F225 --flist H:\projects\hdmi\all_sources.f --dir H:\projects\hdmi\ip\csi_rx_controller --output_dir H:\builds\A12\hdmi --work_dir H:\builds\A12\hdmi\work_syn --opt veri_options=verilog_mode=sv_09,vhdl_mode=vhdl_2008 root=ti60f225_oob_top
+   map :	PASS 
+Creating H:\builds\A12\hdmi\work_interface
+Running: efx_run_pt_unified.py ti60f225_oob Titanium Ti60F225 --output_dir H:\builds\A12\hdmi --timing_model I3 --work_dir H:\builds\A12\hdmi\work_interface
+   interface :	PASS 
+Creating H:\builds\A12\hdmi\work_pnr
+Running: efx_run_pnr.py ti60f225_oob --family Titanium --device Ti60F225 --timing_model I3 --sim --output_dir H:\builds\A12\hdmi --work_dir H:\builds\A12\hdmi\work_pnr
+   pnr :	PASS 
+Running: efx_run_pgm.py ti60f225_oob --family Titanium --device Ti60F225 --output_dir H:\builds\A12\hdmi --work_dir H:\builds\A12\hdmi\work_pnr
+   pgm :	PASS 
+Build complete: E:\EE design\FPGA\嵌入式比赛 4\contest4_work\contest4_dev\releases\A12\hdmi; timing: PASS

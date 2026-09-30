@@ -1,0 +1,19 @@
+progress scene=0 cycles=1000000
+PASS production RAM scene=0 pixels=307200 accepted=0 cycles=1290240 transactions=307200 writes=0 cache_hits=245760 ram_reads=61440 four_cycle_equivalent=1536000
+progress scene=1 cycles=1000000
+progress scene=1 cycles=2000000
+progress scene=1 cycles=3000000
+progress scene=1 cycles=4000000
+progress scene=1 cycles=5000000
+progress scene=1 cycles=6000000
+progress scene=1 cycles=7000000
+progress scene=1 cycles=8000000
+progress scene=1 cycles=9000000
+progress scene=1 cycles=10000000
+progress scene=1 cycles=11000000
+progress scene=1 cycles=12000000
+progress scene=1 cycles=13000000
+progress scene=1 cycles=14000000
+PASS production RAM scene=1 pixels=307200 accepted=307200 cycles=14842638 transactions=3372484 writes=307200 cache_hits=1719298 ram_reads=1653186 four_cycle_equivalent=16561936
+PASS production RAM total: 614400 packed-cell checks, BFS, 3-cycle hit / 4-cycle miss handshake and linear bounds
+tests/tb_hysteresis_ram.sv:108: $finish called at 165015380000 (1ps)

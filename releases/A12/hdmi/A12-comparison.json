@@ -1,0 +1,116 @@
+{
+  "baseline_version": "A11",
+  "baseline_commit": "38ee2808f7f59614ee757b21e94a29c8addfda46",
+  "vendor_vs_word_model_40x80": "PASS: four identical scene records",
+  "A11_vs_A12_40x80": "PASS: same BFS result/accesses/writes and four-cycle equivalent; saved cycles equal extra cache hits",
+  "A11_vs_A12_production_640x480": "PASS: same BFS result/accesses/writes; saved cycles equal extra cache hits; all 120 banks read back",
+  "regular_checks": 236405,
+  "cross_bank_checks": {
+    "timing": 155547,
+    "rgb": 40320,
+    "edge": 155547
+  },
+  "full_size_cell_checks": 614400,
+  "coherence_checks": 351,
+  "A11_coherence_calibration_checks": 351,
+  "cache_policy": "two-word fully associative MRU/victim, least-recent eviction",
+  "added_logical_cache_bits_at_full_size": 37,
+  "RAM_video_read_edges": 2,
+  "snapshot_output_stages": 3,
+  "engine_request_cycles": {
+    "hit": 3,
+    "miss": 4,
+    "write_commit": "on ready consumption edge"
+  },
+  "full_size_cycles": [
+    {
+      "scene": 0,
+      "baseline_cycles": 1290240,
+      "cycles": 1290240,
+      "saved_cycles": 0,
+      "reduction_percent": 0.0,
+      "baseline_ram_reads": 61440,
+      "ram_reads": 61440,
+      "ram_read_reduction_percent": 0.0,
+      "cache_hits": 245760,
+      "transactions": 307200,
+      "writes": 0,
+      "at_148_5MHz_ms": 8.68848484848485
+    },
+    {
+      "scene": 1,
+      "baseline_cycles": 14842638,
+      "cycles": 14165428,
+      "saved_cycles": 677210,
+      "reduction_percent": 4.562598643179197,
+      "baseline_ram_reads": 1653186,
+      "ram_reads": 975976,
+      "ram_read_reduction_percent": 40.96393267303256,
+      "cache_hits": 2396508,
+      "transactions": 3372484,
+      "writes": 307200,
+      "at_148_5MHz_ms": 95.39008754208754
+    }
+  ],
+  "resources": {
+    "A11": {
+      "EFX_LUT4": 14510,
+      "EFX_FF": 9751,
+      "EFX_RAM10": 250,
+      "EFX_DPRAM10": 4,
+      "EFX_DSP24": 12,
+      "EFX_DSP48": 4
+    },
+    "A12": {
+      "EFX_LUT4": 14716,
+      "EFX_FF": 9725,
+      "EFX_RAM10": 250,
+      "EFX_DPRAM10": 4,
+      "EFX_DSP24": 12,
+      "EFX_DSP48": 4
+    }
+  },
+  "timing": {
+    "version": "A12",
+    "resources": {
+      "EFX_LUT4": 14716,
+      "EFX_FF": 9725,
+      "EFX_RAM10": 250,
+      "EFX_DPRAM10": 4,
+      "EFX_DSP24": 12,
+      "EFX_DSP48": 4
+    },
+    "setup_groups": 18,
+    "hold_groups": 18,
+    "min_setup_ns": 0.246,
+    "min_hold_ns": 0.026,
+    "pixel_setup_ns": 0.536,
+    "pixel_hold_ns": 0.029,
+    "pixel_analysis_fmax_MHz": 161.342,
+    "bit_sha256": "B79226C9635A27D782965ED53AB8064A288ACA00D4E54511353DE2F414C8CD71",
+    "hex_sha256": "DB09EE984D85B514E8F91657634DD3DF5DB4B3D4B9DD28B033BD5E6078F73476",
+    "pixel_critical_path": {
+      "Path Begin": "contest4_processing/u_exact/memory/bank[28].ram|RCLK",
+      "Path End": "contest4_processing/u_exact/mem_rdata[1]~FF|D",
+      "Slack": "0.536 (required time - arrival time)",
+      "Delay": "4.708",
+      "Logic Level": "12"
+    },
+    "status": "PASS",
+    "actual_pixel_clock_MHz": 148.5
+  },
+  "source_hashes_verified_against_build_manifest": 145,
+  "programming_files_match_this_build": true,
+  "programming_files_differ_from_A11": true,
+  "hardware_video_validation": "pending; no A12 download; HDMI disconnected; board kept factory MIPI diagnosis configuration",
+  "scope": "Exact connectivity only on frozen right-side 640x480 ROI; continuous video still uses local approximation",
+  "complexity": {
+    "time": "O(P)",
+    "state_bits": "4P plus fixed registers; two cached words, no extra RAM/DFS stack",
+    "request_bound": "P+10V",
+    "cycle_bound": "5P+49V+2-H",
+    "symbols": "P=ROI pixels, V=accepted pixels, H=cache-hit requests"
+  },
+  "offline_MIPI_preparation": "Three GPIO direction conflicts and two shared input pins with supplied V4 Key Demo. Actual PCB/levels/cause unverified. Independent RGB888 timing/packing plan saved; no diagnostic bitstream yet.",
+  "source_line_endings": "Build source hashes describe raw working-tree bytes. Git may normalize source line endings on checkout. Release evidence has local .gitattributes preserving all raw bytes."
+}

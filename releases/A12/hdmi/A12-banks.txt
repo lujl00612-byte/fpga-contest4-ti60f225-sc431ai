@@ -1,0 +1,4 @@
+snapshot scenario=0 accepted=57 processing_cycles=15824 frames=9
+snapshot scenario=1 accepted=720 processing_cycles=43610 frames=12
+PASS snapshot: 155547 timing checks, 40320 colored-output checks, 155547 independent edge checks, packed RAM, recapture and frame publication
+tests/tb_snapshot.sv:89: $finish called at 1555516000 (1ps)
