@@ -1,0 +1,26 @@
+{
+  "name": "A4_median_pipeline",
+  "label": "进阶优化 A4",
+  "features": "A3 全部功能 + 中值比较复用与分级流水",
+  "project": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_advanced\\A4_median_pipeline",
+  "bit": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A4_median_pipeline\\A4_median_pipeline.bit",
+  "hex": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A4_median_pipeline\\A4_median_pipeline.hex",
+  "bit_sha256": "3F1EEEF01C0A249DFD74B697708D7D98DD1C92D8784A0AFF4D11210F64BC4818",
+  "hex_sha256": "AB5D14F6F70679C3A30E41C821BB4735C37B4C30374E91EC7B5A924DC093E2B4",
+  "resources": {
+    "EFX_LUT4": 11387,
+    "EFX_FF": 9368,
+    "EFX_RAM10": 134,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 3
+  },
+  "hdmi_148_5mhz_setup_slack_ns": 1.796,
+  "hdmi_148_5mhz_hold_slack_ns": 0.027,
+  "build": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "hardware_video_validation": "未进行；当前未连接 HDMI 显示器"
+}
