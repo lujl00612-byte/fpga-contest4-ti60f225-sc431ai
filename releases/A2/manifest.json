@@ -1,0 +1,26 @@
+{
+  "name": "A2_canny_color_overlay",
+  "label": "进阶 A2",
+  "features": "高斯 + Canny 流水 + 红色边缘叠加",
+  "project": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_advanced\\A2_canny_color_overlay",
+  "bit": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A2_canny_color_overlay\\A2_canny_color_overlay.bit",
+  "hex": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A2_canny_color_overlay\\A2_canny_color_overlay.hex",
+  "bit_sha256": "8CE0DDA002343D5ECA8B12EE3D07A3D19E9A42066224F431BEF0FFB8F26EAC99",
+  "hex_sha256": "1A62EE0C40671AB139E3F88D564CFC7A4FAB9A71B010E8A8AFD1B0F2C1801419",
+  "resources": {
+    "EFX_LUT4": 10747,
+    "EFX_FF": 8688,
+    "EFX_RAM10": 125,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 3
+  },
+  "hdmi_148_5mhz_setup_slack_ns": 2.534,
+  "hdmi_148_5mhz_hold_slack_ns": 0.029,
+  "build": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "hardware_video_validation": "未进行；当前未连接 HDMI 显示器"
+}
