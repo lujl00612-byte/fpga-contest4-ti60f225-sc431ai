@@ -1,0 +1,26 @@
+{
+  "name": "V2_complete_gaussian",
+  "label": "基础二版",
+  "features": "高斯降噪 + 3×3 Sobel + 灰度/边缘分屏",
+  "project": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_versions\\V2_complete_denoise",
+  "bit": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\V2_complete_gaussian\\V2_complete_gaussian.bit",
+  "hex": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\V2_complete_gaussian\\V2_complete_gaussian.hex",
+  "bit_sha256": "32FC1DAE402099B9AF7A30FF8D5309B3554B80C0FC9EFE952741C08505E259A1",
+  "hex_sha256": "F63838B53AEE7DF7FA420D3EDBCF2714385E3B1D5FE916E58FB90C95313AE07C",
+  "resources": {
+    "EFX_LUT4": 10329,
+    "EFX_FF": 7959,
+    "EFX_RAM10": 92,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 3
+  },
+  "hdmi_148_5mhz_setup_slack_ns": 2.613,
+  "hdmi_148_5mhz_hold_slack_ns": 0.046,
+  "build": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "hardware_video_validation": "未进行；当前未连接 HDMI 显示器"
+}
