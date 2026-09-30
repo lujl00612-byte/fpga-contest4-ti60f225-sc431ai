@@ -16,16 +16,20 @@ module canny_tag_memory #(
     reg [WORD_BITS-1:0] word_addr;
     reg [ADDR_BITS-1:0] cell_addr;
     reg write_latched;reg [3:0] tag_latched;
+    // Reuse the writeback register as a single packed-word cache. A hit skips
+    // READ_WORD; writes still commit only on the requester's ACK edge.
     reg [19:0] write_word_q;
+    reg cache_valid,use_cache_q;
     localparam integer BANKS=(WORDS+511)/512;
     localparam integer BANK_BITS=(BANKS>1)?$clog2(BANKS):1;
     wire [19:0] bank_data[0:BANKS-1];
     reg [BANK_BITS-1:0] read_bank_q;
     reg video_en_q;
     wire [19:0] read_word=bank_data[read_bank_q];
-    wire [19:0] engine_word=read_word;
-    // Register the selected video word after the RAM read; the engine still
-    // consumes the direct word through its unchanged four-cycle interface.
+    wire [WORD_BITS-1:0] requested_word=req_addr/5;
+    wire cache_hit=cache_valid&&(requested_word==word_addr)&&!(capture_we||video_en||video_en_q);
+    wire [19:0] engine_word=use_cache_q?write_word_q:read_word;
+    // Video retains its two-edge read latency, independently of cache hits.
     wire ram_re=(state==READ_WORD)||video_en;
     wire [WORD_BITS-1:0] ram_raddr=(state==READ_WORD)?word_addr:video_addr;
     // Commit on the edge on which the requester consumes req_ready. The existing
@@ -67,18 +71,27 @@ module canny_tag_memory #(
     end
     always @(posedge clk or negedge rst_n)begin
         if(!rst_n)begin
-            state<=IDLE;word_addr<=0;cell_addr<=0;write_latched<=0;tag_latched<=0;write_word_q<=0;req_ready<=0;req_rdata<=0;
+            state<=IDLE;word_addr<=0;cell_addr<=0;write_latched<=0;tag_latched<=0;write_word_q<=0;
+            cache_valid<=0;use_cache_q<=0;req_ready<=0;req_rdata<=0;
         end else begin
             req_ready<=0;
             case(state)
                 IDLE:if(req_valid)begin
-                    word_addr<=req_addr/5;cell_addr<=req_addr;write_latched<=req_write;tag_latched<=req_wdata;
-                    state<=READ_WORD;
+                    word_addr<=requested_word;cell_addr<=req_addr;write_latched<=req_write;tag_latched<=req_wdata;
+                    use_cache_q<=cache_hit;state<=cache_hit?RESPOND:READ_WORD;
                 end
                 READ_WORD:state<=RESPOND;
-                RESPOND:begin req_rdata<=selected_tag;write_word_q<=updated_word;req_ready<=1;state<=ACK;end
+                RESPOND:begin
+                    req_rdata<=selected_tag;
+                    // A read must cache the unchanged word, including all neighbors.
+                    write_word_q<=write_latched?updated_word:engine_word;
+                    cache_valid<=1;req_ready<=1;state<=ACK;
+                end
                 ACK:state<=IDLE;
             endcase
+            // Capture can replace any word; display also changes the RAM bank
+            // selection. Do not carry cache state across either ownership switch.
+            if(capture_we||video_en||video_en_q)cache_valid<=0;
         end
     end
 endmodule

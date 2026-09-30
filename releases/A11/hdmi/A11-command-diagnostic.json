@@ -1,0 +1,23 @@
+{
+  "failed_command": "& .\\tools\\build.ps1 -Target hdmi -Version A11 2>&1 | Tee-Object -FilePath .cache/A11-build.log",
+  "failure": "Could not find a part of the path 'H:\\projects\\hdmi\\.cache\\A11-build.log'.",
+  "cause": "Tee-Object resolved a relative output path after build.ps1 changed the process location to H:\\projects\\hdmi.",
+  "mapped_candidate_exists": true,
+  "map_artifacts": {
+    "ti60f225_oob.vdb": {
+      "bytes": 20458332,
+      "sha256": "DB2557CE8C918F6566E9680CEF60DCE7FBF2D310B87B482A9F3C416DD2E5F9CD"
+    },
+    "ti60f225_oob.map.out": {
+      "bytes": 197717,
+      "sha256": "8EB22A7F3FE2E56DE00062565606C3475C658F8B751B58A1FFFEBCDD7056E19D"
+    },
+    "ti60f225_oob.map.rpt": {
+      "bytes": 649325,
+      "sha256": "A55A58225FA7E8BFC6841E8244AAA61CD4B633DBDAE273E5E0716D08237EB735"
+    }
+  },
+  "source_sha256": "25A412E61C87AC9F404C2B3B3623A8B9F86E6E0462F6F31C03E288430EC09390",
+  "resumed_command": "$taskBuildLog=Join-Path (Get-Location).Path '.cache/A11-build.log'; & .\\tools\\build.ps1 -Target hdmi -Version A11 -ResumeFrom interface 2>&1 | Tee-Object -FilePath $taskBuildLog",
+  "note": "The same newly mapped A11 candidate is resumed; no old bitstream is substituted. Original map.out and map.rpt are retained. No RTL changes between mapping and resume."
+}

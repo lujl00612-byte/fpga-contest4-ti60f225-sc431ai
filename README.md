@@ -16,6 +16,7 @@
 | `WB02` | 按匹配的供应商示例补齐 DSI 时钟通道约束，增加适用配置检查 | 4,423 项白平衡检查；生成新位流；14 组 setup / 14 组 hold 均为正裕量；屏幕实测待完成 |
 | `A9` | 利用原 ACK 周期寄存完整连接 RAM 写回，保持四周期接口 | 新 / 旧完整控制器各通过 640×480 对照；LUT −318、FF −61；像素 setup +0.556 ns；HDMI 实测待完成 |
 | `A10` | 寄存 RAM 视频读出、后移边缘叠加，保持外部三拍与引擎四周期 | 像素 setup +0.916 ns；LUT +279、FF +85、RAM 不变；逐像素 / 边缘标记及全尺寸对照 PASS；HDMI 实测待完成 |
+| `A11` | 复用写回寄存器缓存一个打包字，命中三周期、未命中四周期 | 640×480 无种子 / 全连通周期分别减少 16% / 10.38%；LUT −300、FF −51、RAM 不变；像素 setup +0.879 ns；HDMI 实测待完成 |
 
 每个发布版本保存源码 Git 提交、位流、报告、SHA256 清单。工具产生的临时文件位于 `builds/`，不进入 Git。
 
@@ -54,7 +55,7 @@ V4 原理图的 KEY0 对应实体丝印 **SW0**；装配图中四个用户按键
 ```powershell
 .\tools\test.ps1
 .\tools\build.ps1 -Target mipi -Version WB03
-.\tools\build.ps1 -Target hdmi -Version A11
+.\tools\build.ps1 -Target hdmi -Version A12
 & 'C:\Python314\python.exe' .\tools\jtag_load_sram.py --status
 & 'C:\Python314\python.exe' .\tools\jtag_load_sram.py --status --program --bit .\releases\WB02\mipi\WB02.bit
 ```
@@ -73,4 +74,6 @@ A9 的写回分级、实际四周期存储访问计数、资源与时序对照�
 
 A10 的视频读取分级、三拍像素与边缘标记对齐、资源代价及实际时序收益见 `docs/A10.md`。A9 和 A10 的计算周期相同；下一轮重点评估重复打包字访问的缓存，降低计算常数，复杂度仍须如实记录。
 
-“赛题4持续迭代”后台任务已按用户要求暂停，应用任务 ID 为 4；本次 A10 已保存，后续计划及运行条件见 `docs/iteration-plan.md`。等待用户明确恢复后再继续。
+A11 已完成上述单字缓存评估，640×480 全连通为 14,842,638 周期，按 148.5 MHz 折算约 99.95 ms，尚未板上计时。复杂度仍为 O(P)，视频输出仍为三拍。缓存一致性、实际 RAM 读次数、全尺寸 BFS 对照、资源和时序的完整记录见 `docs/A11.md`。
+
+用户在 2026-09-30 明确恢复继续迭代，“赛题4持续迭代”后台任务已恢复 **ACTIVE**，应用任务 ID 为 4；A11 已保存，后续计划及运行条件见 `docs/iteration-plan.md`。当前不重复下载到无法观察的板子。

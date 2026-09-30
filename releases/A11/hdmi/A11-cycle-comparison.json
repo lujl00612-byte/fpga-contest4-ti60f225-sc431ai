@@ -1,0 +1,24 @@
+[
+  {
+    "scene": 0,
+    "baseline_cycles": 1536000,
+    "cycles": 1290240,
+    "saved_cycles": 245760,
+    "reduction_percent": 16.0,
+    "ram_reads": 61440,
+    "transactions": 307200,
+    "writes": 0,
+    "at_148_5MHz_ms": 8.68848484848485
+  },
+  {
+    "scene": 1,
+    "baseline_cycles": 16561936,
+    "cycles": 14842638,
+    "saved_cycles": 1719298,
+    "reduction_percent": 10.381020672945482,
+    "ram_reads": 1653186,
+    "transactions": 3372484,
+    "writes": 307200,
+    "at_148_5MHz_ms": 99.95042424242425
+  }
+]
