@@ -17,9 +17,9 @@ module canny_tag_memory #(
     reg [ADDR_BITS-1:0] cell_addr;
     reg write_latched;reg [3:0] tag_latched;
     // Keep the most recent word in the writeback register, and one displaced
-    // word in a victim entry. Either hit skips READ_WORD; writes commit on ACK.
+    // word in a victim entry. A hit responds at acceptance; writes commit on ACK.
     reg [19:0] write_word_q;
-    reg cache_valid,use_cache_q;
+    reg cache_valid;
     reg [19:0] victim_word_q;
     reg [WORD_BITS-1:0] victim_addr_q;
     reg victim_valid;
@@ -42,7 +42,21 @@ module canny_tag_memory #(
     wire primary_hit=cache_valid&&(requested_word==word_addr)&&cache_allowed;
     wire victim_hit=victim_valid&&(requested_word==victim_addr_q)&&cache_allowed;
     wire cache_hit=primary_hit||victim_hit;
-    wire [19:0] engine_word=use_cache_q?write_word_q:read_word;
+    wire [19:0] engine_word=read_word;
+    wire [19:0] hit_word=primary_hit?write_word_q:victim_word_q;
+    wire [2:0] request_lane=req_addr-requested_word*5;
+    reg [19:0] hit_updated_word;reg [3:0] hit_tag;
+    always @* begin
+        hit_tag=0;hit_updated_word=hit_word;
+        case(request_lane)
+            0:begin hit_tag=hit_word[3:0];hit_updated_word[3:0]=req_wdata;end
+            1:begin hit_tag=hit_word[7:4];hit_updated_word[7:4]=req_wdata;end
+            2:begin hit_tag=hit_word[11:8];hit_updated_word[11:8]=req_wdata;end
+            3:begin hit_tag=hit_word[15:12];hit_updated_word[15:12]=req_wdata;end
+            4:begin hit_tag=hit_word[19:16];hit_updated_word[19:16]=req_wdata;end
+            default:begin end
+        endcase
+    end
     // Video retains its two-edge read latency, independently of cache hits.
     wire ram_re=(state==READ_WORD)||video_en;
     wire [WORD_BITS-1:0] ram_raddr=(state==READ_WORD)?word_addr:video_addr;
@@ -114,21 +128,22 @@ module canny_tag_memory #(
     always @(posedge clk or negedge rst_n)begin
         if(!rst_n)begin
             state<=IDLE;word_addr<=0;cell_addr<=0;write_latched<=0;tag_latched<=0;write_word_q<=0;
-            cache_valid<=0;use_cache_q<=0;req_ready<=0;req_rdata<=0;
+            cache_valid<=0;req_ready<=0;req_rdata<=0;
             victim_word_q<=0;victim_addr_q<=0;victim_valid<=0;
         end else begin
             req_ready<=0;
             case(state)
                 IDLE:if(req_valid)begin
                     if(!primary_hit)begin
-                        // On a victim hit these nonblocking assignments swap
-                        // words before RESPOND. On a miss retain the old MRU
-                        // while the new word is fetched from RAM.
+                        // Retain the old MRU on a miss, or swap it into the
+                        // victim entry when the victim responds immediately.
                         victim_word_q<=write_word_q;victim_addr_q<=word_addr;victim_valid<=cache_valid;
-                        if(victim_hit)write_word_q<=victim_word_q;
                     end
                     word_addr<=requested_word;cell_addr<=req_addr;write_latched<=req_write;tag_latched<=req_wdata;
-                    use_cache_q<=cache_hit;state<=cache_hit?RESPOND:READ_WORD;
+                    if(cache_hit)begin
+                        req_rdata<=hit_tag;write_word_q<=req_write?hit_updated_word:hit_word;
+                        cache_valid<=1;req_ready<=1;state<=ACK;
+                    end else state<=READ_WORD;
                 end
                 READ_WORD:state<=RESPOND;
                 RESPOND:begin

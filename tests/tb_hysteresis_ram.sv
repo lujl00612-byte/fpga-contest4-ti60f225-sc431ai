@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 // Production controller/engine; independent BFS and readback of all packed cells.
-module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1,CACHE_WORDS=2);
+module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1,CACHE_WORDS=2,HIT_CYCLES=2);
     localparam P=W*H,WORDS=P/5,AB=$clog2(P),WB=$clog2(WORDS);
     reg clk=0;always #5 clk=~clk;
     reg rst_n=0,start=0,capture_we=0,video_en=0;
@@ -28,7 +28,7 @@ module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1,CACHE_WORDS=2);
             if(addr!==paddr||write!==pwrite||(write&&wdata!==pdata))$fatal(1,"request changed at acknowledgement");
             if(request_wait+1!=expected_cycles)$fatal(1,"RAM response latency: expected=%0d actual=%0d",expected_cycles,request_wait+1);
             transactions=transactions+1;if(write)writes=writes+1;
-            if(expected_cycles==3)hits=hits+1;
+            if(expected_cycles==HIT_CYCLES)hits=hits+1;
             // Independent bounded MRU list models the cache contract, without
             // reading internal controller state, entry tags or swap controls.
             if(CACHED)begin
@@ -46,7 +46,7 @@ module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1,CACHE_WORDS=2);
                 pending=1;paddr=addr;pwrite=write;pdata=wdata;request_wait=0;
                 model_hit=0;
                 for(k=0;k<recent_count;k=k+1)if(recent_words[k]==addr/5)model_hit=1;
-                expected_cycles=(CACHED&&model_hit&&!(capture_we||video_en||previous_video))?3:4;
+                expected_cycles=(CACHED&&model_hit&&!(capture_we||video_en||previous_video))?HIT_CYCLES:4;
             end
             else if(addr!==paddr||write!==pwrite||(write&&wdata!==pdata))$fatal(1,"request changed while waiting");
             request_wait=request_wait+1;
@@ -101,7 +101,7 @@ module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1,CACHE_WORDS=2);
             if(!done||error||accepted!==tail)$fatal(1,"engine result mismatch scene=%0d",scene);
             if(transactions>P+10*tail||writes!=tail)$fatal(1,"linear work bound or write count failed");
             if(ram_reads+hits!=transactions)$fatal(1,"physical RAM reads do not match cache misses");
-            if(cycles+hits>5*P+49*tail+2)$fatal(1,"production RAM cycle bound failed");
+            if(cycles+(4-HIT_CYCLES)*hits>5*P+49*tail+2)$fatal(1,"production RAM cycle bound failed");
             for(a=0;a<WORDS;a=a+1)begin
                 @(negedge clk);video_en=1;video_addr=a;
                 // The read is accepted at the first edge and the selected
@@ -115,9 +115,9 @@ module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4,CACHED=1,CACHE_WORDS=2);
                 end
             end
             @(negedge clk);video_en=0;
-            $display("PASS production RAM scene=%0d pixels=%0d accepted=%0d cycles=%0d transactions=%0d writes=%0d cache_hits=%0d ram_reads=%0d four_cycle_equivalent=%0d",scene,P,accepted,cycles,transactions,writes,hits,ram_reads,cycles+hits);
+            $display("PASS production RAM scene=%0d pixels=%0d accepted=%0d cycles=%0d transactions=%0d writes=%0d cache_hits=%0d ram_reads=%0d four_cycle_equivalent=%0d",scene,P,accepted,cycles,transactions,writes,hits,ram_reads,cycles+(4-HIT_CYCLES)*hits);
             repeat(5)@(negedge clk);
         end
-        $display("PASS production RAM total: %0d packed-cell checks, BFS, %0d-cycle hit / 4-cycle miss handshake and linear bounds",checks,CACHED?3:4);$finish;
+        $display("PASS production RAM total: %0d packed-cell checks, BFS, %0d-cycle hit / 4-cycle miss handshake and linear bounds",checks,CACHED?HIT_CYCLES:4);$finish;
     end
 endmodule

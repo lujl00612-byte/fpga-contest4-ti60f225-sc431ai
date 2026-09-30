@@ -1,0 +1,2 @@
+PASS tag_banks words=61440 banks=120 request_checks=736 video_cell_checks=571115; 2/4-cycle handshake, streamed two-edge video, gaps, group boundaries, partial bank, reset
+tests/tb_tag_banks.sv:107: $finish called at 1858130000 (1ps)

@@ -1,0 +1,176 @@
+{
+  "version": "A14",
+  "scope": "all release files except this hash inventory",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 20,
+      "sha256": "E97602AB9CAC70102245345C5AB0FC9830DF8B17F1072B188265A662A3A547AE"
+    },
+    {
+      "path": "A13-A14-comparison.json",
+      "bytes": 4121,
+      "sha256": "FC816581A1D8AB78BC8957C1446F74D417275915DDF82D3794C55D96085AE8D4"
+    },
+    {
+      "path": "A14-banks-full.log",
+      "bytes": 236,
+      "sha256": "CE76058D00354CEB93D7C78EA6236DF02D4096AE6CDECD4771A6C4F67C0011C1"
+    },
+    {
+      "path": "A14-baseline-banks.log",
+      "bytes": 232,
+      "sha256": "7309B3B44E4EBB4B7B9095D896C42E287ED72D517A7531E90621BC5C0282D9FB"
+    },
+    {
+      "path": "A14-baseline-cache.log",
+      "bytes": 225,
+      "sha256": "0CC170A5A621320A3CA2F68DC8CCA83648CD5E0D1868874E0B7F5628AC5300FB"
+    },
+    {
+      "path": "A14-baseline-ram.log",
+      "bytes": 808,
+      "sha256": "F9ACC5AE21B34CB9D0EB1E5285CF6BEA19A2A2CEC0BB18C18CBD297F385CF8F1"
+    },
+    {
+      "path": "A14-build.log",
+      "bytes": 1082,
+      "sha256": "712A6752B944DF6780FF685A89A92AAFAEC327511E41CFD616504CC3CE9D4545"
+    },
+    {
+      "path": "A14-fast-ram.log",
+      "bytes": 808,
+      "sha256": "FAA2A136D99436E1D27113831B9A9E2D96B88CD7B975D102E43AC739F072FE87"
+    },
+    {
+      "path": "A14-measured-metrics.json",
+      "bytes": 909,
+      "sha256": "95A6BC4442429B1C606FE2339E3100C3037F552FC2FCFBC86D0A154F62B503D6"
+    },
+    {
+      "path": "A14-ram-full.log",
+      "bytes": 922,
+      "sha256": "F40AA053F70A9F09255FC370A6AF7AD527ACF33862C73DAB1DEF117FAC4E1569"
+    },
+    {
+      "path": "A14-regression.log",
+      "bytes": 5424,
+      "sha256": "197D740694D4E6A4549DD768A604119808A09436625EFBB3EEF8999001343295"
+    },
+    {
+      "path": "A14-snapshot-banks.log",
+      "bytes": 338,
+      "sha256": "171E7F9A9EDC77B625A4538106520661B15AEBC52DF8F79CA75FEDE7CE807EEB"
+    },
+    {
+      "path": "A14.bit",
+      "bytes": 2400606,
+      "sha256": "6537A7032498E0AA5DA39814E41E20EC46BA2AC1A6A9392C89D0A467BE88DB9F"
+    },
+    {
+      "path": "A14.cdc.rpt",
+      "bytes": 296,
+      "sha256": "4DE7506DBF2B0D0AE971914D76163E11492591100A78A8F03395F4A678988B28"
+    },
+    {
+      "path": "A14.err.log",
+      "bytes": 135,
+      "sha256": "DE8CF70CE09870E38C56625573FAABB6EDA119F892B3C067EB38AAF862ADD712"
+    },
+    {
+      "path": "A14.hex",
+      "bytes": 2400666,
+      "sha256": "51916F65399F722AC5EE7AF6E2749A0971493118C2FA848F30FF1B4642C1DBBF"
+    },
+    {
+      "path": "A14.info.log",
+      "bytes": 193082,
+      "sha256": "17702B209C4D9B0B23CC9316E48886C5D4B0E9B7463046EE03EE10418CE85DD9"
+    },
+    {
+      "path": "A14.map.out",
+      "bytes": 197839,
+      "sha256": "7C0681C2F0C9E379D2CC8FA8C4AA91F2EBB60098905D593732483824250D4AC6"
+    },
+    {
+      "path": "A14.map.rpt",
+      "bytes": 639538,
+      "sha256": "100E5BEC0989C21A650A726F229D9436395931C2C75DAAE0E2EFC8977654A92D"
+    },
+    {
+      "path": "A14.pgm.out",
+      "bytes": 1474,
+      "sha256": "562D1F41FF7BA5F94C521A7C567CCD7CCB04970E61EB1FDC12B3B1541F47C5A1"
+    },
+    {
+      "path": "A14.pinout.rpt",
+      "bytes": 48181,
+      "sha256": "D4019B63B2373E6E56D1A0D33C500EB71A209155DABA1266F3BD2F8BEDC5FB61"
+    },
+    {
+      "path": "A14.route.out",
+      "bytes": 55072,
+      "sha256": "C99E1A2A13CC270774EFBC3541E979B6DA2165FD6F249DB03C6C1EA8ADFFDD04"
+    },
+    {
+      "path": "A14.timing.rpt",
+      "bytes": 201732,
+      "sha256": "EE83CC894A2AB32F3D4FE52CDA494564EB428F3CF7806DA2A6B0A2D9A7D0A6DD"
+    },
+    {
+      "path": "A14.warn.log",
+      "bytes": 58928,
+      "sha256": "5B92D2C4AD1D821222B07997651843AB19E104269AFD8A127079FA4C86AC4B40"
+    },
+    {
+      "path": "baseline/A13-canny_tag_memory.v",
+      "bytes": 7547,
+      "sha256": "85D48D76BD5AC8A1BE59F197484EAFE2E327AC99C60E857B5E0A5B5C179FF704"
+    },
+    {
+      "path": "baseline/A13-measured-metrics.json",
+      "bytes": 897,
+      "sha256": "F0AC8637C6E39B787F3200397D35B0409A084F9BA25DBDF468882AEECB9039F6"
+    },
+    {
+      "path": "baseline/A13-ram-full.log",
+      "bytes": 1024,
+      "sha256": "3857D78782270AD130B6EF82B0AB2EB6D36EA9589D53A4D54A2AB9F402A5B72C"
+    },
+    {
+      "path": "baseline/A13-regression.log",
+      "bytes": 5412,
+      "sha256": "837BF2F71750AA38AABBCAC363FB1817B144E4F7F724EA775E46BA593124D9AD"
+    },
+    {
+      "path": "input-provenance.json",
+      "bytes": 62873,
+      "sha256": "DB013470376640145645D84610B52E88839EB37ECA874F1FD334A7029BFBD2A5"
+    },
+    {
+      "path": "interface-generated/design_issue.xml",
+      "bytes": 398,
+      "sha256": "CDB7858F2E62D97E045379197CF933D4565E87B503FB87E2DF4C6ABFFAC2EF02"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 26893,
+      "sha256": "1BC0B618A7F358EF724073E78882D4D073B22AA4C681978F4A59581BFDC70BA7"
+    },
+    {
+      "path": "source/canny_tag_memory.v",
+      "bytes": 8244,
+      "sha256": "1B52906A85B6B1D8124840C8B797971277760EA5E47C5E8D39D1FB514A481FA5"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 5965,
+      "sha256": "F53D71854D4356F895C9F158A15E2098A0B805CEAE239D8F6046BD3BA4AAABCD"
+    },
+    {
+      "path": "verification-commands.ps1",
+      "bytes": 4079,
+      "sha256": "1222164DEE36D1DF8BC67E442543D256F371C6D730CF45C26558B30C0AB15BAC"
+    }
+  ]
+}

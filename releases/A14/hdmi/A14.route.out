@@ -1,0 +1,616 @@
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:25] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:25] set_clock_groups: No valid clock(s) found for -group 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:25] set_clock_groups: Cannot set clock group when only one non-empty group remains
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:25] Unable to run 'set_clock_groups' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:41] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:41] set_output_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:41] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:42] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:42] set_output_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:42] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:43] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:43] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:43] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:44] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:44] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:44] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:45] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:45] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:45] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:46] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:46] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:46] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:47] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:47] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:47] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:48] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:48] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:48] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:49] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:49] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:49] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:50] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:50] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:50] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:51] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:51] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:51] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:52] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:52] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:52] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst1_DRCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:53] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:53] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:53] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst1_DRCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:54] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:54] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:54] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_TDO__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:62] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:62] set_output_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:62] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_TDO__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:63] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:63] set_output_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:63] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_CAPTURE__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:64] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:64] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:64] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_CAPTURE__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:65] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:65] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:65] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_RESET__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:66] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:66] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:66] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_RESET__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:67] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:67] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:67] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_SEL__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:68] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:68] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:68] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_SEL__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:69] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:69] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:69] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_UPDATE__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:70] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:70] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:70] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_UPDATE__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:71] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:71] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:71] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_SHIFT__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:72] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:72] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:72] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_SHIFT__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:73] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:73] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:73] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_DRCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:74] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:74] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:74] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_DRCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:75] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:75] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:75] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:86] Missing value for option -period, please type 'create_clock -help' for usage info
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:86] Unable to run 'create_clock' constraint due to warnings found
+WARNING  : No ports matched 'ddr_addr[14]'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:115] set_output_delay: No valid output port(s) found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:115] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'ddr_addr[14]'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:116] set_output_delay: No valid output port(s) found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:116] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'ddr_addr[15]'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:117] set_output_delay: No valid output port(s) found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:117] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'ddr_addr[15]'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:118] set_output_delay: No valid output port(s) found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:118] Unable to run 'set_output_delay' constraint due to warnings found
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Router Setup
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : [Setup Parallel Routing Scheduler]
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Route Circuit with 10 threads
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Beneficial skew enabled! Optimizing clock skews ... 
+INFO     : Non-legalized beneficial skew improved geomean CPD by 0.61% (from 3094ps to 3075ps)
+INFO     : CSS improved CPD of clock tx_cal_clk_90edge by 0.00% (from 1995ps to 1995ps)
+INFO     : CSS improved CPD of clock sdram_clk by 0.00% (from 1962ps to 1962ps)
+INFO     : CSS improved CPD of clock rx_cal_clk by 2.29% (from 2180ps to 2130ps)
+INFO     : CSS improved CPD of clock tx_cal_clk by 0.00% (from 1814ps to 1814ps)
+INFO     : CSS improved CPD of clock vid_clk_dvi2 by 0.00% (from 5395ps to 5395ps)
+INFO     : CSS improved CPD of clock hdmi_tx_slow_clk by -1.01% (from 5460ps to 5515ps)
+INFO     : CSS improved CPD of clock core_clk by 0.00% (from 4544ps to 4544ps)
+INFO     : CSS improved CPD of clock i_mipi_rx_pclk by 0.00% (from 4155ps to 4155ps)
+INFO     : CSS improved CPD of clock CLK_5M by 0.00% (from 2455ps to 2455ps)
+INFO     : CSS improved CPD of clock i_cam_ck_CLKOUT by 0.00% (from 3813ps to 3813ps)
+INFO     : Discretized beneficial skew improved geomean CPD by 0.13% (from 3094ps to 3090ps in 5 iterations and 0.6 sec)
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Overridding delay budgets for 446 synchronizer-related pins
+
+INFO     : Iter  1: overlap=54866   heapops=7004115    (0%) cpd=2130  frr=1.00  msec=2167
+INFO     : [Setup Delay Budgets | 328.6 ms]
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Hold Fixing
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Total min wire delay:   8118670
+INFO     : Hold fix wire delay:        106
+INFO     : Hold fix delay ratio:     0.00%
+INFO     : Pins requiring hold fix:  0.00%
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Iter  2: overlap=21494   heapops=5680437    (28%) cpd=2099  frr=0.99  msec=901
+INFO     : Iter  3: overlap=10892   heapops=4229146    (49%) cpd=2107  frr=0.99  msec=724
+INFO     : Iter  4: overlap=4143    heapops=2726658    (67%) cpd=2099  frr=0.99  msec=512
+INFO     : Iter  5: overlap=1141    heapops=1385810    (81%) cpd=2118  frr=0.99  msec=349
+INFO     : Iter  6: overlap=248     heapops=572604     (88%) cpd=2118  frr=0.99  msec=277
+INFO     : [Rebuild Parallel Routing Scheduler]
+INFO     : Iter  7: overlap=72      heapops=266958     (90%) cpd=2118  frr=0.99  msec=281
+INFO     : Iter  8: overlap=22      heapops=290086     (90%) cpd=2118  frr=0.99  msec=215
+INFO     : Iter  9: overlap=10      heapops=154024     (91%) cpd=2118  frr=0.99  msec=169
+INFO     : Iter 10: overlap=10      heapops=342459     (91%) cpd=2118  frr=0.99  msec=286
+INFO     : Iter 11: overlap=6       heapops=285580     (91%) cpd=2118  frr=0.99  msec=280
+INFO     : Iter 12: overlap=4       heapops=219029     (91%) cpd=2118  frr=0.99  msec=215
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Beneficial skew enabled! Optimizing clock skews ... 
+INFO     : Non-legalized beneficial skew improved geomean CPD by 0.00% (from 3462ps to 3462ps)
+INFO     : CSS improved CPD of clock tx_cal_clk_90edge by 0.00% (from 2034ps to 2034ps)
+INFO     : CSS improved CPD of clock sdram_clk by 0.00% (from 2011ps to 2011ps)
+INFO     : CSS improved CPD of clock rx_cal_clk by 0.00% (from 2118ps to 2118ps)
+INFO     : CSS improved CPD of clock tx_cal_clk by 0.00% (from 1834ps to 1834ps)
+INFO     : CSS improved CPD of clock vid_clk_dvi2 by 0.00% (from 6266ps to 6266ps)
+INFO     : CSS improved CPD of clock hdmi_tx_slow_clk by 0.00% (from 6057ps to 6057ps)
+INFO     : CSS improved CPD of clock core_clk by 0.00% (from 5506ps to 5506ps)
+INFO     : CSS improved CPD of clock i_mipi_rx_pclk by 0.00% (from 5524ps to 5524ps)
+INFO     : CSS improved CPD of clock CLK_5M by 0.00% (from 3005ps to 3005ps)
+INFO     : CSS improved CPD of clock i_cam_ck_CLKOUT by 0.00% (from 4488ps to 4488ps)
+INFO     : Discretized beneficial skew improved geomean CPD by 0.00% (from 3462ps to 3462ps in 1 iterations and 0.7 sec)
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Iter 13: overlap=0       heapops=85555      (91%) cpd=2118  frr=0.99  msec=882
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Routing Result
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Routing Succeeded in 7.93 seconds taking 13 iterations! 
+INFO     : 
+INFO     : First iteration critical path delay = 2.130 ns 
+INFO     : Last iteration critical path delay  = 2.118 ns (ratio = 0.99)
+INFO     : Max Routing Heap Size = 35,209
+INFO     : Routing trace written to file 'H:\builds\A14\hdmi\ti60f225_oob.troutingtraces' 
+INFO     : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO     : Routing took 13.7483 seconds.
+INFO     : 	Routing took 35.4375 seconds (approximately) in total CPU time.
+INFO     : Routing virtual memory usage: begin = 255.812 MB, end = 390.676 MB, delta = 134.864 MB
+INFO     : 	Routing peak virtual memory usage = 1314.02 MB
+INFO     : Routing resident set memory usage: begin = 273.652 MB, end = 405.192 MB, delta = 131.54 MB
+INFO     : 	Routing peak resident set memory usage = 1332.1 MB
+           ***** Beginning stage final timing analysis ... *****
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:25] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:25] set_clock_groups: No valid clock(s) found for -group 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:25] set_clock_groups: Cannot set clock group when only one non-empty group remains
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:25] Unable to run 'set_clock_groups' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:41] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:41] set_output_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:41] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:42] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:42] set_output_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:42] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:43] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:43] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:43] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:44] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:44] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:44] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:45] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:45] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:45] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:46] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:46] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:46] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:47] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:47] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:47] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:48] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:48] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:48] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:49] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:49] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:49] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:50] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:50] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:50] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:51] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:51] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:51] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:52] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:52] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:52] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst1_DRCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:53] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:53] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:53] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst1_DRCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:54] No clocks matched 'jtag_inst1_TCK'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:54] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:54] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_TDO__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:62] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:62] set_output_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:62] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_TDO__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:63] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:63] set_output_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:63] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_CAPTURE__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:64] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:64] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:64] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_CAPTURE__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:65] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:65] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:65] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_RESET__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:66] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:66] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:66] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_RESET__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:67] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:67] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:67] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_SEL__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:68] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:68] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:68] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_SEL__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:69] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:69] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:69] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_UPDATE__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:70] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:70] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:70] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_UPDATE__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:71] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:71] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:71] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_SHIFT__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:72] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:72] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:72] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_SHIFT__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:73] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:73] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:73] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_DRCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:74] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:74] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:74] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : No ports matched 'jtag_inst2_autodbg_DRCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:75] No clocks matched 'jtag_inst2_autodbg_TCK__'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:75] set_input_delay: No valid clock found for -clock
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:75] Unable to run 'set_input_delay' constraint due to warnings found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:86] Missing value for option -period, please type 'create_clock -help' for usage info
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:86] Unable to run 'create_clock' constraint due to warnings found
+WARNING  : No ports matched 'ddr_addr[14]'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:115] set_output_delay: No valid output port(s) found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:115] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'ddr_addr[14]'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:116] set_output_delay: No valid output port(s) found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:116] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'ddr_addr[15]'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:117] set_output_delay: No valid output port(s) found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:117] Unable to run 'set_output_delay' constraint due to warnings found
+WARNING  : No ports matched 'ddr_addr[15]'
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:118] set_output_delay: No valid output port(s) found
+WARNING  : [SDC H:/projects/hdmi/ti60f225_oob.sdc:118] Unable to run 'set_output_delay' constraint due to warnings found
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1808:in[0] to i1808:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1628:in[0] to i1628:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1818:in[0] to i1818:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1618:in[0] to i1618:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1828:in[0] to i1828:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1608:in[0] to i1608:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1838:in[0] to i1838:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1598:in[0] to i1598:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1848:in[0] to i1848:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1588:in[0] to i1588:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2538:in[0] to i2538:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1858:in[0] to i1858:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1198:in[0] to i1198:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1578:in[0] to i1578:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2528:in[0] to i2528:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1868:in[0] to i1868:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1238:in[0] to i1238:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1568:in[0] to i1568:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1878:in[0] to i1878:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1558:in[0] to i1558:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1988:in[0] to i1988:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1448:in[0] to i1448:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2478:in[0] to i2478:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1998:in[0] to i1998:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1208:in[0] to i1208:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1438:in[0] to i1438:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2008:in[0] to i2008:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1428:in[0] to i1428:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2018:in[0] to i2018:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1418:in[0] to i1418:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2028:in[0] to i2028:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1408:in[0] to i1408:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2038:in[0] to i2038:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1398:in[0] to i1398:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2048:in[0] to i2048:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1388:in[0] to i1388:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1888:in[0] to i1888:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1548:in[0] to i1548:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1898:in[0] to i1898:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1538:in[0] to i1538:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1908:in[0] to i1908:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1528:in[0] to i1528:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1918:in[0] to i1918:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1518:in[0] to i1518:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1928:in[0] to i1928:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1508:in[0] to i1508:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1938:in[0] to i1938:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1498:in[0] to i1498:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1948:in[0] to i1948:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1488:in[0] to i1488:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1958:in[0] to i1958:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1478:in[0] to i1478:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1968:in[0] to i1968:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1468:in[0] to i1468:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1978:in[0] to i1978:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1458:in[0] to i1458:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1688:in[0] to i1688:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1728:in[0] to i1728:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1678:in[0] to i1678:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i798:in[0] to i798:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1718:in[0] to i1718:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1698:in[0] to i1698:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1708:in[0] to i1708:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1668:in[0] to i1668:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2288:in[0] to i2288:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2278:in[0] to i2278:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2268:in[0] to i2268:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2258:in[0] to i2258:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2248:in[0] to i2248:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2238:in[0] to i2238:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2228:in[0] to i2228:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2218:in[0] to i2218:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2208:in[0] to i2208:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2198:in[0] to i2198:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2188:in[0] to i2188:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2178:in[0] to i2178:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2168:in[0] to i2168:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2158:in[0] to i2158:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2148:in[0] to i2148:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2138:in[0] to i2138:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2128:in[0] to i2128:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2118:in[0] to i2118:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2108:in[0] to i2108:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i2098:in[0] to i2098:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1758:in[0] to i1758:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1748:in[0] to i1748:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i1738:in[0] to i1738:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i758:in[0] to i758:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i748:in[0] to i748:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i738:in[0] to i738:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i728:in[0] to i728:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i718:in[0] to i718:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i708:in[0] to i708:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i698:in[0] to i698:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i688:in[0] to i688:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i678:in[0] to i678:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i668:in[0] to i668:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i658:in[0] to i658:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i648:in[0] to i648:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i638:in[0] to i638:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i628:in[0] to i628:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i618:in[0] to i618:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i608:in[0] to i608:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i598:in[0] to i598:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i588:in[0] to i588:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i578:in[0] to i578:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i568:in[0] to i568:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i558:in[0] to i558:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i548:in[0] to i548:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i538:in[0] to i538:out 
+INFO     : Timer::BuildGraph: ============ Cutting edge BACK edge from i528:in[0] to i528:out 
+Maximum possible analyzed clocks frequency
+   Clock Name     Period (ns)  Frequency (MHz)     Edge
+tx_cal_clk_90edge    2.160        462.963         (R-R)
+sdram_clk            2.137        467.946         (R-R)
+rx_cal_clk           2.244        445.633         (R-R)
+tx_cal_clk           1.960        510.204         (R-R)
+vid_clk_dvi2         6.392        156.446         (R-R)
+hdmi_tx_slow_clk     6.183        161.734         (R-R)
+core_clk             5.632        177.557         (R-R)
+i_mipi_rx_pclk       5.650        176.991         (R-R)
+CLK_5M               3.131        319.387         (R-R)
+i_cam_ck_CLKOUT      4.614        216.732         (R-R)
+
+Geomean max period: 3.603
+
+Setup (Max) Clock Relationship
+  Launch Clock      Capture Clock   Constraint (ns)     Slack (ns)          Edge
+tx_cal_clk_90edge tx_cal_clk_90edge       2.500            0.340           (R-R)
+tx_cal_clk_90edge tx_cal_clk              2.500            1.262           (R-R)
+tx_cal_clk_90edge core_clk                2.500            1.846           (R-R)
+sdram_clk         tx_cal_clk_90edge       2.500            0.792           (R-R)
+sdram_clk         sdram_clk               2.500            0.363           (R-R)
+rx_cal_clk        rx_cal_clk              2.500            0.256           (R-R)
+tx_cal_clk        tx_cal_clk              2.500            0.540           (R-R)
+vid_clk_dvi2      vid_clk_dvi2           13.468            7.076           (R-R)
+vid_clk_dvi2      hdmi_tx_slow_clk        6.734            3.267           (R-R)
+hdmi_tx_slow_clk  hdmi_tx_slow_clk        6.734            0.551           (R-R)
+core_clk          tx_cal_clk_90edge       2.500            1.112           (R-R)
+core_clk          core_clk               10.000            4.368           (R-R)
+core_clk          i_cam_ck_CLKOUT        10.000            9.061           (R-R)
+i_mipi_rx_pclk    i_mipi_rx_pclk         20.000           14.350           (R-R)
+i_mipi_rx_pclk    i_cam_ck_CLKOUT        10.000            7.656           (R-R)
+CLK_5M            CLK_5M                200.000          196.869           (R-R)
+i_cam_ck_CLKOUT   i_mipi_rx_pclk         10.000            8.467           (R-R)
+i_cam_ck_CLKOUT   i_cam_ck_CLKOUT        10.000            5.386           (R-R)
+
+Hold (Min) Clock Relationship
+  Launch Clock      Capture Clock   Constraint (ns)     Slack (ns)          Edge
+tx_cal_clk_90edge tx_cal_clk_90edge      0.000            0.064            (R-R)
+tx_cal_clk_90edge tx_cal_clk             0.000            0.504            (R-R)
+tx_cal_clk_90edge core_clk               0.000            0.071            (R-R)
+sdram_clk         tx_cal_clk_90edge      0.000            0.345            (R-R)
+sdram_clk         sdram_clk              0.000            0.095            (R-R)
+rx_cal_clk        rx_cal_clk             0.000            0.026            (R-R)
+tx_cal_clk        tx_cal_clk             0.000            0.097            (R-R)
+vid_clk_dvi2      vid_clk_dvi2           0.000            0.049            (R-R)
+vid_clk_dvi2      hdmi_tx_slow_clk       0.000            0.129            (R-R)
+hdmi_tx_slow_clk  hdmi_tx_slow_clk       0.000            0.028            (R-R)
+core_clk          tx_cal_clk_90edge      0.000            0.188            (R-R)
+core_clk          core_clk               0.000            0.031            (R-R)
+core_clk          i_cam_ck_CLKOUT        0.000            0.132            (R-R)
+i_mipi_rx_pclk    i_mipi_rx_pclk         0.000            0.026            (R-R)
+i_mipi_rx_pclk    i_cam_ck_CLKOUT        0.000            0.137            (R-R)
+CLK_5M            CLK_5M                 0.000            0.094            (R-R)
+i_cam_ck_CLKOUT   i_mipi_rx_pclk         0.000            0.090            (R-R)
+i_cam_ck_CLKOUT   i_cam_ck_CLKOUT        0.000            0.026            (R-R)
+
+INFO     : Write Timing Report to "H:\builds\A14\hdmi\ti60f225_oob.timing.rpt" ...
+INFO     : final timing analysis took 15.5488 seconds.
+INFO     : 	final timing analysis took 15.5156 seconds (approximately) in total CPU time.
+INFO     : final timing analysis virtual memory usage: begin = 448.252 MB, end = 523.94 MB, delta = 75.688 MB
+INFO     : 	final timing analysis peak virtual memory usage = 1314.02 MB
+INFO     : final timing analysis resident set memory usage: begin = 460.48 MB, end = 530.408 MB, delta = 69.928 MB
+INFO     : 	final timing analysis peak resident set memory usage = 1332.1 MB
+           ***** Ending stage final timing analysis *****
+           
+           ***** Beginning stage netlist pre-processing ... *****
+INFO     : Successfully Read in Verific binary Netlist dump file "H:\builds\A14\hdmi\ti60f225_oob.vdb".
+INFO     : ***** Beginning VDB Netlist Checker ... *****
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(46): Input/inout port jtag_inst1_DRCK is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(48): Input/inout port jtag_inst1_RUNTEST is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(53): Input/inout port jtag_inst1_TMS is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(64): Input/inout port CLK_25M is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(69): Input/inout port pll_inst4_LOCKED is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(169): Input/inout port i_mipi_tx_pclk is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(207): Input/inout port mipi_dp_data0_LP_P_IN is unconnected and will be removed. [VDB-8003]
+WARNING  : H:\projects\hdmi\rtl\ti60f225_oob_top.v(208): Input/inout port mipi_dp_data0_LP_N_IN is unconnected and will be removed. [VDB-8003]
+WARNING  : CE port of EFX_DSP48 instance debayer_top/inst_rgb_gain/mult_27 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP48 instance debayer_top/inst_rgb_gain/mult_28 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP48 instance debayer_top/inst_rgb_gain/mult_29 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP48 instance debayer_top/inst_rgb_gain/mult_30 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_3 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_4 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_6 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_61 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_62 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_median/mult_64 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_hysteresis/mult_22 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_hysteresis/mult_23 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_hysteresis/mult_25 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_exact/mult_188 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_exact/mult_189 is permanently disabled [VDB-8002]
+WARNING  : CE port of EFX_DSP24 instance contest4_processing/u_exact/mult_191 is permanently disabled [VDB-8002]
+WARNING  : Found 24 warnings in the post-synthesis netlist.
+INFO     : VDB Netlist Checker took 0.127974 seconds.
+INFO     : 	VDB Netlist Checker took 0.15625 seconds (approximately) in total CPU time.
+INFO     : VDB Netlist Checker virtual memory usage: begin = 455.468 MB, end = 455.516 MB, delta = 0.048 MB
+INFO     : 	VDB Netlist Checker peak virtual memory usage = 1314.02 MB
+INFO     : VDB Netlist Checker resident set memory usage: begin = 470.604 MB, end = 470.652 MB, delta = 0.048 MB
+INFO     : 	VDB Netlist Checker peak resident set memory usage = 1332.1 MB
+INFO     : ***** Ending VDB Netlist Checker ... *****
+INFO     : Writing netlist 'ti60f225_oob_top' to Verilog file 'H:\builds\A14\hdmi\ti60f225_oob.prevpr.v' [VDB-1030]
+INFO     : Reading core interface constraints file "H:\builds\A14\hdmi\ti60f225_oob.interface.csv"
+INFO     : Successfully read core interface constraints file "H:\builds\A14\hdmi\ti60f225_oob.interface.csv"
+INFO     : Creating interface clock pin CLK_27M.
+INFO     : Creating interface clock pin clk_100m.
+INFO     : Creating interface clock pin fb.
+INFO     : Creating interface clock pin hdmi_tx_fast_clk.
+INFO     : Creating interface clock pin i_mipi_txc_sclk.
+INFO     : Creating interface clock pin i_mipi_txd_sclk.
+INFO     : Net CLK_27M promoted to global due to interface constraints.
+INFO     : Net fb promoted to global due to interface constraints.
+INFO     : Net CLK_25M promoted to global due to interface constraints.
+INFO     : Net i_mipi_txd_sclk promoted to global due to interface constraints.
+INFO     : Net i_mipi_tx_pclk promoted to global due to interface constraints.
+INFO     : Net i_mipi_txc_sclk promoted to global due to interface constraints.
+INFO     : Net clk_100m promoted to global due to interface constraints.
+INFO     : Net hdmi_tx_fast_clk promoted to global due to interface constraints.
+INFO     : Found 0 constant generator nets.
+INFO     : Pass 0: Swept away 0 nets with no fanout.
+INFO     : logical_block #1(jtag_inst1_DRCK) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #3(jtag_inst1_RUNTEST) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #8(jtag_inst1_TMS) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #23(pll_inst4_LOCKED) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #310(mipi_dp_data0_LP_P_IN) has no fanout.
+INFO     : Removing input.
+INFO     : logical_block #311(mipi_dp_data0_LP_N_IN) has no fanout.
+INFO     : Removing input.
+INFO     : Pass 0: Swept away 6 blocks with no fanout.
+INFO     : Pass 1: Swept away 0 nets with no fanout.
+INFO     : Pass 1: Swept away 0 blocks with no fanout.
+INFO     : Swept away 0 nets and 6 blocks in total.
+INFO     : Removed 0 LUT buffers
+INFO     : Sweept away 6 nodes
+INFO     : Successfully created VPR logical netlist from Verific binary DataBase file "H:\builds\A14\hdmi\ti60f225_oob.vdb".
+INFO     : Netlist pre-processing took 1.655 seconds.
+INFO     : 	Netlist pre-processing took 1.1875 seconds (approximately) in total CPU time.
+INFO     : Netlist pre-processing virtual memory usage: begin = 412.724 MB, end = 1602.92 MB, delta = 1190.2 MB
+INFO     : 	Netlist pre-processing peak virtual memory usage = 1602.92 MB
+INFO     : Netlist pre-processing resident set memory usage: begin = 428.26 MB, end = 1609.24 MB, delta = 1180.98 MB
+INFO     : 	Netlist pre-processing peak resident set memory usage = 1609.24 MB
+           ***** Ending stage netlist pre-processing *****
+           
+           ***** Beginning stage packed netlist loading ... *****
+INFO     : Load Global Network took 0.997822 seconds.
+INFO     : 	Load Global Network took 0.203125 seconds (approximately) in total CPU time.
+INFO     : Load Global Network virtual memory usage: begin = 1602.92 MB, end = 1602.92 MB, delta = 0 MB
+INFO     : 	Load Global Network peak virtual memory usage = 1602.92 MB
+INFO     : Load Global Network resident set memory usage: begin = 1609.24 MB, end = 1609.28 MB, delta = 0.044 MB
+INFO     : 	Load Global Network peak resident set memory usage = 1609.28 MB
+INFO     : Reading V://arch/.\rr_pb_hier_mapping.xml
+INFO     : Read proto netlist file H:\builds\A14\hdmi\work_pnr\ti60f225_oob.net_proto
+INFO     : Read proto netlist for file "H:\builds\A14\hdmi\work_pnr\ti60f225_oob.net_proto" took 0.031 seconds
+INFO     : Setup net and block data structure took 0.225 seconds
+INFO     : Reading core interface constraints file "H:\builds\A14\hdmi\ti60f225_oob.interface.csv"
+INFO     : Successfully read core interface constraints file "H:\builds\A14\hdmi\ti60f225_oob.interface.csv"
+INFO     : Counting 1 clocks that are not assigned to clock resources as global clocks.
+INFO     : Packed netlist loading took 1.52337 seconds.
+INFO     : 	Packed netlist loading took 0.640625 seconds (approximately) in total CPU time.
+INFO     : Packed netlist loading virtual memory usage: begin = 1602.92 MB, end = 1602.92 MB, delta = 0 MB
+INFO     : 	Packed netlist loading peak virtual memory usage = 1602.92 MB
+INFO     : Packed netlist loading resident set memory usage: begin = 1609.24 MB, end = 1610.5 MB, delta = 1.264 MB
+INFO     : 	Packed netlist loading peak resident set memory usage = 1610.5 MB
+           ***** Ending stage packed netlist loading *****
+           
+INFO     : Run checks after load placement.
+INFO     : Reading core interface constraints file "H:\builds\A14\hdmi\ti60f225_oob.interface.csv"
+INFO     : Successfully read core interface constraints file "H:\builds\A14\hdmi\ti60f225_oob.interface.csv"
+INFO     : Successfully loaded placement data from "H:\builds\A14\hdmi\ti60f225_oob.place".
+           ***** Beginning stage bitstream generation ... *****
+INFO     : Reading core interface constraints file "H:\builds\A14\hdmi\ti60f225_oob.interface.csv"
+INFO     : Successfully read core interface constraints file "H:\builds\A14\hdmi\ti60f225_oob.interface.csv"
+INFO     : Finished writing bitstream file H:\builds\A14\hdmi\work_pnr\ti60f225_oob.lbf.
+INFO     : Bitstream generation took 1.94932 seconds.
+INFO     : 	Bitstream generation took 1.73438 seconds (approximately) in total CPU time.
+INFO     : Bitstream generation virtual memory usage: begin = 481.768 MB, end = 622.496 MB, delta = 140.728 MB
+INFO     : 	Bitstream generation peak virtual memory usage = 1602.92 MB
+INFO     : Bitstream generation resident set memory usage: begin = 489.72 MB, end = 631.204 MB, delta = 141.484 MB
+INFO     : 	Bitstream generation peak resident set memory usage = 1610.73 MB
+           ***** Ending stage bitstream generation *****
+           
+INFO     : The entire flow of EFX_PNR took 107.333 seconds.
+INFO     : 	The entire flow of EFX_PNR took 225.359 seconds (approximately) in total CPU time.
+INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 19.776 MB, end = 622.056 MB, delta = 602.28 MB
+INFO     : 	The entire flow of EFX_PNR peak virtual memory usage = 1602.92 MB
+INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 21.604 MB, end = 630.792 MB, delta = 609.188 MB
+INFO     : 	The entire flow of EFX_PNR peak resident set memory usage = 1610.73 MB

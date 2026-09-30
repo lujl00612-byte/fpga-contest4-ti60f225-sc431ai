@@ -1,0 +1,151 @@
+{
+  "version": "A14",
+  "status": "offline_verified_hardware_pending",
+  "build_stages": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "independent_reference": "BFS and per-cell scoreboard; no internal selector dependence",
+  "regression_checks": 320914,
+  "regression_checks_by_suite": {
+    "white_balance": 4423,
+    "filters": 19608,
+    "controls": 71,
+    "shapes": 68120,
+    "exact_hysteresis": 18432,
+    "cache": 351,
+    "bank_requests": 118,
+    "bank_video_cells": 76275,
+    "snapshot_timing": 44622,
+    "snapshot_RGB": 13440,
+    "snapshot_edge": 44622,
+    "production_RAM_cells": 12800,
+    "mipi_diagnostic": 3121,
+    "panel_AXI": 14911
+  },
+  "panel_delay_bit22_boundary": "PASS separately from numeric regression total",
+  "vendor_bank_17": {
+    "request_checks": 118,
+    "video_cell_checks": 76275
+  },
+  "vendor_bank_120": {
+    "request_checks": 736,
+    "video_cell_checks": 571115
+  },
+  "vendor_snapshot_crossbank": {
+    "timing_checks": 140733,
+    "RGB_checks": 40320,
+    "edge_checks": 140733,
+    "display_latency_clocks": 3
+  },
+  "full_ROI_BFS": {
+    "width": 640,
+    "height": 480,
+    "scenes": 2,
+    "checked_cells": 614400,
+    "RAM_model": "fast model calibrated to vendor 40x80 four scenes"
+  },
+  "handshake_clocks": {
+    "hit": 2,
+    "miss": 4
+  },
+  "complexity": "O(P)",
+  "actual_pixel_clock_MHz": 148.5,
+  "hardware_downloaded": false,
+  "HDMI_connected": false,
+  "continuous_full_Canny": false,
+  "board_configuration": "unchanged factory 3.5 inch diagnostic",
+  "physical_GPIO_levels_verified": false,
+  "MIPI_colour_white_balance_validated": false,
+  "DDR_tearing_or_frame_rate_validated": false,
+  "demonstration_video": "pending",
+  "test_source_hashes": [
+    {
+      "path": "tests/models/efx_ram10_20bit_fast.v",
+      "raw_sha256": "61468FF7C8DBB8117D2F98D89ED597D154A730DB2D509D33D894E0A375313144",
+      "normalized_LF_sha256": "61468FF7C8DBB8117D2F98D89ED597D154A730DB2D509D33D894E0A375313144"
+    },
+    {
+      "path": "tests/tb_controls.sv",
+      "raw_sha256": "0F59E14D97FF50AD0CA2C6EB40836D0FABF77CC4A3F15700530376661370BB4F",
+      "normalized_LF_sha256": "0F59E14D97FF50AD0CA2C6EB40836D0FABF77CC4A3F15700530376661370BB4F"
+    },
+    {
+      "path": "tests/tb_filters.sv",
+      "raw_sha256": "066263188EB3F886DDEF13B5B4601193640414D51F2B1F9312C0259B2CF00848",
+      "normalized_LF_sha256": "066263188EB3F886DDEF13B5B4601193640414D51F2B1F9312C0259B2CF00848"
+    },
+    {
+      "path": "tests/tb_hysteresis_exact.sv",
+      "raw_sha256": "E9E360AD7ACBBFD85A2C133FE7AF89F200F05C6B2A4DEFE43F9EF649CA87FB64",
+      "normalized_LF_sha256": "E9E360AD7ACBBFD85A2C133FE7AF89F200F05C6B2A4DEFE43F9EF649CA87FB64"
+    },
+    {
+      "path": "tests/tb_hysteresis_ram.sv",
+      "raw_sha256": "79426A14085E6354BA743EBD0086268F7C44B24F3B9C86CDE9F07352FA65F325",
+      "normalized_LF_sha256": "79426A14085E6354BA743EBD0086268F7C44B24F3B9C86CDE9F07352FA65F325"
+    },
+    {
+      "path": "tests/tb_mipi_diagnostic.sv",
+      "raw_sha256": "2FEEA9B413F7AE43045C50723E0EF2E27D2E112FB53DA117F14866D521FBCE7D",
+      "normalized_LF_sha256": "2FEEA9B413F7AE43045C50723E0EF2E27D2E112FB53DA117F14866D521FBCE7D"
+    },
+    {
+      "path": "tests/tb_panel_axi.sv",
+      "raw_sha256": "7066E6269CEA6248B421259B7984A4A700BDB452D9A20DC082E3EDE6AF6D4782",
+      "normalized_LF_sha256": "7066E6269CEA6248B421259B7984A4A700BDB452D9A20DC082E3EDE6AF6D4782"
+    },
+    {
+      "path": "tests/tb_panel_delay.sv",
+      "raw_sha256": "F8AF77E460A02A37E5722C4EA25F85BB33EE5C2CE794102CC3EC44D00F3956A8",
+      "normalized_LF_sha256": "F8AF77E460A02A37E5722C4EA25F85BB33EE5C2CE794102CC3EC44D00F3956A8"
+    },
+    {
+      "path": "tests/tb_shapes.sv",
+      "raw_sha256": "D60367B0783CCD57E7C333EA17A4F3FF1611F202F54877A58A7D565A3EEA6E82",
+      "normalized_LF_sha256": "D60367B0783CCD57E7C333EA17A4F3FF1611F202F54877A58A7D565A3EEA6E82"
+    },
+    {
+      "path": "tests/tb_snapshot.sv",
+      "raw_sha256": "27B2CE69CD5DBB4EE5E52023C7632124CEAC8915813D443E349EDBBA715F44CC",
+      "normalized_LF_sha256": "27B2CE69CD5DBB4EE5E52023C7632124CEAC8915813D443E349EDBBA715F44CC"
+    },
+    {
+      "path": "tests/tb_tag_banks.sv",
+      "raw_sha256": "36B7DBCFCCAA484F863DA97CA07FAAEF76CF3B7606EFD7BFCA7FD96CE39C1A26",
+      "normalized_LF_sha256": "36B7DBCFCCAA484F863DA97CA07FAAEF76CF3B7606EFD7BFCA7FD96CE39C1A26"
+    },
+    {
+      "path": "tests/tb_tag_cache.sv",
+      "raw_sha256": "FA8963FB9D52E5C17CC3BBD0E70E365DD21C00BB7C093A45F4C7F6CE4B573E6F",
+      "normalized_LF_sha256": "FA8963FB9D52E5C17CC3BBD0E70E365DD21C00BB7C093A45F4C7F6CE4B573E6F"
+    },
+    {
+      "path": "tests/tb_white_balance.sv",
+      "raw_sha256": "64B947A69CC9416F4248BA3DE6512C703DE28CEC94108CC0E8522306E1E32AF2",
+      "normalized_LF_sha256": "64B947A69CC9416F4248BA3DE6512C703DE28CEC94108CC0E8522306E1E32AF2"
+    },
+    {
+      "path": "tools/build.ps1",
+      "raw_sha256": "1DA289C8B3190B2B3E29FCDF9133D76738AB115C931E0C1289E502724DC98C63",
+      "normalized_LF_sha256": "1DA289C8B3190B2B3E29FCDF9133D76738AB115C931E0C1289E502724DC98C63"
+    },
+    {
+      "path": "tools/prepare_panel_fixture.py",
+      "raw_sha256": "AC0B327201DD013C9DC25E16A35FBEC613BBC3C6CDAA3DCA895347F1BAB8DF8F",
+      "normalized_LF_sha256": "AC0B327201DD013C9DC25E16A35FBEC613BBC3C6CDAA3DCA895347F1BAB8DF8F"
+    },
+    {
+      "path": "tools/test.ps1",
+      "raw_sha256": "474E1BBAEDE45881B7317FF8A7795B73ECC83C44F48988431D2E53991E465616",
+      "normalized_LF_sha256": "474E1BBAEDE45881B7317FF8A7795B73ECC83C44F48988431D2E53991E465616"
+    },
+    {
+      "path": "tools/test_mipi_diag.ps1",
+      "raw_sha256": "DFE62CFA8A0162899162167AF063DF29F04059EC58746A4703586B1BED187D7F",
+      "normalized_LF_sha256": "DFE62CFA8A0162899162167AF063DF29F04059EC58746A4703586B1BED187D7F"
+    }
+  ]
+}

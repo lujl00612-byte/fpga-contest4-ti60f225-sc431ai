@@ -1,0 +1,179 @@
+{
+  "baseline": "A13",
+  "baseline_commit": "c9b9d97dac498a462825fb3fcc5a07fd89667d54",
+  "candidate": "A14",
+  "resource_delta": {
+    "EFX_LUT4": 43,
+    "EFX_FF": -9,
+    "EFX_RAM10": 0,
+    "EFX_DPRAM10": 0,
+    "EFX_DSP24": 0,
+    "EFX_DSP48": 0
+  },
+  "pixel_setup_delta_ns": -0.239,
+  "critical_logic_levels": {
+    "A13": 8,
+    "A14": 19
+  },
+  "critical_delay_ns": {
+    "A13": 4.454,
+    "A14": 5.823
+  },
+  "pixel_analysis_fmax_MHz": {
+    "A13": 168.237,
+    "A14": 161.734
+  },
+  "actual_clock_changed": false,
+  "small_vendor_and_fast_identical": true,
+  "baseline_A13_resim_records_identical": true,
+  "full_access_counts_identical": true,
+  "full_scenes": [
+    {
+      "scene": 0,
+      "pixels": 307200,
+      "accepted": 0,
+      "cycles": 1044480,
+      "transactions": 307200,
+      "writes": 0,
+      "cache_hits": 245760,
+      "ram_reads": 61440,
+      "four_cycle_equivalent": 1536000
+    },
+    {
+      "scene": 1,
+      "pixels": 307200,
+      "accepted": 307200,
+      "cycles": 11768920,
+      "transactions": 3372484,
+      "writes": 307200,
+      "cache_hits": 2396508,
+      "ram_reads": 975976,
+      "four_cycle_equivalent": 16561936
+    }
+  ],
+  "baseline_full_scenes": [
+    {
+      "scene": 0,
+      "pixels": 307200,
+      "accepted": 0,
+      "cycles": 1290240,
+      "transactions": 307200,
+      "writes": 0,
+      "cache_hits": 245760,
+      "ram_reads": 61440,
+      "four_cycle_equivalent": 1536000
+    },
+    {
+      "scene": 1,
+      "pixels": 307200,
+      "accepted": 307200,
+      "cycles": 14165428,
+      "transactions": 3372484,
+      "writes": 307200,
+      "cache_hits": 2396508,
+      "ram_reads": 975976,
+      "four_cycle_equivalent": 16561936
+    }
+  ],
+  "small_scenes": [
+    {
+      "scene": 0,
+      "pixels": 3200,
+      "accepted": 0,
+      "cycles": 10880,
+      "transactions": 3200,
+      "writes": 0,
+      "cache_hits": 2560,
+      "ram_reads": 640,
+      "four_cycle_equivalent": 16000
+    },
+    {
+      "scene": 1,
+      "pixels": 3200,
+      "accepted": 3200,
+      "cycles": 119480,
+      "transactions": 34484,
+      "writes": 3200,
+      "cache_hits": 25228,
+      "ram_reads": 9256,
+      "four_cycle_equivalent": 169936
+    },
+    {
+      "scene": 2,
+      "pixels": 3200,
+      "accepted": 1718,
+      "cycles": 71498,
+      "transactions": 19980,
+      "writes": 1718,
+      "cache_hits": 13542,
+      "ram_reads": 6438,
+      "four_cycle_equivalent": 98582
+    },
+    {
+      "scene": 3,
+      "pixels": 3200,
+      "accepted": 860,
+      "cycles": 39396,
+      "transactions": 11380,
+      "writes": 860,
+      "cache_hits": 8532,
+      "ram_reads": 2848,
+      "four_cycle_equivalent": 56460
+    }
+  ],
+  "baseline_small_scenes": [
+    {
+      "scene": 0,
+      "pixels": 3200,
+      "accepted": 0,
+      "cycles": 13440,
+      "transactions": 3200,
+      "writes": 0,
+      "cache_hits": 2560,
+      "ram_reads": 640,
+      "four_cycle_equivalent": 16000
+    },
+    {
+      "scene": 1,
+      "pixels": 3200,
+      "accepted": 3200,
+      "cycles": 144708,
+      "transactions": 34484,
+      "writes": 3200,
+      "cache_hits": 25228,
+      "ram_reads": 9256,
+      "four_cycle_equivalent": 169936
+    },
+    {
+      "scene": 2,
+      "pixels": 3200,
+      "accepted": 1718,
+      "cycles": 85040,
+      "transactions": 19980,
+      "writes": 1718,
+      "cache_hits": 13542,
+      "ram_reads": 6438,
+      "four_cycle_equivalent": 98582
+    },
+    {
+      "scene": 3,
+      "pixels": 3200,
+      "accepted": 860,
+      "cycles": 47928,
+      "transactions": 11380,
+      "writes": 860,
+      "cache_hits": 8532,
+      "ram_reads": 2848,
+      "four_cycle_equivalent": 56460
+    }
+  ],
+  "saved_cycles_per_hit": 1,
+  "cycle_reduction_percent": [
+    19.047619047619047,
+    16.91800628967935
+  ],
+  "algorithm_complexity": "O(P)",
+  "state_bits": "4P plus fixed cache/control registers",
+  "cycle_bound": "5P+49V+2-2H",
+  "hardware_cycles_measured": false
+}

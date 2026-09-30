@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 // Exercise ownership changes and aborted writes with the production controller
 // and vendor RAM. Expected data is kept per cell, independently of word packing.
-module tb_tag_cache #(parameter CACHE_WORDS=2);
+module tb_tag_cache #(parameter CACHE_WORDS=2,HIT_CYCLES=2);
     localparam P=5200,WORDS=P/5,AB=$clog2(P),WB=$clog2(WORDS);
     reg clk=0;always #5 clk=~clk;
     reg rst_n=0,capture_we=0,valid=0,write=0,video_en=0;
@@ -30,7 +30,7 @@ module tb_tag_cache #(parameter CACHE_WORDS=2);
         begin
             old_tag=cells[address];elapsed=0;acknowledged=0;
             expected_latency=4;
-            for(k=0;k<recent_count;k=k+1)if(recent_words[k]==address/5)expected_latency=3;
+            for(k=0;k<recent_count;k=k+1)if(recent_words[k]==address/5)expected_latency=HIT_CYCLES;
             if(latency>=0&&latency!=expected_latency)$fatal(1,"directed test cache expectation inconsistent");
             @(negedge clk);valid=1;addr=address;write=do_write;wdata=data;
             while(!acknowledged&&elapsed<5)begin
@@ -45,7 +45,7 @@ module tb_tag_cache #(parameter CACHE_WORDS=2);
             end
             if(!acknowledged||elapsed!=expected_latency)$fatal(1,"latency addr=%0d expected=%0d got=%0d",address,expected_latency,elapsed);
             if(do_write)cells[address]=data;
-            if(expected_latency==3)hits=hits+1;else misses=misses+1;
+            if(expected_latency==HIT_CYCLES)hits=hits+1;else misses=misses+1;
             index=recent_count;
             for(k=0;k<recent_count;k=k+1)if(recent_words[k]==address/5)index=k;
             if(index==recent_count&&recent_count<CACHE_WORDS)recent_count=recent_count+1;
@@ -94,34 +94,34 @@ module tb_tag_cache #(parameter CACHE_WORDS=2);
         for(i=0;i<P;i=i+1)cells[i]=0;
         repeat(4)@(negedge clk);rst_n=1;
         capture(0,20'h54321);capture(512,20'habcde);capture(1039,20'h13579);
-        access(0,0,0,4);access(1,0,0,3);access(4,1,4'hf,3);access(4,0,0,3);
-        for(i=0;i<4;i=i+1)access(i,0,0,3);
-        access(2560,0,0,4);access(2564,1,4'h6,3);access(2563,0,0,3);
+        access(0,0,0,4);access(1,0,0,HIT_CYCLES);access(4,1,4'hf,HIT_CYCLES);access(4,0,0,HIT_CYCLES);
+        for(i=0;i<4;i=i+1)access(i,0,0,HIT_CYCLES);
+        access(2560,0,0,4);access(2564,1,4'h6,HIT_CYCLES);access(2563,0,0,HIT_CYCLES);
         // Revisit the displaced word, then the other bank. Both hits must use
         // their own modified data, and a third word must evict the least recent.
-        access(1,1,4'h8,CACHE_WORDS==2?3:4);
-        access(2564,0,0,CACHE_WORDS==2?3:4);
-        access(0,0,0,CACHE_WORDS==2?3:4);
-        access(5195,0,0,4);access(2,0,0,CACHE_WORDS==2?3:4);
+        access(1,1,4'h8,CACHE_WORDS==2?HIT_CYCLES:4);
+        access(2564,0,0,CACHE_WORDS==2?HIT_CYCLES:4);
+        access(0,0,0,CACHE_WORDS==2?HIT_CYCLES:4);
+        access(5195,0,0,4);access(2,0,0,CACHE_WORDS==2?HIT_CYCLES:4);
         access(2564,0,0,4);
         capture(512,20'hfedcb);
         access(2560,0,0,4);access(0,0,0,4); // capture invalidates both entries
-        access(2564,0,0,CACHE_WORDS==2?3:4);
-        video(1039);access(2561,0,0,4);access(2562,0,0,3);
+        access(2564,0,0,CACHE_WORDS==2?HIT_CYCLES:4);
+        video(1039);access(2561,0,0,4);access(2562,0,0,HIT_CYCLES);
         access(0,0,0,4); // populate the other entry before reset
         reset_cache();access(2562,0,0,4);access(0,0,0,4);
-        access(2563,0,0,CACHE_WORDS==2?3:4);
-        access(5199,1,4'h8,4);access(5199,0,0,3);video(1039);
-        access(0,0,0,4);abort_write(2,3); // primary-entry write aborted before ACK
+        access(2563,0,0,CACHE_WORDS==2?HIT_CYCLES:4);
+        access(5199,1,4'h8,4);access(5199,0,0,HIT_CYCLES);video(1039);
+        access(0,0,0,4);abort_write(2,HIT_CYCLES); // primary-entry write aborted before ACK
         access(0,0,0,4);access(2560,0,0,4);
-        abort_write(2,CACHE_WORDS==2?3:4); // displaced-entry write aborted before ACK
+        abort_write(2,CACHE_WORDS==2?HIT_CYCLES:4); // displaced-entry write aborted before ACK
         abort_write(2562,4);             // RAM miss write aborted before ACK
         for(r=0;r<120;r=r+1)begin
             case($urandom_range(0,2))0:word_index=0;1:word_index=512;default:word_index=1039;endcase
             access(word_index*5+$urandom_range(0,4),$urandom_range(0,1),$urandom_range(0,15),-1);
         end
         video(0);video(512);video(1039);
-        $display("PASS tag cache: %0d data/latency/coherence checks, hits=%0d misses=%0d, words=%0d, capture/video/reset/eviction/aborted primary, displaced and miss writes",checks,hits,misses,CACHE_WORDS);
+        $display("PASS tag cache: %0d data/latency/coherence checks, hits=%0d misses=%0d, words=%0d hit_cycles=%0d, capture/video/reset/eviction/aborted primary, displaced and miss writes",checks,hits,misses,CACHE_WORDS,HIT_CYCLES);
         $finish;
     end
 endmodule

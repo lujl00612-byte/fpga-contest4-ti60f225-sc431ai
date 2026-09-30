@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 // An independent per-cell scoreboard checks continuously changing video
 // addresses, group boundaries, cache writes and restart at the RAM interface.
-module tb_tag_banks #(parameter WORD_COUNT=16*512+13);
+module tb_tag_banks #(parameter WORD_COUNT=16*512+13,HIT_CYCLES=2);
     localparam P=WORD_COUNT*5,AB=$clog2(P),WB=$clog2(WORD_COUNT),NB=(WORD_COUNT+511)/512;
     reg clk=0,rst_n=0,capture_we=0,valid=0,write=0,video_en=0;
     reg [WB-1:0] capture_addr=0,video_addr=0;
@@ -77,13 +77,13 @@ module tb_tag_banks #(parameter WORD_COUNT=16*512+13);
         for(bank_index=0;bank_index<NB;bank_index=bank_index+1)begin
             word_index=bank_index*512;
             access(word_index*5,0,0,4);
-            access(word_index*5+1,0,0,3);
-            access(word_index*5+4,1,cells[word_index*5+4]^4'hf,3);
+            access(word_index*5+1,0,0,HIT_CYCLES);
+            access(word_index*5+4,1,cells[word_index*5+4]^4'hf,HIT_CYCLES);
         end
         // Swap the two cached words across distant groups; retain writes.
         access(0,0,0,4);access((WORD_COUNT-1)*5,0,0,4);
-        access(4,1,4'h7,3);access((WORD_COUNT-1)*5+4,1,4'h9,3);
-        access(0,0,0,3);access((WORD_COUNT-1)*5+4,0,0,3);
+        access(4,1,4'h7,HIT_CYCLES);access((WORD_COUNT-1)*5+4,1,4'h9,HIT_CYCLES);
+        access(0,0,0,HIT_CYCLES);access((WORD_COUNT-1)*5+4,0,0,HIT_CYCLES);
         // A new word each clock checks data versus the previous accepted input.
         for(n=0;n<WORD_COUNT;n=n+1)begin
             @(negedge clk);video_en=1;video_addr=n;
@@ -103,7 +103,7 @@ module tb_tag_banks #(parameter WORD_COUNT=16*512+13);
             @(negedge clk);video_en=1;video_addr=(NB-1-n)*512;
         end
         stop_video();
-        $display("PASS tag_banks words=%0d banks=%0d request_checks=%0d video_cell_checks=%0d; 3/4-cycle handshake, streamed two-edge video, gaps, group boundaries, partial bank, reset",WORD_COUNT,NB,request_checks,video_checks);
+        $display("PASS tag_banks words=%0d banks=%0d request_checks=%0d video_cell_checks=%0d; %0d/4-cycle handshake, streamed two-edge video, gaps, group boundaries, partial bank, reset",WORD_COUNT,NB,request_checks,video_checks,HIT_CYCLES);
         $finish;
     end
     initial begin #20000000; $fatal(1,"tag banks timeout");end
