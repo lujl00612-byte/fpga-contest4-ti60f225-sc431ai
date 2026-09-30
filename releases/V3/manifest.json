@@ -1,0 +1,26 @@
+{
+  "name": "V3_complete_adaptive",
+  "label": "基础三版",
+  "features": "高斯降噪 + 梯度幅值近似 + 自适应阈值",
+  "project": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_versions\\V3_complete_adaptive",
+  "bit": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\V3_complete_adaptive\\V3_complete_adaptive.bit",
+  "hex": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\V3_complete_adaptive\\V3_complete_adaptive.hex",
+  "bit_sha256": "115E6BC54B0B67594D26D2FB49E493031CE35A55776CFA44309E5BB7DF19DE1A",
+  "hex_sha256": "BA7D85192F453932970B517B29C8B51D09C156675F5EB15E6A8AD6D9E6EBB87C",
+  "resources": {
+    "EFX_LUT4": 10390,
+    "EFX_FF": 7973,
+    "EFX_RAM10": 92,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 3
+  },
+  "hdmi_148_5mhz_setup_slack_ns": 2.13,
+  "hdmi_148_5mhz_hold_slack_ns": 0.044,
+  "build": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "hardware_video_validation": "未进行；当前未连接 HDMI 显示器"
+}
