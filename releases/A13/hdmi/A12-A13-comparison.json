@@ -1,0 +1,103 @@
+{
+  "baseline": "A12",
+  "baseline_commit": "676da1068d4d6dfa1dc7c1fa5874763f6de9cafc",
+  "candidate": "A13",
+  "resource_delta": {
+    "EFX_LUT4": -472,
+    "EFX_FF": 21,
+    "EFX_RAM10": 0,
+    "EFX_DPRAM10": 0,
+    "EFX_DSP24": 0,
+    "EFX_DSP48": 0
+  },
+  "pixel_setup_delta_ns": 0.254,
+  "critical_logic_levels": {
+    "A12": 12,
+    "A13": 8
+  },
+  "critical_delay_ns": {
+    "A12": 4.708,
+    "A13": 4.454
+  },
+  "pixel_analysis_fmax_MHz": {
+    "A12": 161.342,
+    "A13": 168.237
+  },
+  "actual_clock_changed": false,
+  "small_vendor_fast_and_A12_records_identical": true,
+  "full_cycles_and_access_counts_identical": true,
+  "full_scenes": [
+    {
+      "scene": 0,
+      "pixels": 307200,
+      "accepted": 0,
+      "cycles": 1290240,
+      "transactions": 307200,
+      "writes": 0,
+      "cache_hits": 245760,
+      "ram_reads": 61440,
+      "four_cycle_equivalent": 1536000
+    },
+    {
+      "scene": 1,
+      "pixels": 307200,
+      "accepted": 307200,
+      "cycles": 14165428,
+      "transactions": 3372484,
+      "writes": 307200,
+      "cache_hits": 2396508,
+      "ram_reads": 975976,
+      "four_cycle_equivalent": 16561936
+    }
+  ],
+  "small_scenes": [
+    {
+      "scene": 0,
+      "pixels": 3200,
+      "accepted": 0,
+      "cycles": 13440,
+      "transactions": 3200,
+      "writes": 0,
+      "cache_hits": 2560,
+      "ram_reads": 640,
+      "four_cycle_equivalent": 16000
+    },
+    {
+      "scene": 1,
+      "pixels": 3200,
+      "accepted": 3200,
+      "cycles": 144708,
+      "transactions": 34484,
+      "writes": 3200,
+      "cache_hits": 25228,
+      "ram_reads": 9256,
+      "four_cycle_equivalent": 169936
+    },
+    {
+      "scene": 2,
+      "pixels": 3200,
+      "accepted": 1718,
+      "cycles": 85040,
+      "transactions": 19980,
+      "writes": 1718,
+      "cache_hits": 13542,
+      "ram_reads": 6438,
+      "four_cycle_equivalent": 98582
+    },
+    {
+      "scene": 3,
+      "pixels": 3200,
+      "accepted": 860,
+      "cycles": 47928,
+      "transactions": 11380,
+      "writes": 860,
+      "cache_hits": 8532,
+      "ram_reads": 2848,
+      "four_cycle_equivalent": 56460
+    }
+  ],
+  "algorithm_complexity": "O(P)",
+  "state_bits": "4P plus fixed cache/control registers",
+  "cycle_bound": "5P+49V+2-H",
+  "hardware_cycles_measured": false
+}

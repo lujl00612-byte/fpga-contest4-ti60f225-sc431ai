@@ -1,0 +1,171 @@
+{
+  "version": "A13",
+  "scope": "all release files except this hash inventory",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 20,
+      "sha256": "E97602AB9CAC70102245345C5AB0FC9830DF8B17F1072B188265A662A3A547AE"
+    },
+    {
+      "path": "A12-A13-comparison.json",
+      "bytes": 2393,
+      "sha256": "7BA581E1CE98027EB95C4DFCBCBD7D58F154A2D8508D1AA7D23A2EB5C0E86C43"
+    },
+    {
+      "path": "A13-bank-boundaries.log",
+      "bytes": 232,
+      "sha256": "7309B3B44E4EBB4B7B9095D896C42E287ED72D517A7531E90621BC5C0282D9FB"
+    },
+    {
+      "path": "A13-banks-full.log",
+      "bytes": 236,
+      "sha256": "1E55C0F58785E02E6367B297F74C2BADE39C2139C07AF1344547E48446A4812A"
+    },
+    {
+      "path": "A13-baseline-banks.log",
+      "bytes": 232,
+      "sha256": "7309B3B44E4EBB4B7B9095D896C42E287ED72D517A7531E90621BC5C0282D9FB"
+    },
+    {
+      "path": "A13-build.log",
+      "bytes": 1082,
+      "sha256": "5F7E389D0CC7F4813A09BF60D850502A41F7B59B071EC774E44BF0A5CF31C0EB"
+    },
+    {
+      "path": "A13-fast-ram.log",
+      "bytes": 808,
+      "sha256": "F9ACC5AE21B34CB9D0EB1E5285CF6BEA19A2A2CEC0BB18C18CBD297F385CF8F1"
+    },
+    {
+      "path": "A13-measured-metrics.json",
+      "bytes": 897,
+      "sha256": "F0AC8637C6E39B787F3200397D35B0409A084F9BA25DBDF468882AEECB9039F6"
+    },
+    {
+      "path": "A13-ram-full.log",
+      "bytes": 1024,
+      "sha256": "3857D78782270AD130B6EF82B0AB2EB6D36EA9589D53A4D54A2AB9F402A5B72C"
+    },
+    {
+      "path": "A13-regression.log",
+      "bytes": 5412,
+      "sha256": "837BF2F71750AA38AABBCAC363FB1817B144E4F7F724EA775E46BA593124D9AD"
+    },
+    {
+      "path": "A13-snapshot-banks.log",
+      "bytes": 338,
+      "sha256": "1A11D8A4549D452D7236BCA7A7E65554976FF829441D798D68BD07CCD59D3EEA"
+    },
+    {
+      "path": "A13.bit",
+      "bytes": 2386662,
+      "sha256": "1A38CEAA63ACBC9ABA9AB246BF58931C71E41CA1D76DFF3F68335B85335D31C0"
+    },
+    {
+      "path": "A13.cdc.rpt",
+      "bytes": 296,
+      "sha256": "4DE7506DBF2B0D0AE971914D76163E11492591100A78A8F03395F4A678988B28"
+    },
+    {
+      "path": "A13.err.log",
+      "bytes": 135,
+      "sha256": "E28A4937213AB9C91156919E6BF9E0B54B976E797FBA893A8C309258D9CDC465"
+    },
+    {
+      "path": "A13.hex",
+      "bytes": 2386722,
+      "sha256": "62D79E1C6388346F1BAC6D18D834BDA61B4235FFF2B9169E5386177449BBD229"
+    },
+    {
+      "path": "A13.info.log",
+      "bytes": 192947,
+      "sha256": "547CA280EF576D127227BD7ED2ACF77D5981E36F9365BF4C74A7443FA732EB41"
+    },
+    {
+      "path": "A13.map.out",
+      "bytes": 197707,
+      "sha256": "0BF0E11FB0F6BAF21E44FDBBB530BC6393355D3721DE8530BFB647E98F58DC2C"
+    },
+    {
+      "path": "A13.map.rpt",
+      "bytes": 651647,
+      "sha256": "30395C196320BA6571F53B4CA61C2D1DBDB7EC9175FC7EDA6685B871CC0915F8"
+    },
+    {
+      "path": "A13.pgm.out",
+      "bytes": 1474,
+      "sha256": "438BE67F26C73B002AD78FB6F30E87C46BB1BFE6B4135D0869EA8D65F8382E0D"
+    },
+    {
+      "path": "A13.pinout.rpt",
+      "bytes": 48181,
+      "sha256": "541C66F476594B9ACE3C8F0892B567BBE93544180B1696EEC4F22E5BCF9E98C0"
+    },
+    {
+      "path": "A13.route.out",
+      "bytes": 55077,
+      "sha256": "69FF1725429C1E04A7022A208F3657BD23C1D9E73D9E3A8A9980204068593538"
+    },
+    {
+      "path": "A13.timing.rpt",
+      "bytes": 199942,
+      "sha256": "557E1602656CE0DE521282E52D8318EC209471DB4C8E6A97CCC308DCC15EA3CE"
+    },
+    {
+      "path": "A13.warn.log",
+      "bytes": 58793,
+      "sha256": "DAD9B4333BFD9B8B684F4A37154EBA50C1D6B1E9FA6D5EF417C802C2C45043F0"
+    },
+    {
+      "path": "baseline/A12-canny_tag_memory.v",
+      "bytes": 5894,
+      "sha256": "35B7E93714299653E45D79C6B3A60A1261EF974FDC5484F4BCFC84B8A8FF896E"
+    },
+    {
+      "path": "baseline/A12-measured-metrics.json",
+      "bytes": 820,
+      "sha256": "11DB7D15DFE26F7AC17ACFB6542CD4EF96AB76B565839E3575B8A4E495164540"
+    },
+    {
+      "path": "baseline/A12-ram-full.txt",
+      "bytes": 1024,
+      "sha256": "3857D78782270AD130B6EF82B0AB2EB6D36EA9589D53A4D54A2AB9F402A5B72C"
+    },
+    {
+      "path": "baseline/A12-vendor-ram.txt",
+      "bytes": 626,
+      "sha256": "8B11FD2665098834A743921134C8B8F0F32B1950F013CD9740251E495DAFD455"
+    },
+    {
+      "path": "input-provenance.json",
+      "bytes": 62873,
+      "sha256": "18FD54451BB3D8EA2845C4B697D3276B713F5E4E96BBF098A0CD9B5D4E2BC198"
+    },
+    {
+      "path": "interface-generated/design_issue.xml",
+      "bytes": 398,
+      "sha256": "CDB7858F2E62D97E045379197CF933D4565E87B503FB87E2DF4C6ABFFAC2EF02"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 26896,
+      "sha256": "B2579C07EFFF3E1589998CB0D8639FC49A9819E196406FE203FF99718CC53F1E"
+    },
+    {
+      "path": "source/canny_tag_memory.v",
+      "bytes": 7547,
+      "sha256": "85D48D76BD5AC8A1BE59F197484EAFE2E327AC99C60E857B5E0A5B5C179FF704"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 5965,
+      "sha256": "4357A32757351405588C6D75096FD52234F8ACED5EAD2E1677980CF3B2DD91F8"
+    },
+    {
+      "path": "verification-commands.ps1",
+      "bytes": 3587,
+      "sha256": "1491839D954DF6C195A6F73E22248ABFFE20D2DD99800A4047E819895723F2DB"
+    }
+  ]
+}

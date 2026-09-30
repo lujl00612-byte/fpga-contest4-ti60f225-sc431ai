@@ -1,0 +1,1172 @@
+{
+  "build_start_commit": "bab28d7fcdd531b7b0ad90d1ba0cba5f0cd8cbbc",
+  "algorithm_baseline_commit": "676da1068d4d6dfa1dc7c1fa5874763f6de9cafc",
+  "source_count": 144,
+  "relations": {
+    "CRLF_LF_only": 104,
+    "identical": 39,
+    "edited_RTL_archived": 1
+  },
+  "note": "Hashes in manifest describe raw build input bytes. CRLF/LF-only inputs have separate expected Git blob hashes. The edited RTL is also archived with raw release attributes.",
+  "sources": [
+    {
+      "path": "projects/hdmi/all_sources_2025.f",
+      "raw_sha256": "324862D55DA75C5E799E7DC1A010984279FA0D8548D266E1725AE3334528848C",
+      "bytes": 4723,
+      "start_commit_blob_sha256": "23E5E957151AB32964AA353A56F407A7404D9EA51F5DBB2BDEA2F25746F05A3F",
+      "expected_git_blob_sha256": "23E5E957151AB32964AA353A56F407A7404D9EA51F5DBB2BDEA2F25746F05A3F",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/all_sources.f",
+      "raw_sha256": "DC20E85F389879C2C8AC370814F6D426F278D064D5B76D31995ED3C3A5F966A4",
+      "bytes": 3524,
+      "start_commit_blob_sha256": "8FEEAEC7B2C839A00612FDAC32A1D9A7B98A8DAAAF6DA41489926411C71BAE2D",
+      "expected_git_blob_sha256": "8FEEAEC7B2C839A00612FDAC32A1D9A7B98A8DAAAF6DA41489926411C71BAE2D",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/debug_profile.wizard.json",
+      "raw_sha256": "5AF645A0B9D16056EC2CAB9FFC80A6CC960347AA5138E3CE4729CAA55D6FA758",
+      "bytes": 60551,
+      "start_commit_blob_sha256": "A5FB0215B5D8C6B3F3C7A4C9C32A8C9EA2CD92ECC7FD4DB51FAC9A6E9A892148",
+      "expected_git_blob_sha256": "A5FB0215B5D8C6B3F3C7A4C9C32A8C9EA2CD92ECC7FD4DB51FAC9A6E9A892148",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/debug_top.v",
+      "raw_sha256": "81C1402E39E460E4BF81723534176D2D0F2EFA35BA57CC9366F75155DDA4ED6C",
+      "bytes": 425643,
+      "start_commit_blob_sha256": "7E97B82E7AB8D9947B3E6BAB04FBD986F2210EDB2B8BBED91531CE359741F18B",
+      "expected_git_blob_sha256": "7E97B82E7AB8D9947B3E6BAB04FBD986F2210EDB2B8BBED91531CE359741F18B",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/Panel_1080p_reg.mem",
+      "raw_sha256": "1B192B20B57BDA019D39B24126789C582AE5DA0B9DF5395152854A8C2C4576B7",
+      "bytes": 4051,
+      "start_commit_blob_sha256": "3BD22F85D4DFB4BB4D1BCB2E3586494FA340B7205E92F7277D88E9142A5E7FC3",
+      "expected_git_blob_sha256": "3BD22F85D4DFB4BB4D1BCB2E3586494FA340B7205E92F7277D88E9142A5E7FC3",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ti60f225_oob.peri.xml",
+      "raw_sha256": "14F93AA3A9334E4BB2A9B9A4353E5EB46E1A899ADFECEDE7C4B47036FAA28BA5",
+      "bytes": 76388,
+      "start_commit_blob_sha256": "6414AFB4EB7F3280D94002C5328F566217D07EE5CDFA7EA388155CB1B427C03D",
+      "expected_git_blob_sha256": "6414AFB4EB7F3280D94002C5328F566217D07EE5CDFA7EA388155CB1B427C03D",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ti60f225_oob.sdc",
+      "raw_sha256": "170D1BECB7449E8E5CAD000F9CDF7072E1890CB6337A05CC4A3CC58A1AF303CB",
+      "bytes": 41818,
+      "start_commit_blob_sha256": "14BCA84726D860DDCB68AC4CC98B0D65C601D253D5D1899636A83A0AE8EC5124",
+      "expected_git_blob_sha256": "14BCA84726D860DDCB68AC4CC98B0D65C601D253D5D1899636A83A0AE8EC5124",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ti60f225_oob.xml",
+      "raw_sha256": "787344FE7C6F98B07549DD8AA7432234F7B9B3769E8145B95EE1FE2CC5C69061",
+      "bytes": 14821,
+      "start_commit_blob_sha256": "57A3D53DEC68CADE922560182A866E2F22A6390FA7D219DFDF50E950B45BC3C7",
+      "expected_git_blob_sha256": "57A3D53DEC68CADE922560182A866E2F22A6390FA7D219DFDF50E950B45BC3C7",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/yuvpattern_mif.memh",
+      "raw_sha256": "F8E37B33E6E7BCC9B0633C906F48A18BAFE02D9FD8AFF04B5C434661335F34D8",
+      "bytes": 318,
+      "start_commit_blob_sha256": "C4D6707CC54545A42155026C4017BBB8CC71E6E9BC12E56B420D9411F88C42E9",
+      "expected_git_blob_sha256": "C4D6707CC54545A42155026C4017BBB8CC71E6E9BC12E56B420D9411F88C42E9",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/csi_rx_controller_define.svh",
+      "raw_sha256": "3F5BD0D4BA2A72E8A397FE8F091C058CE879C83AD86CE7091F9A41C6775784FF",
+      "bytes": 3540,
+      "start_commit_blob_sha256": "FDDEEC9B55053AB314ACA6C6C857FC313469BEAB54DEDC66876879DCA8FF5A2F",
+      "expected_git_blob_sha256": "FDDEEC9B55053AB314ACA6C6C857FC313469BEAB54DEDC66876879DCA8FF5A2F",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/csi_rx_controller_define.vh",
+      "raw_sha256": "149C14940BE1B2BB5F21F7475358E57481BF8BBB4D35929DE1F01E9B8B304FC1",
+      "bytes": 3535,
+      "start_commit_blob_sha256": "6439265A0CEC82CDCAA2CD2A8FF452248DD3DD29A6F70CF466489224BE24E50C",
+      "expected_git_blob_sha256": "6439265A0CEC82CDCAA2CD2A8FF452248DD3DD29A6F70CF466489224BE24E50C",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/csi_rx_controller_tmpl.sv",
+      "raw_sha256": "6DF4AEAAB593511F6C9A0A32C97D15ED43B4ABA32DD34AC5654195A655AD9E82",
+      "bytes": 5883,
+      "start_commit_blob_sha256": "72966A14A914FB29F6E4A8AA701D7B4AAF5955AD1E4BC241EEE2F6DF38E250B9",
+      "expected_git_blob_sha256": "72966A14A914FB29F6E4A8AA701D7B4AAF5955AD1E4BC241EEE2F6DF38E250B9",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/csi_rx_controller_tmpl.v",
+      "raw_sha256": "3F04B23A6E20705198B0B3949E68E0CF0E2472F5CD87B4FE3D7A95B6682E1482",
+      "bytes": 5218,
+      "start_commit_blob_sha256": "4902C4B2CD64C9DC59780D79C7017F157DEB172A586571C27486585AEA89D97E",
+      "expected_git_blob_sha256": "4902C4B2CD64C9DC59780D79C7017F157DEB172A586571C27486585AEA89D97E",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/csi_rx_controller_tmpl.vhd",
+      "raw_sha256": "60DCFD875AE0B60AF4C190BF298F2AC65E57724C1C92ABC3D01FA992F6DAEC95",
+      "bytes": 9241,
+      "start_commit_blob_sha256": "2257B803F2D98CECC657F984D23C6BB20C724580485AEDA62A9CEC7C336C9F8B",
+      "expected_git_blob_sha256": "2257B803F2D98CECC657F984D23C6BB20C724580485AEDA62A9CEC7C336C9F8B",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/csi_rx_controller.sv",
+      "raw_sha256": "DBD18FBB5C375A68E3ED13F3E742DB377A3596F0676ED71357348AE9FD86868B",
+      "bytes": 511333,
+      "start_commit_blob_sha256": "3845D7A4A336A139CE5C33E202F7C7B656DE2CEE683EB4342C4D12684206717B",
+      "expected_git_blob_sha256": "3845D7A4A336A139CE5C33E202F7C7B656DE2CEE683EB4342C4D12684206717B",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/settings.json",
+      "raw_sha256": "21ACE23896A1D40671C9FE7C2510AB82B6A126AFF0C7BC81859EDD41D6607E1B",
+      "bytes": 1230,
+      "start_commit_blob_sha256": "94D7964117F51FBEF587A0ECFD1C3E0CA9DDD693D4AE0E12826FC909BF362AD5",
+      "expected_git_blob_sha256": "94D7964117F51FBEF587A0ECFD1C3E0CA9DDD693D4AE0E12826FC909BF362AD5",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/ipm/component.pickle",
+      "raw_sha256": "FA7F940E4F0A48C590937B98D8B6748D88E2BD6E5A267418D6D144953717E691",
+      "bytes": 82002,
+      "start_commit_blob_sha256": "FA7F940E4F0A48C590937B98D8B6748D88E2BD6E5A267418D6D144953717E691",
+      "expected_git_blob_sha256": "FA7F940E4F0A48C590937B98D8B6748D88E2BD6E5A267418D6D144953717E691",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/ip/csi_rx_controller/ipm/graph.pickle",
+      "raw_sha256": "53A0CE7AF9A182004AF0E527799E9A1F6299AE0DC89E97360EE49516B235F7E2",
+      "bytes": 165661,
+      "start_commit_blob_sha256": "53A0CE7AF9A182004AF0E527799E9A1F6299AE0DC89E97360EE49516B235F7E2",
+      "expected_git_blob_sha256": "53A0CE7AF9A182004AF0E527799E9A1F6299AE0DC89E97360EE49516B235F7E2",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/dsi_tx_define.svh",
+      "raw_sha256": "9215B5BAE493B6051B7DED8A412E1C002E7C34249EEB7B388DE5C9B5D19264CA",
+      "bytes": 3984,
+      "start_commit_blob_sha256": "735A03029E040B16E5EB2D71890122AA20A22EF761537FCD0D71AA473D9D4EAE",
+      "expected_git_blob_sha256": "735A03029E040B16E5EB2D71890122AA20A22EF761537FCD0D71AA473D9D4EAE",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/dsi_tx_define.vh",
+      "raw_sha256": "F24BF85C429CE6B48DA786924C16E52CFBDA9F8910BFF58E135617CCF6404688",
+      "bytes": 3978,
+      "start_commit_blob_sha256": "31F919053BDFC179B515754409983BA9C666AD3FFC4C70E27FBE107CE47FAAD2",
+      "expected_git_blob_sha256": "31F919053BDFC179B515754409983BA9C666AD3FFC4C70E27FBE107CE47FAAD2",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/dsi_tx_tmpl.sv",
+      "raw_sha256": "B4B6C9D46F7545D1AC8317E624E9101A859022023F3D37A210CD3D3E1191D4C1",
+      "bytes": 4599,
+      "start_commit_blob_sha256": "76CAC7A397BC426E2323EAEEB88E4B3BA4C70808F86A9FFDCD1F1D0945E22780",
+      "expected_git_blob_sha256": "76CAC7A397BC426E2323EAEEB88E4B3BA4C70808F86A9FFDCD1F1D0945E22780",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/dsi_tx_tmpl.v",
+      "raw_sha256": "C2419A773C60AC4CE124C79B69D0248ED6ABDD8255FE018625A6783172FD1743",
+      "bytes": 4158,
+      "start_commit_blob_sha256": "8906394186177145870E3442CEAF7D07261B2A2B9F758103A956DC123832C72F",
+      "expected_git_blob_sha256": "8906394186177145870E3442CEAF7D07261B2A2B9F758103A956DC123832C72F",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/dsi_tx_tmpl.vhd",
+      "raw_sha256": "4118182E46C1EF1ADC1A2E064166D2305632BEBA3615A7573880BDE2F9BFC5B1",
+      "bytes": 6509,
+      "start_commit_blob_sha256": "06941C4F7788AAA31B941CB8BD352E22C9B78D59C7064F9415BEA3464B4B2691",
+      "expected_git_blob_sha256": "06941C4F7788AAA31B941CB8BD352E22C9B78D59C7064F9415BEA3464B4B2691",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/dsi_tx.sv",
+      "raw_sha256": "086C703559D8064A5889B6CD390D9C9C7107AE65800A76EEBF31738E48EED5E4",
+      "bytes": 780530,
+      "start_commit_blob_sha256": "CCE6F3A0D9BF7407205A72C1F4BBCAB274AEA14D374D3DF6BC1977A49244478A",
+      "expected_git_blob_sha256": "CCE6F3A0D9BF7407205A72C1F4BBCAB274AEA14D374D3DF6BC1977A49244478A",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/settings.json",
+      "raw_sha256": "84A9892F8D0CB22115959282A2D4F6E061E15B05D69B816FB21C9BE415BE3161",
+      "bytes": 2687,
+      "start_commit_blob_sha256": "A7CE80B255D11676C27D9AE31FDF1B369EDC2B925E779C50F6BF567CD9B2E4A4",
+      "expected_git_blob_sha256": "A7CE80B255D11676C27D9AE31FDF1B369EDC2B925E779C50F6BF567CD9B2E4A4",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/ipm/component.pickle",
+      "raw_sha256": "70D2D24DF1C0FAD3E6D8834E4FC03D4D060EA0F381E0D04C4E1605C9A417D2B4",
+      "bytes": 78508,
+      "start_commit_blob_sha256": "70D2D24DF1C0FAD3E6D8834E4FC03D4D060EA0F381E0D04C4E1605C9A417D2B4",
+      "expected_git_blob_sha256": "70D2D24DF1C0FAD3E6D8834E4FC03D4D060EA0F381E0D04C4E1605C9A417D2B4",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/ip/dsi_tx/ipm/graph.pickle",
+      "raw_sha256": "D59235836463EF250A4E17C30F46AB2D4B6C2F86ED5C9D374E589BEC39922621",
+      "bytes": 168508,
+      "start_commit_blob_sha256": "D59235836463EF250A4E17C30F46AB2D4B6C2F86ED5C9D374E589BEC39922621",
+      "expected_git_blob_sha256": "D59235836463EF250A4E17C30F46AB2D4B6C2F86ED5C9D374E589BEC39922621",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/canny_hysteresis_exact.v",
+      "raw_sha256": "801A48DCC112A15F1972A791EA8902D2FB07421BD433BEFC1DB44697D2ED1F37",
+      "bytes": 6214,
+      "start_commit_blob_sha256": "801A48DCC112A15F1972A791EA8902D2FB07421BD433BEFC1DB44697D2ED1F37",
+      "expected_git_blob_sha256": "801A48DCC112A15F1972A791EA8902D2FB07421BD433BEFC1DB44697D2ED1F37",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/canny_snapshot_exact.v",
+      "raw_sha256": "6CFA5E56D574A15FFCADC69E88C697705C8F042F9470979BAFE4F647786B4593",
+      "bytes": 6705,
+      "start_commit_blob_sha256": "6CFA5E56D574A15FFCADC69E88C697705C8F042F9470979BAFE4F647786B4593",
+      "expected_git_blob_sha256": "6CFA5E56D574A15FFCADC69E88C697705C8F042F9470979BAFE4F647786B4593",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/canny_tag_memory.v",
+      "raw_sha256": "85D48D76BD5AC8A1BE59F197484EAFE2E327AC99C60E857B5E0A5B5C179FF704",
+      "bytes": 7547,
+      "start_commit_blob_sha256": "35B7E93714299653E45D79C6B3A60A1261EF974FDC5484F4BCFC84B8A8FF896E",
+      "expected_git_blob_sha256": "85D48D76BD5AC8A1BE59F197484EAFE2E327AC99C60E857B5E0A5B5C179FF704",
+      "relation": "edited_RTL_archived"
+    },
+    {
+      "path": "projects/hdmi/rtl/contest4_sobel_display.v",
+      "raw_sha256": "0DF9575743EE1A28176C02140D04059B282012BCFAD5B37348F7FBAAAB3710A4",
+      "bytes": 24298,
+      "start_commit_blob_sha256": "B149D0053C463EBA0252C9171D182C0FEF166A23ADB087FE78F3A9753C1369B7",
+      "expected_git_blob_sha256": "B149D0053C463EBA0252C9171D182C0FEF166A23ADB087FE78F3A9753C1369B7",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/csi_rx_controller.sv",
+      "raw_sha256": "685D96FD52A604434A1DA0BB404131CD4413BF76ED8EE738AC596B32CE373E5A",
+      "bytes": 508269,
+      "start_commit_blob_sha256": "F8C05419CD6E92D88C62A49BF56E8FF4842CB1FAD83E3FD10E61AD5E1D56F37D",
+      "expected_git_blob_sha256": "F8C05419CD6E92D88C62A49BF56E8FF4842CB1FAD83E3FD10E61AD5E1D56F37D",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dual_clock_fifo.v",
+      "raw_sha256": "2D6F56DEDB23FB47E10D412E97E987F338A30FC39C86B1ADA4D356FB2F3893DD",
+      "bytes": 17286,
+      "start_commit_blob_sha256": "47B6259FC23ABD7D5E2A9265F4A05885B46353F0C383104431831B82F5C1BFED",
+      "expected_git_blob_sha256": "47B6259FC23ABD7D5E2A9265F4A05885B46353F0C383104431831B82F5C1BFED",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/efx_dsi_tx.sv",
+      "raw_sha256": "6E2D541B69967F4009FD4C62E3F08044AA9A8FA7FA74681D6809DBD340960C97",
+      "bytes": 752205,
+      "start_commit_blob_sha256": "910BA14F013C00F2C5BEF1EFA7FB45ECBCE57FF2CA5BB431F2A5A244F3F0A435",
+      "expected_git_blob_sha256": "910BA14F013C00F2C5BEF1EFA7FB45ECBCE57FF2CA5BB431F2A5A244F3F0A435",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_freeze_control.v",
+      "raw_sha256": "3704D33CBE576D5B48F6B693CBCC8459AF3DF84461463823E2A04AA5518951F0",
+      "bytes": 736,
+      "start_commit_blob_sha256": "3704D33CBE576D5B48F6B693CBCC8459AF3DF84461463823E2A04AA5518951F0",
+      "expected_git_blob_sha256": "3704D33CBE576D5B48F6B693CBCC8459AF3DF84461463823E2A04AA5518951F0",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/reset.v",
+      "raw_sha256": "126540013B52B8CAB339CDAF57B1A6947D3088E97EEB9CB84FB68448F8A2E978",
+      "bytes": 3849,
+      "start_commit_blob_sha256": "A79C8595FB73AAC9BB292801B970E517E66C6AE77E85D984B28F36C4D29E95C7",
+      "expected_git_blob_sha256": "A79C8595FB73AAC9BB292801B970E517E66C6AE77E85D984B28F36C4D29E95C7",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/shape_overlay.v",
+      "raw_sha256": "5D98497CC5F2470E75C2DD9B9BAF315A85AF589FC35F45E2F975D4957DB0BDA0",
+      "bytes": 7403,
+      "start_commit_blob_sha256": "84F29EF88455DCB96D3A965C1298575DAD26FD42B01248E0F9A245E5B1099B82",
+      "expected_git_blob_sha256": "84F29EF88455DCB96D3A965C1298575DAD26FD42B01248E0F9A245E5B1099B82",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/simple_dual_port_ram.v",
+      "raw_sha256": "01B74E74D39C4E4AE380BC7BE73329987B17FFFAEA58BC7C92A9B24E4A110C5D",
+      "bytes": 1440,
+      "start_commit_blob_sha256": "A41489D031651489E32E6A3823415D054C612AC258D1508B57631A7DF7BA1F3A",
+      "expected_git_blob_sha256": "A41489D031651489E32E6A3823415D054C612AC258D1508B57631A7DF7BA1F3A",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/threshold_control.v",
+      "raw_sha256": "A0B78D7EC4F141C847BC69C61412F3B4593D29F669A95EBE5DB2E92F10BB17F0",
+      "bytes": 2442,
+      "start_commit_blob_sha256": "E8287ABE0E27B9244EBF6E8EE23DF2B053D591291F3E107103945AFBA7EC8E94",
+      "expected_git_blob_sha256": "E8287ABE0E27B9244EBF6E8EE23DF2B053D591291F3E107103945AFBA7EC8E94",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ti60f225_oob_top.v",
+      "raw_sha256": "677A4B0960E60792163787288EF128D317B0BA03E2A341D9D9FA2B4A99AD0940",
+      "bytes": 38127,
+      "start_commit_blob_sha256": "21ABE04B9F75DCF48F17A46A9C8B010932BDB4D775A43EE780203818744C8E5C",
+      "expected_git_blob_sha256": "21ABE04B9F75DCF48F17A46A9C8B010932BDB4D775A43EE780203818744C8E5C",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/true_dual_port_ram.v",
+      "raw_sha256": "44BFB696E997B4D31BFD3C414623623C9B60964BFE711C611CF80A39222E8E8F",
+      "bytes": 2965,
+      "start_commit_blob_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "expected_git_blob_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/user_dual_port_ram.v",
+      "raw_sha256": "F522E90F71C388BA4E2E91FD2506039982BDB60B8BB4710D6D99F8895E9367DF",
+      "bytes": 3756,
+      "start_commit_blob_sha256": "65E71B9F4D5EA20D00FDF9EA580F385F186340F8B2BECF6980681299670E6AB3",
+      "expected_git_blob_sha256": "65E71B9F4D5EA20D00FDF9EA580F385F186340F8B2BECF6980681299670E6AB3",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/i2c_phy.v",
+      "raw_sha256": "E2D25E6720A52419B0F2EC1642350A46012C68B874862D994081FFA655FD7B56",
+      "bytes": 16755,
+      "start_commit_blob_sha256": "E2D25E6720A52419B0F2EC1642350A46012C68B874862D994081FFA655FD7B56",
+      "expected_git_blob_sha256": "E2D25E6720A52419B0F2EC1642350A46012C68B874862D994081FFA655FD7B56",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/imx185_1080p_reg.mem",
+      "raw_sha256": "91A563349D23D90D5604E88E9986EC963CEF7D5872577CBEB194D296B227F830",
+      "bytes": 3050,
+      "start_commit_blob_sha256": "91A563349D23D90D5604E88E9986EC963CEF7D5872577CBEB194D296B227F830",
+      "expected_git_blob_sha256": "91A563349D23D90D5604E88E9986EC963CEF7D5872577CBEB194D296B227F830",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/imx185_config.v",
+      "raw_sha256": "5B3D8D37275E87D24B429A4983898663C4D6851F6F9EA10FF86E97BFE6BBE8DD",
+      "bytes": 4934,
+      "start_commit_blob_sha256": "5B3D8D37275E87D24B429A4983898663C4D6851F6F9EA10FF86E97BFE6BBE8DD",
+      "expected_git_blob_sha256": "5B3D8D37275E87D24B429A4983898663C4D6851F6F9EA10FF86E97BFE6BBE8DD",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/piv2_1080p_reg - Copy.mem",
+      "raw_sha256": "4E2F401FFE262886A77B1AFD6E65CDD8AEF29403C149ECA63C2CF698C5A2943D",
+      "bytes": 2064,
+      "start_commit_blob_sha256": "4E2F401FFE262886A77B1AFD6E65CDD8AEF29403C149ECA63C2CF698C5A2943D",
+      "expected_git_blob_sha256": "4E2F401FFE262886A77B1AFD6E65CDD8AEF29403C149ECA63C2CF698C5A2943D",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/piv2_1080p_reg.mem",
+      "raw_sha256": "289DECD9B14F44496E74ECDE0BE82831FE3AD61EB3A098791B182AA0890475CC",
+      "bytes": 2064,
+      "start_commit_blob_sha256": "289DECD9B14F44496E74ECDE0BE82831FE3AD61EB3A098791B182AA0890475CC",
+      "expected_git_blob_sha256": "289DECD9B14F44496E74ECDE0BE82831FE3AD61EB3A098791B182AA0890475CC",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/piv2_720p_7M_1L_reg.mem",
+      "raw_sha256": "F7B04E8085801360FEC5B9E9D5C1CD56A17B57B9C7F477E70FDE2BE5B01EBF0A",
+      "bytes": 2063,
+      "start_commit_blob_sha256": "F7B04E8085801360FEC5B9E9D5C1CD56A17B57B9C7F477E70FDE2BE5B01EBF0A",
+      "expected_git_blob_sha256": "F7B04E8085801360FEC5B9E9D5C1CD56A17B57B9C7F477E70FDE2BE5B01EBF0A",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/piv2_720p_7M_2L_reg.mem",
+      "raw_sha256": "4DC3D43C163937FC2E66C32D07463F4C28151630FD4B807F4B2D07665EEAD384",
+      "bytes": 2064,
+      "start_commit_blob_sha256": "4DC3D43C163937FC2E66C32D07463F4C28151630FD4B807F4B2D07665EEAD384",
+      "expected_git_blob_sha256": "4DC3D43C163937FC2E66C32D07463F4C28151630FD4B807F4B2D07665EEAD384",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/piv2_720p_9M_1L_reg.mem",
+      "raw_sha256": "815A9278AEB0417CE94C718C300E2D7FE3A5D20685B5B87CDF76CD82AE8FD90F",
+      "bytes": 2064,
+      "start_commit_blob_sha256": "815A9278AEB0417CE94C718C300E2D7FE3A5D20685B5B87CDF76CD82AE8FD90F",
+      "expected_git_blob_sha256": "815A9278AEB0417CE94C718C300E2D7FE3A5D20685B5B87CDF76CD82AE8FD90F",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/piv2_720p_9M_2L_reg.mem",
+      "raw_sha256": "440EBE49A6F9D019EEBA810CA1F5DD68639CAF2740B2B228EDAA6E5E9A38E2CA",
+      "bytes": 2064,
+      "start_commit_blob_sha256": "440EBE49A6F9D019EEBA810CA1F5DD68639CAF2740B2B228EDAA6E5E9A38E2CA",
+      "expected_git_blob_sha256": "440EBE49A6F9D019EEBA810CA1F5DD68639CAF2740B2B228EDAA6E5E9A38E2CA",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/piv2_config.v",
+      "raw_sha256": "53496295E0CE4FBE5D4722DFBA93807E9EA57232B20D5DFACF4C8BFF0BDE33C8",
+      "bytes": 7108,
+      "start_commit_blob_sha256": "53496295E0CE4FBE5D4722DFBA93807E9EA57232B20D5DFACF4C8BFF0BDE33C8",
+      "expected_git_blob_sha256": "53496295E0CE4FBE5D4722DFBA93807E9EA57232B20D5DFACF4C8BFF0BDE33C8",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam/doc/IMX219PQ.pdf",
+      "raw_sha256": "49250B153D55FE91A5A184651EF0EEAB4316A195F7F6C2D42C068B336F237219",
+      "bytes": 2237503,
+      "start_commit_blob_sha256": "49250B153D55FE91A5A184651EF0EEAB4316A195F7F6C2D42C068B336F237219",
+      "expected_git_blob_sha256": "49250B153D55FE91A5A184651EF0EEAB4316A195F7F6C2D42C068B336F237219",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/I2C_Master.docx",
+      "raw_sha256": "D994B6FD94F005BFBC26ED383F973A14B7B4F6530C2C71BD9E37920EB9AA369B",
+      "bytes": 669362,
+      "start_commit_blob_sha256": "D994B6FD94F005BFBC26ED383F973A14B7B4F6530C2C71BD9E37920EB9AA369B",
+      "expected_git_blob_sha256": "D994B6FD94F005BFBC26ED383F973A14B7B4F6530C2C71BD9E37920EB9AA369B",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c/i2c_16addr_8data.v",
+      "raw_sha256": "12210C511B52DCFDACA2F4CFFC0FAFB390AC87ED3B3C97DFA2C6008A339C4BB7",
+      "bytes": 9560,
+      "start_commit_blob_sha256": "428D4E269A84AD94C4CC2B5670B277C42C906C40D916E8DA4F1D4374E756FBAF",
+      "expected_git_blob_sha256": "428D4E269A84AD94C4CC2B5670B277C42C906C40D916E8DA4F1D4374E756FBAF",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c/i2c_8addr_8data.v",
+      "raw_sha256": "15C787D98CB272A155584941841C55DBB4A489A009CE79BC589C9CAB5E913159",
+      "bytes": 8677,
+      "start_commit_blob_sha256": "B17C8B0E2CD74D2841D7D32A38043E8DDD2EF69E3AE0929A54294FDC58E894ED",
+      "expected_git_blob_sha256": "B17C8B0E2CD74D2841D7D32A38043E8DDD2EF69E3AE0929A54294FDC58E894ED",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c/i2c_master_ctrl_top.v",
+      "raw_sha256": "2534B3D0CD1793B9F91320FC8D5495820252D0221C38CA9DEA247E27AEA1DC7F",
+      "bytes": 2955,
+      "start_commit_blob_sha256": "91F1D63EF9AB08BC5EC6DDF0AAC0208FD56CE82848F454B5B9C139C208F9A920",
+      "expected_git_blob_sha256": "91F1D63EF9AB08BC5EC6DDF0AAC0208FD56CE82848F454B5B9C139C208F9A920",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c/i2c_master_reg_rom.v",
+      "raw_sha256": "DB13D1EED22A9478FD0AFFB9AC86B8265302A474886D7FFF688447AF2470FFE3",
+      "bytes": 10450,
+      "start_commit_blob_sha256": "8116B53C76C2A123FEE01C345C911C517A027BAB7495124A0F45605A742AA98D",
+      "expected_git_blob_sha256": "8116B53C76C2A123FEE01C345C911C517A027BAB7495124A0F45605A742AA98D",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c/i2c_master_reg_set.v",
+      "raw_sha256": "8BB2F5E862A606097F312BB90C2A501FC5F29E8A21737FFCD0A4AB62D90101EA",
+      "bytes": 2185,
+      "start_commit_blob_sha256": "EE10893939465BC4EAC61202B48691948263910D348CF68BEAE90B15BE7D32AA",
+      "expected_git_blob_sha256": "EE10893939465BC4EAC61202B48691948263910D348CF68BEAE90B15BE7D32AA",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c_master/i2c_master_bit_ctrl.v",
+      "raw_sha256": "2DF1F5D522725EA216385829A4DEC38FDD616E4979AAA0AEF7053AC34BF8AC8C",
+      "bytes": 19013,
+      "start_commit_blob_sha256": "2FEEA1ACB59776B31AD6638C3352DD937A67FBC9A7DCD19EC5EB678D07F37E48",
+      "expected_git_blob_sha256": "2FEEA1ACB59776B31AD6638C3352DD937A67FBC9A7DCD19EC5EB678D07F37E48",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c_master/i2c_master_byte_ctrl.v",
+      "raw_sha256": "442159006425FA36A946F67AFC62391F9F80142AAD379A640118A28CE67C9F80",
+      "bytes": 11679,
+      "start_commit_blob_sha256": "AA6B819FCD3BB98609F12487B2E5590BB2A346F92D07992FDD3D90A535A0370A",
+      "expected_git_blob_sha256": "AA6B819FCD3BB98609F12487B2E5590BB2A346F92D07992FDD3D90A535A0370A",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c_master/i2c_master_defines.v",
+      "raw_sha256": "B6DCF92C66C3DC80192206621E732F0474709579662EE09943E48DB0077F302E",
+      "bytes": 4071,
+      "start_commit_blob_sha256": "F997DE7D0083B6D19567B10949F3C5D741D9EE2E93C0B66BB8A4807412462D06",
+      "expected_git_blob_sha256": "F997DE7D0083B6D19567B10949F3C5D741D9EE2E93C0B66BB8A4807412462D06",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c_master/i2c_master_top.v",
+      "raw_sha256": "BF5DD12F2BF30DBC46A1D4CF1D3D1ACCC05106E14CA1CECF467FD09B46CD45C8",
+      "bytes": 11048,
+      "start_commit_blob_sha256": "49F385B3D296D8B55E2CEEBEC96015730894F2B8C49E7E7E3E55A2B9D264DC13",
+      "expected_git_blob_sha256": "49F385B3D296D8B55E2CEEBEC96015730894F2B8C49E7E7E3E55A2B9D264DC13",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c_master/oc_i2c_master.v",
+      "raw_sha256": "DDE241966DD153F0F65EB711D6C0B00B9DFC806A733C5F2BF5FF6255BC54AD29",
+      "bytes": 2281,
+      "start_commit_blob_sha256": "DDE241966DD153F0F65EB711D6C0B00B9DFC806A733C5F2BF5FF6255BC54AD29",
+      "expected_git_blob_sha256": "DDE241966DD153F0F65EB711D6C0B00B9DFC806A733C5F2BF5FF6255BC54AD29",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/cam_i2c_ctrl/i2c_master/timescale.v",
+      "raw_sha256": "D98DD66323E809EE4BC88896063327802CA13241B5742A5E25DB17DB17A40A4C",
+      "bytes": 813,
+      "start_commit_blob_sha256": "310233EF829EA104055D0A4D2363F0C60744E6E581F72270679C16138A69448E",
+      "expected_git_blob_sha256": "310233EF829EA104055D0A4D2363F0C60744E6E581F72270679C16138A69448E",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/ddr3_parameter.vh",
+      "raw_sha256": "688995BA379237B1DAA428CCB119B564C3DCB760227F75F2FE86B8D50A41DE80",
+      "bytes": 972,
+      "start_commit_blob_sha256": "688995BA379237B1DAA428CCB119B564C3DCB760227F75F2FE86B8D50A41DE80",
+      "expected_git_blob_sha256": "688995BA379237B1DAA428CCB119B564C3DCB760227F75F2FE86B8D50A41DE80",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/ddr3_top.v",
+      "raw_sha256": "7D8D9CD8A2C69E44EBE9A143F91E6591136AA57F3BE22B2CFF76904F67D0236A",
+      "bytes": 58209,
+      "start_commit_blob_sha256": "2088214B860C567A6C6B3A9E58156EF74D62B477E1E5A582CEBDF21370F74F35",
+      "expected_git_blob_sha256": "2088214B860C567A6C6B3A9E58156EF74D62B477E1E5A582CEBDF21370F74F35",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/lb2_axi_clk.v",
+      "raw_sha256": "9CEF7D5361E79D8C7F1DEEAB3AF981444941EA50447C6C7C8B782E381F41DC2D",
+      "bytes": 16295,
+      "start_commit_blob_sha256": "71FFF2A02D31674D0E22637FDA27F7396F4E51661CADD89FE6157BCFE95CFB68",
+      "expected_git_blob_sha256": "71FFF2A02D31674D0E22637FDA27F7396F4E51661CADD89FE6157BCFE95CFB68",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/axi4_bus_ctl/axi_upsizer.v",
+      "raw_sha256": "03C25E7276781D9C22F4CBD7B25B76B6317ED7083874A7C94B052A0ABD1188E0",
+      "bytes": 242096,
+      "start_commit_blob_sha256": "03C25E7276781D9C22F4CBD7B25B76B6317ED7083874A7C94B052A0ABD1188E0",
+      "expected_git_blob_sha256": "03C25E7276781D9C22F4CBD7B25B76B6317ED7083874A7C94B052A0ABD1188E0",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/axi4_bus_ctl/axi4_bus_ctl.v",
+      "raw_sha256": "E908D8045FE2332A1740F3ACA0226B5FE0BF4D03E25B040FE0F32015D573AD5B",
+      "bytes": 187598,
+      "start_commit_blob_sha256": "7B633DB6AA607895CEB3173EF1A8CB066389232BCA819F50CE73F7B2EA2C96BD",
+      "expected_git_blob_sha256": "7B633DB6AA607895CEB3173EF1A8CB066389232BCA819F50CE73F7B2EA2C96BD",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/common/simple_dual_port_ram.v",
+      "raw_sha256": "41DA4FB5D1E10B94A1F35DF8075A594071BDF154823FF4EDC87AC5F4E128D934",
+      "bytes": 3413,
+      "start_commit_blob_sha256": "E0A0B850BF0F93615C2C9B1C5432A64D86EC826D1FDFDBBCF36F0BB408D72C38",
+      "expected_git_blob_sha256": "E0A0B850BF0F93615C2C9B1C5432A64D86EC826D1FDFDBBCF36F0BB408D72C38",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/common/efx_fifo_v2.3/efx_fifo_wrapper.v",
+      "raw_sha256": "040558D9DAFD6D7F4C6610B8CD8040CDEDC3F95B58A6F31F32DBD7429182EB98",
+      "bytes": 54025,
+      "start_commit_blob_sha256": "040558D9DAFD6D7F4C6610B8CD8040CDEDC3F95B58A6F31F32DBD7429182EB98",
+      "expected_git_blob_sha256": "040558D9DAFD6D7F4C6610B8CD8040CDEDC3F95B58A6F31F32DBD7429182EB98",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/local_bus_ctl/local_bus_ctl.v",
+      "raw_sha256": "822D5D0F54C7BA0EA8D66F19F1E97CDEA3A159932C64295DFE5CA86F9F814608",
+      "bytes": 19528,
+      "start_commit_blob_sha256": "2AF35A35BE5A0EAEACFFB993E985163715F8B4CC20FA0317183310D250F0C7F0",
+      "expected_git_blob_sha256": "2AF35A35BE5A0EAEACFFB993E985163715F8B4CC20FA0317183310D250F0C7F0",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/memory_bus_ctl/memory_bus_ctl.v",
+      "raw_sha256": "A12B886A37278BD44BC207C2DEBD11156EAB1D579E4E3AA7702B229508778882",
+      "bytes": 337766,
+      "start_commit_blob_sha256": "3BF41AC4A2E95341A4361391FCCDD404EC1350CE9809C2F3A819BD2DC6C0951E",
+      "expected_git_blob_sha256": "3BF41AC4A2E95341A4361391FCCDD404EC1350CE9809C2F3A819BD2DC6C0951E",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/phy_ctl/ddr_calibration_ini.v",
+      "raw_sha256": "7A6976BCECA5E4598ED9C53C17B522E7C86E07C97F0DBDA16F8286D321035522",
+      "bytes": 97258,
+      "start_commit_blob_sha256": "BFBEAA95F7D28D14D72B7B098264B646DF9D03DDF8187A62179607308F1D4540",
+      "expected_git_blob_sha256": "BFBEAA95F7D28D14D72B7B098264B646DF9D03DDF8187A62179607308F1D4540",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/phy_ctl/ddr_mpr_rdlvl.v",
+      "raw_sha256": "08446B90C5897750AE6214918981DE8262513745DA7F7D25850BA6A124B9763E",
+      "bytes": 17792,
+      "start_commit_blob_sha256": "99D798EA31C413048B968858A8BBBAF651AEE94FB4C6A24E4FE577AC6D355BBD",
+      "expected_git_blob_sha256": "99D798EA31C413048B968858A8BBBAF651AEE94FB4C6A24E4FE577AC6D355BBD",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/phy_ctl/ddr_phy_if.v",
+      "raw_sha256": "CE8DFD7600E8BE615611D353CC6B62E7CCF6411D22AC47C45F9B650AD908584B",
+      "bytes": 57056,
+      "start_commit_blob_sha256": "C90409F830C35B45E36B5D3CB02EEF3CD2A784580659BD5C1AFB710E928A6ADC",
+      "expected_git_blob_sha256": "C90409F830C35B45E36B5D3CB02EEF3CD2A784580659BD5C1AFB710E928A6ADC",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/phy_ctl/ddr_phy_rdlvl_dqs.v",
+      "raw_sha256": "BB5E2C9D76C2816164A9BFCBF51A3C2760D897C1340AE493D29867FEE601E31F",
+      "bytes": 24650,
+      "start_commit_blob_sha256": "65B76DE1B3A76D18E7C336AFD0EC84B1635F539EC8547B868903266E8687A641",
+      "expected_git_blob_sha256": "65B76DE1B3A76D18E7C336AFD0EC84B1635F539EC8547B868903266E8687A641",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/phy_ctl/ddr_phy_wrcal.v",
+      "raw_sha256": "50ACBB56F307A0FC9847981216389D41438649993908FDF96C09D823EE7E5CA9",
+      "bytes": 57540,
+      "start_commit_blob_sha256": "6E237102193F5E6AEFF88125115D33E9EFE2AC1285ED9D852A50775A4CEE4773",
+      "expected_git_blob_sha256": "6E237102193F5E6AEFF88125115D33E9EFE2AC1285ED9D852A50775A4CEE4773",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/phy_ctl/ddr_phy_wrlvl.v",
+      "raw_sha256": "AEC2C9677C03E1110C542CCC643C1EA0458F1F7FBB93DCAAD105A7623D4A8591",
+      "bytes": 27304,
+      "start_commit_blob_sha256": "41E5FC33DBAA14AC71E2037ED3CC5E4113D493EA31D85C59B611C5F9A4B2D2DD",
+      "expected_git_blob_sha256": "41E5FC33DBAA14AC71E2037ED3CC5E4113D493EA31D85C59B611C5F9A4B2D2DD",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/ddr3_controller/phy_ctl/phy_ctl.v",
+      "raw_sha256": "2B106E88FB017CBCDA86A6ACE62F81049D9725A79D4A2FFE9B44672BB4DBC08B",
+      "bytes": 44157,
+      "start_commit_blob_sha256": "A322F3685F50920B8E540F2F8161B0154681FF3F613C4ADD5D714F40445E7CB2",
+      "expected_git_blob_sha256": "A322F3685F50920B8E540F2F8161B0154681FF3F613C4ADD5D714F40445E7CB2",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/debayer/debayer_top_2to1.v",
+      "raw_sha256": "F6240A41141046CE9888CFF98A5E59FB18CE81B7E7DE46DC2DB70C8F144B6DD9",
+      "bytes": 3353,
+      "start_commit_blob_sha256": "E2CAFFD12CE23E71CAD2A0CD92E40925F246A9E9366DF758C3C38F9AF227FD14",
+      "expected_git_blob_sha256": "E2CAFFD12CE23E71CAD2A0CD92E40925F246A9E9366DF758C3C38F9AF227FD14",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/debayer/line_buffer.v",
+      "raw_sha256": "B2772202F1C8A8773F23A4C62A9470D814978B462C8B8EA52B47D11745855A36",
+      "bytes": 3253,
+      "start_commit_blob_sha256": "B2772202F1C8A8773F23A4C62A9470D814978B462C8B8EA52B47D11745855A36",
+      "expected_git_blob_sha256": "B2772202F1C8A8773F23A4C62A9470D814978B462C8B8EA52B47D11745855A36",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/debayer/raw_to_rgb.v",
+      "raw_sha256": "8EABEA4DDE2241A8D896B132EB991C4637ABC9441D5F58A9F448E14025C0B860",
+      "bytes": 14064,
+      "start_commit_blob_sha256": "8EABEA4DDE2241A8D896B132EB991C4637ABC9441D5F58A9F448E14025C0B860",
+      "expected_git_blob_sha256": "8EABEA4DDE2241A8D896B132EB991C4637ABC9441D5F58A9F448E14025C0B860",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/debayer/rgb_gain_v1.v",
+      "raw_sha256": "EBC9C0B0FC589D7620B708FDD7A952E37CCC27B1ABFA94E041D0E10323602B09",
+      "bytes": 2171,
+      "start_commit_blob_sha256": "45CB30764111BC7D5F10A258D518E8E513EC0C4C17A29AEC3896FD01C5729668",
+      "expected_git_blob_sha256": "45CB30764111BC7D5F10A258D518E8E513EC0C4C17A29AEC3896FD01C5729668",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/debayer/rgb_gain.v",
+      "raw_sha256": "BC09C97F4A0AA7007014FCB8EB95E579229AE704266261232D1CE12EBE6434B9",
+      "bytes": 3622,
+      "start_commit_blob_sha256": "BC09C97F4A0AA7007014FCB8EB95E579229AE704266261232D1CE12EBE6434B9",
+      "expected_git_blob_sha256": "BC09C97F4A0AA7007014FCB8EB95E579229AE704266261232D1CE12EBE6434B9",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/debayer/true_dual_port_ram.v",
+      "raw_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "bytes": 2821,
+      "start_commit_blob_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "expected_git_blob_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/audio_clock_regeneration_packet.sv",
+      "raw_sha256": "A00A00548FD646D3CBC4E706410CDC8360F3A48700D3CA5B5C4DCE5761C19CC3",
+      "bytes": 1100,
+      "start_commit_blob_sha256": "7F4A1A92E85A94DC26AD9FD6EE173BA709026C60C8024DCA1F085EC48BABC1EC",
+      "expected_git_blob_sha256": "7F4A1A92E85A94DC26AD9FD6EE173BA709026C60C8024DCA1F085EC48BABC1EC",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/audio_infoframe_packet.sv",
+      "raw_sha256": "D09B51E8B389647499F31B3E06123AA0EA4FBD096E4FE3D102824D5D95A23831",
+      "bytes": 2554,
+      "start_commit_blob_sha256": "D831E13002AA2834680DC99F403C1BAF541E5DD0F4DE88676726D82B36A8090E",
+      "expected_git_blob_sha256": "D831E13002AA2834680DC99F403C1BAF541E5DD0F4DE88676726D82B36A8090E",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/audio_packet.sv",
+      "raw_sha256": "94B5D63D5AECFF2979795606AA494BF5BC5201D6E3A4C85F6736D4C85D7C9CA9",
+      "bytes": 6874,
+      "start_commit_blob_sha256": "94B5D63D5AECFF2979795606AA494BF5BC5201D6E3A4C85F6736D4C85D7C9CA9",
+      "expected_git_blob_sha256": "94B5D63D5AECFF2979795606AA494BF5BC5201D6E3A4C85F6736D4C85D7C9CA9",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/auxiliary_video_information_info_frame.sv",
+      "raw_sha256": "994994405FA384F531E1B2DE55F52CD344B3B37B8539A3F7CD30ADAFCCE3E161",
+      "bytes": 5365,
+      "start_commit_blob_sha256": "994994405FA384F531E1B2DE55F52CD344B3B37B8539A3F7CD30ADAFCCE3E161",
+      "expected_git_blob_sha256": "994994405FA384F531E1B2DE55F52CD344B3B37B8539A3F7CD30ADAFCCE3E161",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/DC_FIFO.v",
+      "raw_sha256": "60120A28D8C12599CB7D2CB6D7E3E1F44479F3366156FA4055C3260E46CC05FF",
+      "bytes": 28259,
+      "start_commit_blob_sha256": "C58FAF1B94CD9717A0A3349207891C1C60212C563F757001666A712E112A8967",
+      "expected_git_blob_sha256": "C58FAF1B94CD9717A0A3349207891C1C60212C563F757001666A712E112A8967",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/dvi_encoder.v_encrypted.v",
+      "raw_sha256": "2A35CA4E11DD93B3C329EEF7C9E1D94498864C80041672C01E86EC1450E60381",
+      "bytes": 13383,
+      "start_commit_blob_sha256": "C89C00A293B550B431CF68EC9A8E103CEEFE01DD9F1F7857FD61EFFF8E1CD2A0",
+      "expected_git_blob_sha256": "C89C00A293B550B431CF68EC9A8E103CEEFE01DD9F1F7857FD61EFFF8E1CD2A0",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/ecc_calc_v1.v",
+      "raw_sha256": "7BACE5B6945F65A0CC9B3593A81EB92130C4F2A1043D1D427ED8C3FC0429C8BD",
+      "bytes": 964,
+      "start_commit_blob_sha256": "9AA5838FC124BA3814CBD0D072BBA708E8D12E0E5431F941ADDB5865FCDD033B",
+      "expected_git_blob_sha256": "9AA5838FC124BA3814CBD0D072BBA708E8D12E0E5431F941ADDB5865FCDD033B",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/efx_fifo_define.vh",
+      "raw_sha256": "6F231C473C47144F223714938CFE6F3F73131A8ADF3E3B7D73371B130E06AE63",
+      "bytes": 3544,
+      "start_commit_blob_sha256": "46437812299412275D50C394D5E423D6753651717D5B4F4DA7ED47F5B0E13DA5",
+      "expected_git_blob_sha256": "46437812299412275D50C394D5E423D6753651717D5B4F4DA7ED47F5B0E13DA5",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/efx_fifo.v",
+      "raw_sha256": "0F9BE5DE03C280743837B1B27011B95D9203BC0DAA414CEC45D676A76DDE0581",
+      "bytes": 53930,
+      "start_commit_blob_sha256": "EB0C337C7B1BD9CD2BA3D6FAC57D98EFED62FD5DB9DFF6A2ACC8DEAC45556E73",
+      "expected_git_blob_sha256": "EB0C337C7B1BD9CD2BA3D6FAC57D98EFED62FD5DB9DFF6A2ACC8DEAC45556E73",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/encode.v_encrypted.v",
+      "raw_sha256": "D1A0A8139A41F13736BA97C65A9F481267C0642ACD51F2C66120E0E7F543BD3F",
+      "bytes": 8314,
+      "start_commit_blob_sha256": "BB979549C4726C0E2665D9FFAF872D40DBCF7B65452B41EAB353456D9D4D8E44",
+      "expected_git_blob_sha256": "BB979549C4726C0E2665D9FFAF872D40DBCF7B65452B41EAB353456D9D4D8E44",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/packet_assembler.sv",
+      "raw_sha256": "76287F0E960FA1ABDD650CA01D8F66D22DD9AFAE7248A5F5C86B4862C44A3514",
+      "bytes": 3379,
+      "start_commit_blob_sha256": "76EAEE6DD7F90F887CDE1D402AA7F91EBED218F0F7FB2982837AFFC6237B49E8",
+      "expected_git_blob_sha256": "76EAEE6DD7F90F887CDE1D402AA7F91EBED218F0F7FB2982837AFFC6237B49E8",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/Sc_Fifo_Slr8.v",
+      "raw_sha256": "6DC746E307436D3B6F0881E24B654A349FCEEDA4CA76025FDC4C310C1D47C9E6",
+      "bytes": 8775,
+      "start_commit_blob_sha256": "FFEBD570D52F83EADA3C5ABD4FA975145E8824B7DD74393A84316145FC11B98A",
+      "expected_git_blob_sha256": "FFEBD570D52F83EADA3C5ABD4FA975145E8824B7DD74393A84316145FC11B98A",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/simple_dual_port_ram.v",
+      "raw_sha256": "0E0C7ACF31E66724073DC59F379880B6B8115C3E6D1FB179EDE1624ED01D4434",
+      "bytes": 1294,
+      "start_commit_blob_sha256": "0E0C7ACF31E66724073DC59F379880B6B8115C3E6D1FB179EDE1624ED01D4434",
+      "expected_git_blob_sha256": "0E0C7ACF31E66724073DC59F379880B6B8115C3E6D1FB179EDE1624ED01D4434",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/tx_aux.v_encrypted.v",
+      "raw_sha256": "579C75FAB971980053DFC9B4FA07DE2431BDA6DD0E37515F427A5B2F869D72B5",
+      "bytes": 19508,
+      "start_commit_blob_sha256": "229681794E35363427E192E360FC83DE05FA08146CF43C8D9F78EB46A01C20F0",
+      "expected_git_blob_sha256": "229681794E35363427E192E360FC83DE05FA08146CF43C8D9F78EB46A01C20F0",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/simple_dual_port_ram/ram_init_file.mem",
+      "raw_sha256": "92AE78D93E86E4E15231DE8F4AA58428F4547FDFEF01DB57ECBB4D66E74357D7",
+      "bytes": 1504,
+      "start_commit_blob_sha256": "92AE78D93E86E4E15231DE8F4AA58428F4547FDFEF01DB57ECBB4D66E74357D7",
+      "expected_git_blob_sha256": "92AE78D93E86E4E15231DE8F4AA58428F4547FDFEF01DB57ECBB4D66E74357D7",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/simple_dual_port_ram/simple_dual_port_ram_tb.v",
+      "raw_sha256": "B1DAD008B9929A40ABE35493A4BFA1A6C601B30EC051E8E1CDAFA52A7C9B4ACF",
+      "bytes": 3167,
+      "start_commit_blob_sha256": "B1DAD008B9929A40ABE35493A4BFA1A6C601B30EC051E8E1CDAFA52A7C9B4ACF",
+      "expected_git_blob_sha256": "B1DAD008B9929A40ABE35493A4BFA1A6C601B30EC051E8E1CDAFA52A7C9B4ACF",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/dvi_tx/simple_dual_port_ram/simple_dual_port_ram.v",
+      "raw_sha256": "0E0C7ACF31E66724073DC59F379880B6B8115C3E6D1FB179EDE1624ED01D4434",
+      "bytes": 1294,
+      "start_commit_blob_sha256": "0E0C7ACF31E66724073DC59F379880B6B8115C3E6D1FB179EDE1624ED01D4434",
+      "expected_git_blob_sha256": "0E0C7ACF31E66724073DC59F379880B6B8115C3E6D1FB179EDE1624ED01D4434",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/调试总结 .docx",
+      "raw_sha256": "913A52A6F418EF8CBBA87053FD97C27C8A7BD69D2456E0AE70F92FA113E56FB4",
+      "bytes": 162621,
+      "start_commit_blob_sha256": "913A52A6F418EF8CBBA87053FD97C27C8A7BD69D2456E0AE70F92FA113E56FB4",
+      "expected_git_blob_sha256": "913A52A6F418EF8CBBA87053FD97C27C8A7BD69D2456E0AE70F92FA113E56FB4",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/axi_ram.v",
+      "raw_sha256": "A262C60912B260DEFB5338356395A4499AE725D90C442481C5D705B1BEFEC4A9",
+      "bytes": 13016,
+      "start_commit_blob_sha256": "6D0B5622F95FCA412B8B241804C37B2477853ADF2F865655A30091D7A9397987",
+      "expected_git_blob_sha256": "6D0B5622F95FCA412B8B241804C37B2477853ADF2F865655A30091D7A9397987",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/bank_switch.v",
+      "raw_sha256": "47E886098C21EF3B0217F333EFE5573E7628DD65E8A0F02501ACA8C5B103D263",
+      "bytes": 4310,
+      "start_commit_blob_sha256": "AE7FBFE77E1CE37FF1C47D9851D00FF625438CB346D6FDB4C8D1A0B63E783FB9",
+      "expected_git_blob_sha256": "AE7FBFE77E1CE37FF1C47D9851D00FF625438CB346D6FDB4C8D1A0B63E783FB9",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/color_bar_rgb.v",
+      "raw_sha256": "D8DA9192AB0284BBAB70C20971D362E33B02B7FEB5E021D8FE1848BDD0A65E12",
+      "bytes": 9636,
+      "start_commit_blob_sha256": "85224D25A190B6F182EBFCF17507BC16DD9B25A78EEAC39B4839A13459565C9D",
+      "expected_git_blob_sha256": "85224D25A190B6F182EBFCF17507BC16DD9B25A78EEAC39B4839A13459565C9D",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/data_tx.v",
+      "raw_sha256": "5DC2CF6BA15EA207B79CB31D49B51A78EE0C2C8446811E714AC8F6916E2A1AD8",
+      "bytes": 11049,
+      "start_commit_blob_sha256": "7D3B277D0C06673D7629A38B237644EE3A0D54BB0CEDAE898B8FC006EE89EEEB",
+      "expected_git_blob_sha256": "7D3B277D0C06673D7629A38B237644EE3A0D54BB0CEDAE898B8FC006EE89EEEB",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/DC_FIFO.v",
+      "raw_sha256": "60120A28D8C12599CB7D2CB6D7E3E1F44479F3366156FA4055C3260E46CC05FF",
+      "bytes": 28259,
+      "start_commit_blob_sha256": "C58FAF1B94CD9717A0A3349207891C1C60212C563F757001666A712E112A8967",
+      "expected_git_blob_sha256": "C58FAF1B94CD9717A0A3349207891C1C60212C563F757001666A712E112A8967",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/ddr_buffer.v",
+      "raw_sha256": "770D5E55E0A81775A2980D5696AF36EAA8738A03E80BA4F0615F135EB1BDBDC4",
+      "bytes": 7417,
+      "start_commit_blob_sha256": "3DD0B77A43AD0C4E495A6E8329B737B5974FA68A74226EF253F2824F2F31EE0B",
+      "expected_git_blob_sha256": "3DD0B77A43AD0C4E495A6E8329B737B5974FA68A74226EF253F2824F2F31EE0B",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/ddr_rd_buffer.v",
+      "raw_sha256": "711D99275CB984B2AA84B47248C7D5B55B99A9CE852044CEFB8CE7F5388A5AB0",
+      "bytes": 11791,
+      "start_commit_blob_sha256": "8469F110E432308748AA8230C7211055E4CBD49C3A0DB531511E0F4B7665563C",
+      "expected_git_blob_sha256": "8469F110E432308748AA8230C7211055E4CBD49C3A0DB531511E0F4B7665563C",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/ddr_wr_buffer.v",
+      "raw_sha256": "182C396ECD29E838323CEDEE9AA17ED5EF33713884DDE1216BD30A6A58FB7311",
+      "bytes": 15816,
+      "start_commit_blob_sha256": "A118546ABCBD6F7B0D102636F93677A7888761540FC927D95B9020E5D81C2728",
+      "expected_git_blob_sha256": "A118546ABCBD6F7B0D102636F93677A7888761540FC927D95B9020E5D81C2728",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/frame_buffer.v",
+      "raw_sha256": "E2F0691300EBB1317315EF42E582853FE1184A8CF1A5DB11044B67D077221BDC",
+      "bytes": 10656,
+      "start_commit_blob_sha256": "E2F0691300EBB1317315EF42E582853FE1184A8CF1A5DB11044B67D077221BDC",
+      "expected_git_blob_sha256": "E2F0691300EBB1317315EF42E582853FE1184A8CF1A5DB11044B67D077221BDC",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/frame_info_det.v",
+      "raw_sha256": "BFB1B04C0608BB0FE24E8BEA4EACDD27CF5A00F8FC6528492E71E78B65CFC9CB",
+      "bytes": 4644,
+      "start_commit_blob_sha256": "8D7575D6DFF5D5765A4C3B221B3A020F4D1CE7A8DC55050F0870A0E5036F095B",
+      "expected_git_blob_sha256": "8D7575D6DFF5D5765A4C3B221B3A020F4D1CE7A8DC55050F0870A0E5036F095B",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/lpddr4_tb.v",
+      "raw_sha256": "05DB94C6800C7171FB407A6651B2E4136B4DFEB7DB3343278619D41DCEB63A3E",
+      "bytes": 7667,
+      "start_commit_blob_sha256": "D85FD805F35956D4768FBC61B91AA558D7F87F41DD87EF6F6631DE7A26DEEDE5",
+      "expected_git_blob_sha256": "D85FD805F35956D4768FBC61B91AA558D7F87F41DD87EF6F6631DE7A26DEEDE5",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/par2ser_parse.v",
+      "raw_sha256": "6F89421E2D6AFAF3079B3464F899A7496D55CBF72EFB5CA5C7B4FD48543A4620",
+      "bytes": 1079,
+      "start_commit_blob_sha256": "D08FD634D444C843B8417A86D46EAB07C4E680612BAF6F3DB8393644291553D5",
+      "expected_git_blob_sha256": "D08FD634D444C843B8417A86D46EAB07C4E680612BAF6F3DB8393644291553D5",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/rst_n_piple.v",
+      "raw_sha256": "2C127C90995A2B0E647DB1EEC3719C0E746A73DEF78D0C04BC7884195C2CA2D4",
+      "bytes": 1529,
+      "start_commit_blob_sha256": "3A7F50166736F35A3F408EE754BF6778254F8643714399C2A465EFDE51869B9E",
+      "expected_git_blob_sha256": "3A7F50166736F35A3F408EE754BF6778254F8643714399C2A465EFDE51869B9E",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/ser2par_v1.v",
+      "raw_sha256": "D3D3E2730957E0EDD9FE1BE3CC1993ED7F466A0F6D3663A8DE30E5D3AB88D3B2",
+      "bytes": 6262,
+      "start_commit_blob_sha256": "DFFC17D20FA5FFE4ECF8D93D53526F3330B95D22EFB5174F6927A8D3CFD55393",
+      "expected_git_blob_sha256": "DFFC17D20FA5FFE4ECF8D93D53526F3330B95D22EFB5174F6927A8D3CFD55393",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/sim.do",
+      "raw_sha256": "A7B139455EA9A24C187A96B4A51F5BDCBD94C1B38C47DDB920B9EC0DD01244AF",
+      "bytes": 1030,
+      "start_commit_blob_sha256": "BFE183E438BDD78132E2AEBC641587C28066E7750FEBABC5772B7CF8DFDF9D86",
+      "expected_git_blob_sha256": "BFE183E438BDD78132E2AEBC641587C28066E7750FEBABC5772B7CF8DFDF9D86",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/vid_check.v",
+      "raw_sha256": "CBCF6DC3E6F875D57BBF2DE73DB16140E78F1AB6703BBAEBAB0F91310A84D2C0",
+      "bytes": 681,
+      "start_commit_blob_sha256": "CAFDA6ACE8488E1C50B0344094620703B0B763DB1C2F48BC7096744983F73735",
+      "expected_git_blob_sha256": "CAFDA6ACE8488E1C50B0344094620703B0B763DB1C2F48BC7096744983F73735",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/vid_par2ser.v",
+      "raw_sha256": "ABA8E1DE73325D08A5F9620B859314E884FEBE74581E508CD42E45C3FD03B0F2",
+      "bytes": 4687,
+      "start_commit_blob_sha256": "7179E99A3441089190506649E0F36AD7D74F13814559D3A11BF6FD04DDCAB116",
+      "expected_git_blob_sha256": "7179E99A3441089190506649E0F36AD7D74F13814559D3A11BF6FD04DDCAB116",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/vid_rx_align_v1.v",
+      "raw_sha256": "CD97ABC44C86CB7A2DC90AE427E06B0CA18D61028F69EBCFC36C446F31F0D66E",
+      "bytes": 3184,
+      "start_commit_blob_sha256": "289D1447DDF42BF8C6B982AD9AE416F13941BD86CA9662F62AEE52EA8C616569",
+      "expected_git_blob_sha256": "289D1447DDF42BF8C6B982AD9AE416F13941BD86CA9662F62AEE52EA8C616569",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/frame_buffer_V3/wave.do",
+      "raw_sha256": "30200C2D2794B0C3AE1903C3ACADF9605044EDACE58BE3F31D165566E766D726",
+      "bytes": 110460,
+      "start_commit_blob_sha256": "F7B8640CD67A53625F99A4179C40594542D56007FE20FC2BB0F8DE0E2FE4FF92",
+      "expected_git_blob_sha256": "F7B8640CD67A53625F99A4179C40594542D56007FE20FC2BB0F8DE0E2FE4FF92",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/2P0.mem",
+      "raw_sha256": "106F129182E2B8350ACE85722D418C7F44C252F8BE59B42F58F29DB8DF30C4D6",
+      "bytes": 5118,
+      "start_commit_blob_sha256": "159911F3439A27E3F0D58595B502F9D2ACBD17F63B43103BDBF616B6EFC09F7A",
+      "expected_git_blob_sha256": "159911F3439A27E3F0D58595B502F9D2ACBD17F63B43103BDBF616B6EFC09F7A",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/2P1.mem",
+      "raw_sha256": "BCE1459C3E76195090B285FD6F2E90753FEF59E33F77404B801A9DA7419BC769",
+      "bytes": 5118,
+      "start_commit_blob_sha256": "B20738639690133B5E16487BDC69AB58CD9BDB2DD57F82F829068D54EC769DDF",
+      "expected_git_blob_sha256": "B20738639690133B5E16487BDC69AB58CD9BDB2DD57F82F829068D54EC769DDF",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/2P2.mem",
+      "raw_sha256": "BB22604F3B0C25F48B53C22667A0474368364B9396C926E8EC565D4AA77FD895",
+      "bytes": 5118,
+      "start_commit_blob_sha256": "32D81567F32A5A0BA1242686A2B96D4B5B0CAF6FDD671C70248B06267C2B9818",
+      "expected_git_blob_sha256": "32D81567F32A5A0BA1242686A2B96D4B5B0CAF6FDD671C70248B06267C2B9818",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/2P3.mem",
+      "raw_sha256": "F5FA6E316D1E06FE3015C0AA140C92A478431B8BC6EEA6D1194051C7530D9E5D",
+      "bytes": 5118,
+      "start_commit_blob_sha256": "587D97E6C57456CC6B842B795F828ED20F0821AC83B731EFE3D4F82DF0D77739",
+      "expected_git_blob_sha256": "587D97E6C57456CC6B842B795F828ED20F0821AC83B731EFE3D4F82DF0D77739",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/2P4.mem",
+      "raw_sha256": "323A5F24BFD17EDA602A7D4AB6EADA6180EF545D2F2BE73288F398D85BAE4923",
+      "bytes": 5118,
+      "start_commit_blob_sha256": "1DF8CF8E460B31139B88F718A10F91DF6C01966D24677C6DA9A55149726B10FB",
+      "expected_git_blob_sha256": "1DF8CF8E460B31139B88F718A10F91DF6C01966D24677C6DA9A55149726B10FB",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/gamma_correction.v",
+      "raw_sha256": "CD6404D167C15BB7879C3125E92CD8E9D11121870FD1C09CA448BE015D5B11E5",
+      "bytes": 2170,
+      "start_commit_blob_sha256": "7E558BFF338D913EE0FF3F76F03F405531DB0261AA1AABC57026B93A85FA0152",
+      "expected_git_blob_sha256": "7E558BFF338D913EE0FF3F76F03F405531DB0261AA1AABC57026B93A85FA0152",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/testbench/gamma_correction_tb.do",
+      "raw_sha256": "4F8DFA325B949A07B4B4A4717670D66139623F7345A637FC0769830C2AD48042",
+      "bytes": 593,
+      "start_commit_blob_sha256": "4F8DFA325B949A07B4B4A4717670D66139623F7345A637FC0769830C2AD48042",
+      "expected_git_blob_sha256": "4F8DFA325B949A07B4B4A4717670D66139623F7345A637FC0769830C2AD48042",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/testbench/gamma_correction_tb.v",
+      "raw_sha256": "4C889465526F6483F3041FBDD5C9BECB0039DD7564CEB8D75C829EA68DB7E8C3",
+      "bytes": 1640,
+      "start_commit_blob_sha256": "1E7057C498FC07AFC7EA791FB0A9EA935A668763C329C802D2C527924C9850C0",
+      "expected_git_blob_sha256": "1E7057C498FC07AFC7EA791FB0A9EA935A668763C329C802D2C527924C9850C0",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/testbench/true_dual_port_ram.v",
+      "raw_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "bytes": 2821,
+      "start_commit_blob_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "expected_git_blob_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/testbench/vga_gen.v",
+      "raw_sha256": "972ADD783BBDFD81FE5D9D7E77E1000958932F37803F6D4E4C3A9F96BD86A801",
+      "bytes": 4305,
+      "start_commit_blob_sha256": "972ADD783BBDFD81FE5D9D7E77E1000958932F37803F6D4E4C3A9F96BD86A801",
+      "expected_git_blob_sha256": "972ADD783BBDFD81FE5D9D7E77E1000958932F37803F6D4E4C3A9F96BD86A801",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/gamma_conrrection/testbench/vsim.wlf",
+      "raw_sha256": "BC387738091BFADC2C19CE1A67BCDDF00CE41AE289F08B837483145C4802649A",
+      "bytes": 671744,
+      "start_commit_blob_sha256": "BC387738091BFADC2C19CE1A67BCDDF00CE41AE289F08B837483145C4802649A",
+      "expected_git_blob_sha256": "BC387738091BFADC2C19CE1A67BCDDF00CE41AE289F08B837483145C4802649A",
+      "relation": "identical"
+    },
+    {
+      "path": "projects/hdmi/rtl/mipi_config/panel_config.v",
+      "raw_sha256": "65106F2A94983EB9403042F1BDC235192E1CC762120BABC7D1005AEE8D7295FA",
+      "bytes": 4665,
+      "start_commit_blob_sha256": "501892FA641272DA27A8B5DF330B9C8A998A5A8CEB6DA835C922D6330A406480",
+      "expected_git_blob_sha256": "501892FA641272DA27A8B5DF330B9C8A998A5A8CEB6DA835C922D6330A406480",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/mipi_config/true_dual_port_ram.v",
+      "raw_sha256": "44BFB696E997B4D31BFD3C414623623C9B60964BFE711C611CF80A39222E8E8F",
+      "bytes": 2965,
+      "start_commit_blob_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "expected_git_blob_sha256": "B0E1BE82204D5526F5C718D7483B755D6B257CFF253BDEDDC6BC52480FDB4E3A",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/soc_oob/apb3_slave_oob.v",
+      "raw_sha256": "F8D6AAEAF82714A64AC24C6330564B6980E7136A8E999BB1EF94CA040A38A89C",
+      "bytes": 7742,
+      "start_commit_blob_sha256": "90E993CD94C2F25C03E85C4EBA04A344469F9E4E40C44FF41BD9C3E3B96E83C0",
+      "expected_git_blob_sha256": "90E993CD94C2F25C03E85C4EBA04A344469F9E4E40C44FF41BD9C3E3B96E83C0",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/soc_oob/top_soc_oob.v",
+      "raw_sha256": "0B6C4C14E488A752153197AF7C4AEED25AC777DD98CCBBA2A5DE3FB9DAE15141",
+      "bytes": 7607,
+      "start_commit_blob_sha256": "EF73C1C9936A13209C631DCC9DFCBCB4C45727A02FDB34EEAFCC6717914C4D95",
+      "expected_git_blob_sha256": "EF73C1C9936A13209C631DCC9DFCBCB4C45727A02FDB34EEAFCC6717914C4D95",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/soc_oob/axistream/axi_streamin.v",
+      "raw_sha256": "2CFB82E94E4CE535C28C3B45DCF3713CBD86A6D83106F2669F343D844402AC71",
+      "bytes": 6723,
+      "start_commit_blob_sha256": "45B14D44A41B2CD8A6F494A0A92A95DE230C4A40CD772359BACB29F10EDDEDB2",
+      "expected_git_blob_sha256": "45B14D44A41B2CD8A6F494A0A92A95DE230C4A40CD772359BACB29F10EDDEDB2",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/soc_oob/axistream/axi_streamout_div4.v",
+      "raw_sha256": "AF95943ABEF71D8C90B3E5B7452D802F88F042730341DE4AB29AF47458F2E56B",
+      "bytes": 9522,
+      "start_commit_blob_sha256": "D392AFE4FFD373B8208289D2E63C0763B6D5E9C5469D5000D2629289EBF2F2DF",
+      "expected_git_blob_sha256": "D392AFE4FFD373B8208289D2E63C0763B6D5E9C5469D5000D2629289EBF2F2DF",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/soc_oob/axistream/axi_streamout.v",
+      "raw_sha256": "6EC22D41AE390E0233FCBC458C1A445BE536D6B37B54D56496A4F1CED75DBF08",
+      "bytes": 22524,
+      "start_commit_blob_sha256": "9BB10C9789723A3E14A62ACF1A63863E598B4BE828D3E3BFB9010611724A1A8D",
+      "expected_git_blob_sha256": "9BB10C9789723A3E14A62ACF1A63863E598B4BE828D3E3BFB9010611724A1A8D",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/soc_oob/axistream/fifo.v",
+      "raw_sha256": "CDBF3B8DE324461290F5D5737D07AD7FE69C498D85DAB403C374B1B7F4A1A89D",
+      "bytes": 3342,
+      "start_commit_blob_sha256": "0C2718FB7D9F252F0F4924317194279E61ABF212A596BD4347F02CA02CFA6151",
+      "expected_git_blob_sha256": "0C2718FB7D9F252F0F4924317194279E61ABF212A596BD4347F02CA02CFA6151",
+      "relation": "CRLF_LF_only"
+    },
+    {
+      "path": "projects/hdmi/rtl/soc_oob/axistream/vga_buffer.v",
+      "raw_sha256": "7394C8B649154486FA07B4FC1EA7B46333C586B37E4875E9DD7F2EA266123062",
+      "bytes": 1592,
+      "start_commit_blob_sha256": "80588AB85C9E46078896B99E8BEA15A8BD31CAA2E26D4272B3D296FF32FDA11C",
+      "expected_git_blob_sha256": "80588AB85C9E46078896B99E8BEA15A8BD31CAA2E26D4272B3D296FF32FDA11C",
+      "relation": "CRLF_LF_only"
+    }
+  ],
+  "generated_interface": [
+    {
+      "path": "outflow\\design_issue.xml",
+      "release_path": "interface-generated\\design_issue.xml",
+      "sha256": "CDB7858F2E62D97E045379197CF933D4565E87B503FB87E2DF4C6ABFFAC2EF02"
+    }
+  ]
+}

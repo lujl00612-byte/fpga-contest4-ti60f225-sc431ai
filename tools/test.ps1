@@ -17,6 +17,7 @@ try {
         @{name='shapes';sources=@('projects/hdmi/rtl/shape_overlay.v')},
         @{name='hysteresis_exact';sources=@('projects/hdmi/rtl/canny_hysteresis_exact.v')},
         @{name='tag_cache';sources=@('projects/hdmi/rtl/canny_tag_memory.v','../efinity2025_clean/PFiles/Efinity/2025.1/sim_models/verilog/efx_ram10.v')},
+        @{name='tag_banks';sources=@('projects/hdmi/rtl/canny_tag_memory.v','../efinity2025_clean/PFiles/Efinity/2025.1/sim_models/verilog/efx_ram10.v')},
         @{name='snapshot';sources=@('projects/hdmi/rtl/canny_hysteresis_exact.v','projects/hdmi/rtl/canny_tag_memory.v','projects/hdmi/rtl/canny_snapshot_exact.v','../efinity2025_clean/PFiles/Efinity/2025.1/sim_models/verilog/efx_ram10.v')},
         @{name='hysteresis_ram';sources=@('projects/hdmi/rtl/canny_hysteresis_exact.v','projects/hdmi/rtl/canny_tag_memory.v','../efinity2025_clean/PFiles/Efinity/2025.1/sim_models/verilog/efx_ram10.v')}
     )

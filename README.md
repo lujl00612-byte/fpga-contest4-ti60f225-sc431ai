@@ -20,6 +20,7 @@
 | `A12` | 保存两个最近访问的打包字，命中时交换，淘汰最久未访问的字 | 相对 A11 全连通周期再减少 4.56%、RAM 读再减少 40.96%；LUT +206、FF −26、RAM 不变；像素 setup +0.536 ns；HDMI 实测待完成 |
 | `WB03-attempt` | 独立 RGB888 彩条、两个 DSI 使能及 V4 GPIO 候选；修正首次 AXI 读地址 | 1080p 同步 / 两像素模型、新构建及时序通过；继承的 22 位初始化延时截断，候选拒绝，保留诊断 |
 | `WB03R1` | 完整 32 位初始化延时，保留原厂表；独立彩条、双通道使能和 V4 GPIO 候选 | 延时 bit22 握手时间差 4,194,304 周期通过；新构建全部时序通过；LUT +24、FF +16、RAM 不变；未下载，实际 PCB 与屏幕待验证 |
+| `A13` | 每组 8 块 RAM 的分组读出，选择信号提前寄存，保留三 / 四周期接口 | 最长像素路径 12 → 8 级，setup +0.790 ns；LUT −472、FF +21、RAM 不变；全部 120 块供应商 RAM、全尺寸 BFS 和三拍对齐通过；未下载，HDMI 实测待完成 |
 
 每个发布版本保存源码 Git 提交、位流、报告、SHA256 清单。工具产生的临时文件位于 `builds/`，不进入 Git。
 
@@ -57,8 +58,8 @@ V4 原理图的 KEY0 对应实体丝印 **SW0**；装配图中四个用户按键
 
 ```powershell
 .\tools\test.ps1
-.\tools\build.ps1 -Target mipi_diag -Version WB03R1
-.\tools\build.ps1 -Target hdmi -Version A13
+.\tools\build.ps1 -Target mipi_diag -Version WB03R1-reproduce
+.\tools\build.ps1 -Target hdmi -Version A13-reproduce
 & 'C:\Python314\python.exe' .\tools\jtag_load_sram.py --status
 & 'C:\Python314\python.exe' .\tools\jtag_load_sram.py --status --program --bit .\releases\WB02\mipi\WB02.bit
 ```

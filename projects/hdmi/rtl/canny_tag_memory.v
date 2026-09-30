@@ -25,10 +25,18 @@ module canny_tag_memory #(
     reg victim_valid;
     localparam integer BANKS=(WORDS+511)/512;
     localparam integer BANK_BITS=(BANKS>1)?$clog2(BANKS):1;
+    localparam integer GROUPS=(BANKS+7)/8;
+    localparam integer GROUP_LEAVES=1<<$clog2(GROUPS);
     wire [19:0] bank_data[0:BANKS-1];
-    reg [BANK_BITS-1:0] read_bank_q;
+    // Decode on the RAM acceptance edge, then select 8 banks per group.
+    // Both selectors describe the same read as the bank RDATA. This replaces
+    // the long variable-index mux without adding a response/video pipeline.
+    reg [7:0] read_slot_q;
+    reg [GROUPS-1:0] read_group_q;
+    wire [19:0] group_word[0:GROUPS-1];
+    wire [19:0] group_tree[0:2*GROUP_LEAVES-2];
     reg video_en_q;
-    wire [19:0] read_word=bank_data[read_bank_q];
+    wire [19:0] read_word=group_tree[0];
     wire [WORD_BITS-1:0] requested_word=req_addr/5;
     wire cache_allowed=!(capture_we||video_en||video_en_q);
     wire primary_hit=cache_valid&&(requested_word==word_addr)&&cache_allowed;
@@ -60,15 +68,43 @@ module canny_tag_memory #(
     end
     // Explicit 512x20 banks preserve all parity bits. Automatic inference split 20
     // into 16+4 and used 150 blocks; this packing uses exactly 120 for 640x480.
-    genvar b;
+    genvar b,g,s,t;
     generate for(b=0;b<BANKS;b=b+1)begin:bank
         EFX_RAM10 #(.READ_WIDTH(20),.WRITE_WIDTH(20),.OUTPUT_REG(0),.WRITE_MODE("READ_FIRST")) ram(
             .WCLK(clk),.WE({2{ram_we&&(write_bank==b)}}),.WCLKE(1'b1),.WADDREN(1'b1),
             .WDATA(ram_wdata),.WADDR(write_row),.RCLK(clk),.RE(ram_re&&(read_bank==b)),
             .RST(1'b0),.RADDREN(1'b1),.RDATA(bank_data[b]),.RADDR(read_row));
     end endgenerate
+    generate for(g=0;g<GROUPS;g=g+1)begin:read_group
+        wire [19:0] slot[0:7];
+        for(s=0;s<8;s=s+1)begin:read_slot
+            if(g*8+s<BANKS)begin:present
+                assign slot[s]=bank_data[g*8+s]&{20{read_slot_q[s]}};
+            end else begin:padding
+                assign slot[s]=20'd0;
+            end
+        end
+        assign group_word[g]=((slot[0]|slot[1])|(slot[2]|slot[3]))|
+                             ((slot[4]|slot[5])|(slot[6]|slot[7]));
+    end
+    for(t=0;t<GROUP_LEAVES;t=t+1)begin:group_leaf
+        if(t<GROUPS)begin:present
+            assign group_tree[GROUP_LEAVES-1+t]=group_word[t]&{20{read_group_q[t]}};
+        end else begin:padding
+            assign group_tree[GROUP_LEAVES-1+t]=20'd0;
+        end
+    end
+    for(t=0;t<GROUP_LEAVES-1;t=t+1)begin:group_branch
+        assign group_tree[t]=group_tree[t*2+1]|group_tree[t*2+2];
+    end endgenerate
+    integer select_index;
     always @(posedge clk)begin
-        if(ram_re)read_bank_q<=read_bank;
+        if(ram_re)begin
+            for(select_index=0;select_index<8;select_index=select_index+1)
+                read_slot_q[select_index]<=(read_bank%8==select_index);
+            for(select_index=0;select_index<GROUPS;select_index=select_index+1)
+                read_group_q[select_index]<=(read_bank/8==select_index);
+        end
         if(!rst_n)begin video_en_q<=0;video_word<=0;end
         else begin
             video_en_q<=video_en;

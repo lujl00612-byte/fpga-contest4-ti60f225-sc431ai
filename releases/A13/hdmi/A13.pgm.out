@@ -1,0 +1,21 @@
+INFO     : Efinix FPGA Bitstream Generator.
+INFO     : Version: 2025.1.110 
+INFO     : Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
+INFO     : Compiled: May  7 2025.
+INFO     : Using source file "H:\builds\A13\hdmi\work_pnr\ti60f225_oob.lbf"
+INFO     : Generating HEX programming file for device "Ti60F225", family "Titanium"
+INFO     : Using periphery source file "H:\builds\A13\hdmi\ti60f225_oob.lpf"
+INFO     : Generating bit file: "H:\builds\A13\hdmi\ti60f225_oob.bit"
+INFO     : HEX Generation Options Summary:
+INFO     : 	Listing options specified to bitstream generation:
+INFO     : 	enable_remote_update                     = off
+INFO     : 	enable_seu_crc_check                     = off
+INFO     : 	seu_mode                                 = automatic
+INFO     : 	seu_wait_interval                        = 0xFFFFFF
+INFO     : Finished generating "H:\builds\A13\hdmi\ti60f225_oob.hex"
+INFO     : Efinix Bitstream Generator took 1.15643 seconds.
+INFO     : 	Efinix Bitstream Generator took 0.9375 seconds (approximately) in total CPU time.
+INFO     : Efinix Bitstream Generator virtual memory usage: begin = 2.568 MB, end = 9.716 MB, delta = 7.148 MB
+INFO     : 	Efinix Bitstream Generator peak virtual memory usage = 163.24 MB
+INFO     : Efinix Bitstream Generator resident set memory usage: begin = 9.572 MB, end = 20.456 MB, delta = 10.884 MB
+INFO     : 	Efinix Bitstream Generator peak resident set memory usage = 168.756 MB
