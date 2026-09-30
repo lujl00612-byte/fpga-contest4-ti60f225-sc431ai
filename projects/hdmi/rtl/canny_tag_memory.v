@@ -9,7 +9,7 @@ module canny_tag_memory #(
     input wire capture_we,input wire [WORD_BITS-1:0] capture_addr,input wire [19:0] capture_word,
     input wire req_valid,input wire req_write,input wire [ADDR_BITS-1:0] req_addr,input wire [3:0] req_wdata,
     output reg req_ready,output reg [3:0] req_rdata,
-    input wire video_en,input wire [WORD_BITS-1:0] video_addr,output wire [19:0] video_word
+    input wire video_en,input wire [WORD_BITS-1:0] video_addr,output reg [19:0] video_word
 );
     localparam IDLE=0,READ_WORD=1,RESPOND=2,ACK=3;
     reg [1:0] state;
@@ -21,9 +21,11 @@ module canny_tag_memory #(
     localparam integer BANK_BITS=(BANKS>1)?$clog2(BANKS):1;
     wire [19:0] bank_data[0:BANKS-1];
     reg [BANK_BITS-1:0] read_bank_q;
+    reg video_en_q;
     wire [19:0] read_word=bank_data[read_bank_q];
     wire [19:0] engine_word=read_word;
-    assign video_word=read_word;
+    // Register the selected video word after the RAM read; the engine still
+    // consumes the direct word through its unchanged four-cycle interface.
     wire ram_re=(state==READ_WORD)||video_en;
     wire [WORD_BITS-1:0] ram_raddr=(state==READ_WORD)?word_addr:video_addr;
     // Commit on the edge on which the requester consumes req_ready. The existing
@@ -57,6 +59,11 @@ module canny_tag_memory #(
     end endgenerate
     always @(posedge clk)begin
         if(ram_re)read_bank_q<=read_bank;
+        if(!rst_n)begin video_en_q<=0;video_word<=0;end
+        else begin
+            video_en_q<=video_en;
+            if(video_en_q)video_word<=read_word;
+        end
     end
     always @(posedge clk or negedge rst_n)begin
         if(!rst_n)begin

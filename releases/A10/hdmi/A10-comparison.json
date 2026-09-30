@@ -1,0 +1,8 @@
+{
+  "vendor_vs_word_model_40x80": "PASS, exact PASS-line comparison",
+  "A9_vs_A10_snapshot_same_enhanced_test": "PASS, byte-identical displayed results including cycles and independent edge flag checks",
+  "A9_vs_A10_production_640x480": "PASS, exact PASS-line comparison; no extra engine cycle",
+  "RAM_video_read_edges": 2,
+  "snapshot_output_stages": 3,
+  "engine_request_cycles": 4
+}

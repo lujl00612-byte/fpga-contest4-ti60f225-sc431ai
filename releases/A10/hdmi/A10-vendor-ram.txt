@@ -1,0 +1,6 @@
+PASS production RAM scene=0 pixels=3200 accepted=0 cycles=16000 transactions=3200 writes=0
+PASS production RAM scene=1 pixels=3200 accepted=3200 cycles=169936 transactions=34484 writes=3200
+PASS production RAM scene=2 pixels=3200 accepted=1718 cycles=98582 transactions=19980 writes=1718
+PASS production RAM scene=3 pixels=3200 accepted=860 cycles=56460 transactions=11380 writes=860
+PASS production RAM total: 12800 packed-cell checks, BFS, four-cycle handshake and linear bounds
+tests/tb_hysteresis_ram.sv:95: $finish called at 3486940000 (1ps)

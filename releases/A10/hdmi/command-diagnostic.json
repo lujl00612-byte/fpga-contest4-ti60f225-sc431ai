@@ -1,0 +1,11 @@
+{
+  "issue": "PowerShell split unquoted -Ptb_*.parameter=value; initial cross-bank and full-size compiles did not run",
+  "observed_errors": [
+    ".RW=40: No such file or directory",
+    "invalid value specified for defparam: tb_snapshot",
+    ".W=640: No such file or directory",
+    "invalid value specified for defparam: tb_hysteresis_ram"
+  ],
+  "correction": "Quote each entire -P argument; both corrected commands and tests passed",
+  "A9_archived_command_note": "See docs/A9.md; archived A9 evidence bytes unchanged"
+}

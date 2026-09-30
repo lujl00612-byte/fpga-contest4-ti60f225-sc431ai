@@ -78,7 +78,9 @@ module tb_hysteresis_ram #(parameter W=40,H=80,SCENES=4);
             if(cycles>5*P+49*tail+2)$fatal(1,"production RAM cycle bound failed");
             for(a=0;a<WORDS;a=a+1)begin
                 @(negedge clk);video_en=1;video_addr=a;
-                @(posedge clk);#1;
+                // The read is accepted at the first edge and the selected
+                // word is registered at the second; the engine stays at four.
+                repeat(2)begin @(posedge clk);#1;end
                 for(j=0;j<5;j=j+1)begin
                     tag=video_word[j*4+:4];
                     if((tag>=3)!==expected[a*5+j])$fatal(1,"packed cell mismatch scene=%0d cell=%0d tag=%0d",scene,a*5+j,tag);

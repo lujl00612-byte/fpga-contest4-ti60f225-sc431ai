@@ -84,10 +84,10 @@ module canny_snapshot_exact #(
     end
     reg [23:0] rgb0,rgb1;reg de0,hs0,vs0,de1,hs1,vs1;
     reg roi0,ready0,left0,status0;reg [2:0] lane0;
-    reg edge1;
+    reg apply_edge1;reg [2:0] lane1;
     reg [3:0] tag;reg [15:0] gray_sum;
     always @* begin
-        case(lane0)
+        case(lane1)
             0:tag=video_word[3:0];1:tag=video_word[7:4];2:tag=video_word[11:8];
             3:tag=video_word[15:12];default:tag=video_word[19:16];
         endcase
@@ -96,17 +96,20 @@ module canny_snapshot_exact #(
     always @(posedge clk)begin
         if(!rst_n)begin
             rgb0<=0;rgb1<=0;rgb_o<=0;de0<=0;hs0<=0;vs0<=0;de1<=0;hs1<=0;vs1<=0;
-            de_o<=0;hs_o<=0;vs_o<=0;roi0<=0;ready0<=0;left0<=0;status0<=0;lane0<=0;edge_o<=0;edge1<=0;
+            de_o<=0;hs_o<=0;vs_o<=0;roi0<=0;ready0<=0;left0<=0;status0<=0;lane0<=0;lane1<=0;edge_o<=0;apply_edge1<=0;
         end else begin
             rgb0<=rgb_i;de0<=de_i;hs0<=hs_i;vs0<=vs_i;roi0<=roi;ready0<=result_ready;lane0<=video_lane;
             left0<=x<WIDTH/2;
             status0<=de_i&&x>=START_X&&x<START_X+ROI_WIDTH&&y>=ROI_HEIGHT&&y<ROI_HEIGHT+3;
-            de1<=de0;hs1<=hs0;vs1<=vs0;de_o<=de1;hs_o<=hs1;vs_o<=vs1;rgb_o<=rgb1;
-            edge1<=de0&&!left0&&!status0&&roi0&&ready0&&tag>=3;edge_o<=edge1;
+            de1<=de0;hs1<=hs0;vs1<=vs0;de_o<=de1;hs_o<=hs1;vs_o<=vs1;
+            lane1<=lane0;apply_edge1<=de0&&!left0&&!status0&&roi0&&ready0;
+            // The registered RAM word and stage-one lane meet here. Applying
+            // the edge in the existing output stage keeps total latency at 3.
+            edge_o<=apply_edge1&&tag>=3;
+            rgb_o<=(apply_edge1&&tag>=3)?24'hff0000:rgb1;
             if(!de0)rgb1<=0;
             else if(left0)rgb1<={gray_sum[15:8],gray_sum[15:8],gray_sum[15:8]};
             else if(status0)rgb1<=ready0?24'h00ff40:24'hffd000;
-            else if(roi0&&ready0&&tag>=3)rgb1<=24'hff0000;
             else rgb1<=rgb0;
         end
     end

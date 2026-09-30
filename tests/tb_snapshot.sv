@@ -4,14 +4,22 @@ module tb_snapshot #(parameter RW=40,RH=24);
     reg clk=0;always #5 clk=~clk;
     reg rst_n=0,enable=0,de=0,hs=0,vs=0;reg [10:0] threshold=96;
     reg [1:0] classification=0;reg [23:0] rgb=0;
-    wire [23:0] out_rgb;wire od,oh,ov,ready,busy,error;wire [31:0] cycles;wire [$clog2(P):0] accepted;
+    wire [23:0] out_rgb;wire od,oh,ov,edge_flag,ready,busy,error;wire [31:0] cycles;wire [$clog2(P):0] accepted;
     canny_snapshot_exact #(.WIDTH(W),.ROI_WIDTH(RW),.ROI_HEIGHT(RH),.X_BITS($clog2(W)),.Y_BITS($clog2(H)),.SETTLE_FRAMES(1)) dut(
         .clk(clk),.rst_n(rst_n),.enable_i(enable),.threshold_i(threshold),.class_i(classification),.rgb_i(rgb),
-        .de_i(de),.hs_i(hs),.vs_i(vs),.rgb_o(out_rgb),.de_o(od),.hs_o(oh),.vs_o(ov),
+        .de_i(de),.hs_i(hs),.vs_i(vs),.rgb_o(out_rgb),.de_o(od),.hs_o(oh),.vs_o(ov),.edge_o(edge_flag),
         .result_ready(ready),.engine_busy(busy),.engine_error(error),.processing_cycles(cycles),.accepted_pixels(accepted));
     integer source[0:P-1],queue[0:P-1];bit expected[0:P-1];
-    reg [23:0] expected_rgb[0:2];reg [2:0] expected_control[0:2];bit score[0:2];
-    integer x,y,f,i,j,a,nx,ny,n,head,tail,scenario,checks=0,roi_checks=0,ready_frames,white_unused;
+    reg [23:0] expected_rgb[0:2];reg [2:0] expected_control[0:2];bit score[0:2],expected_edge[0:2];
+    integer x,y,f,i,j,a,nx,ny,n,head,tail,scenario,checks=0,roi_checks=0,edge_checks=0,ready_frames,white_unused;
+    // Coordinate-dependent colors expose a shifted pixel; deliberately include
+    // pure red backgrounds so RGB red cannot stand in for the edge flag.
+    function [23:0] source_rgb(input integer px,input integer py);
+        begin
+            if((px+3*py)%11==0)source_rgb=24'hff0000;
+            else source_rgb={8'((px*7+py*3)%256),8'((px*5+py*13)%256),8'((px*11+py*17)%256)};
+        end
+    endfunction
     task reference;
         begin
             head=0;tail=0;
@@ -28,26 +36,28 @@ module tb_snapshot #(parameter RW=40,RH=24);
         end
     endtask
     task tick(input bit valid,input bit v,input integer px,input integer py);
-        reg [23:0] er;bit scored;
+        reg [23:0] er;bit scored,ee;integer gray;
         begin
-            @(negedge clk);de=valid;hs=!valid;vs=v;rgb=valid?24'h305060:0;
+            @(negedge clk);de=valid;hs=!valid;vs=v;rgb=valid?source_rgb(px,py):0;
             classification=(valid&&px>=W/2&&py<RH)?source[py*RW+px-W/2]:0;
-            scored=ready&&valid;er=rgb;
-            if(valid&&px<W/2)er=24'h484848;
+            scored=ready&&valid;er=rgb;ee=0;
+            gray=(77*rgb[23:16]+150*rgb[15:8]+29*rgb[7:0])/256;
+            if(valid&&px<W/2)er={8'(gray),8'(gray),8'(gray)};
             else if(valid&&py>=RH&&py<RH+3)er=ready?24'h00ff40:24'hffd000;
-            else if(ready&&valid&&py<RH&&expected[py*RW+px-W/2])er=24'hff0000;
-            for(i=2;i>0;i=i-1)begin expected_rgb[i]=expected_rgb[i-1];expected_control[i]=expected_control[i-1];score[i]=score[i-1];end
-            expected_rgb[0]=er;expected_control[0]={de,hs,vs};score[0]=scored;
+            else if(ready&&valid&&py<RH&&expected[py*RW+px-W/2])begin er=24'hff0000;ee=1;end
+            for(i=2;i>0;i=i-1)begin expected_rgb[i]=expected_rgb[i-1];expected_control[i]=expected_control[i-1];score[i]=score[i-1];expected_edge[i]=expected_edge[i-1];end
+            expected_rgb[0]=er;expected_control[0]={de,hs,vs};score[0]=scored;expected_edge[0]=ee;
             @(posedge clk);#1;
             if({od,oh,ov}!==expected_control[2])$fatal(1,"snapshot timing mismatch");
             if(error)$fatal(1,"snapshot DFS error");
             if(score[2]&&out_rgb!==expected_rgb[2])$fatal(1,"snapshot mismatch x=%0d y=%0d got=%h expected=%h",px,py,out_rgb,expected_rgb[2]);
+            if(edge_flag!==expected_edge[2])$fatal(1,"snapshot edge flag mismatch x=%0d y=%0d",px,py);
             if(score[2])roi_checks=roi_checks+1;
-            checks=checks+1;
+            checks=checks+1;edge_checks=edge_checks+1;
         end
     endtask
     initial begin
-        for(i=0;i<3;i=i+1)begin expected_rgb[i]=0;expected_control[i]=0;score[i]=0;end
+        for(i=0;i<3;i=i+1)begin expected_rgb[i]=0;expected_control[i]=0;score[i]=0;expected_edge[i]=0;end
         repeat(4)@(negedge clk);rst_n=1;
         for(scenario=0;scenario<2;scenario=scenario+1)begin
             for(i=0;i<P;i=i+1)source[i]=0;
@@ -76,6 +86,6 @@ module tb_snapshot #(parameter RW=40,RH=24);
             $display("snapshot scenario=%0d accepted=%0d processing_cycles=%0d frames=%0d",scenario,accepted,cycles,f);
         end
         if(roi_checks<1000)$fatal(1,"too few output comparisons");
-        $display("PASS snapshot: %0d timing checks, %0d colored-output checks, packed RAM, recapture and frame publication",checks,roi_checks);$finish;
+        $display("PASS snapshot: %0d timing checks, %0d colored-output checks, %0d independent edge checks, packed RAM, recapture and frame publication",checks,roi_checks,edge_checks);$finish;
     end
 endmodule
