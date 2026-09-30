@@ -534,12 +534,10 @@ wire [7:0]    ch0_b;
 wire ch0_vs;
 wire ch0_hs;
 wire ch0_de;
-// Synchronize the HDMI-domain freeze state before stopping camera writes.
-reg freeze_cam_m, freeze_cam;
-always @(posedge i_mipi_rx_pclk or negedge vid_rst_n) begin
-    if(!vid_rst_n) begin freeze_cam_m<=1'b0; freeze_cam<=1'b0; end
-    else begin freeze_cam_m<=contest4_freeze; freeze_cam<=freeze_cam_m; end
-end
+wire freeze_cam;
+frame_freeze_control camera_freeze_boundary(
+    .clk(i_mipi_rx_pclk),.rst_n(vid_rst_n),.vs(w_mipi_rx_vs),
+    .request(contest4_freeze),.frozen(freeze_cam));
 // IMX219
   frame_buffer #(
 .I_VID_WIDTH         (32),
@@ -970,6 +968,7 @@ wire [7:0] contest4_raw_r, contest4_raw_g, contest4_raw_b;
 wire [7:0] contest4_r, contest4_g, contest4_b;
 wire [1:0] contest4_shape_class;
 wire contest4_freeze;
+wire contest4_basic_mode;
 wire contest4_shape_de, contest4_shape_hs, contest4_shape_vs;
 wire contest4_de, contest4_hs, contest4_vs;
 wire [10:0] contest4_threshold;
@@ -978,7 +977,8 @@ wire [1:0] contest4_threshold_level;
 threshold_control contest4_threshold_keys (
     .clk(hdmi_tx_slow_clk), .rst_n(vid_rst_n),
     .vs(hdmi_tx_vs), .key_n(key_threshold),
-    .level(contest4_threshold_level), .threshold(contest4_threshold), .freeze(contest4_freeze)
+    .level(contest4_threshold_level), .threshold(contest4_threshold), .freeze(contest4_freeze),
+    .basic_mode(contest4_basic_mode)
 );
 
 assign led[1] = contest4_threshold_level[0];
@@ -990,12 +990,14 @@ contest4_sobel_display #(.WIDTH(1920)) contest4_processing (
     .in_r(hdmi_tx_rdata), .in_g(hdmi_tx_gdata), .in_b(hdmi_tx_bdata),
     .in_de(hdmi_tx_de), .in_hs(hdmi_tx_hs), .in_vs(hdmi_tx_vs),
     .threshold_i(contest4_threshold),
+    .basic_i(contest4_basic_mode),
     .out_r(contest4_raw_r), .out_g(contest4_raw_g), .out_b(contest4_raw_b),
     .out_de(contest4_de), .out_hs(contest4_hs), .out_vs(contest4_vs)
 );
 
 shape_overlay #(.WIDTH(1920)) contest4_shape_recognition (
     .clk(hdmi_tx_slow_clk), .rst_n(vid_rst_n),
+    .basic_i(contest4_basic_mode),
     .in_r(contest4_raw_r), .in_g(contest4_raw_g), .in_b(contest4_raw_b),
     .in_de(contest4_de), .in_hs(contest4_hs), .in_vs(contest4_vs),
     .out_r(contest4_r), .out_g(contest4_g), .out_b(contest4_b),

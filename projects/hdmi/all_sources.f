@@ -1,6 +1,7 @@
 H:\projects\hdmi\rtl\ti60f225_oob_top.v
 H:\projects\hdmi\rtl\contest4_sobel_display.v
 H:\projects\hdmi\rtl\threshold_control.v
+H:\projects\hdmi\rtl\frame_freeze_control.v
 H:\projects\hdmi\rtl\shape_overlay.v
 H:\projects\hdmi\rtl\user_dual_port_ram.v
 H:\projects\hdmi\rtl\dual_clock_fifo.v

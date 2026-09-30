@@ -10,6 +10,7 @@
         <efx:design_file name="rtl/ti60f225_oob_top.v" version="default" library="default"/>
         <efx:design_file name="rtl/contest4_sobel_display.v" version="default" library="default"/>
         <efx:design_file name="rtl/threshold_control.v" version="default" library="default"/>
+        <efx:design_file name="rtl/frame_freeze_control.v" version="default" library="default"/>
         <efx:design_file name="rtl/shape_overlay.v" version="default" library="default"/>
         <efx:design_file name="rtl/user_dual_port_ram.v" version="default" library="default"/>
         <efx:design_file name="rtl/dual_clock_fifo.v" version="default" library="default"/>

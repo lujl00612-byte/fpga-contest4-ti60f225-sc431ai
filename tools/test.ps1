@@ -11,4 +11,17 @@ try {
     if($LASTEXITCODE -ne 0){throw 'White balance simulation compile failed'}
     & $vvp (Join-Path $cache 'white_balance.vvp')
     if($LASTEXITCODE -ne 0){throw 'White balance simulation failed'}
+    $suites=@(
+        @{name='filters';sources=@('projects/hdmi/rtl/contest4_sobel_display.v')},
+        @{name='controls';sources=@('projects/hdmi/rtl/threshold_control.v','projects/hdmi/rtl/frame_freeze_control.v')},
+        @{name='shapes';sources=@('projects/hdmi/rtl/shape_overlay.v')}
+    )
+    foreach($suite in $suites){
+        $name=$suite.name
+        $args=@('-g2012','-s',('tb_'+$name),'-o',(Join-Path $cache ($name+'.vvp')),('tests/tb_'+$name+'.sv'))+$suite.sources
+        & $iverilog @args
+        if($LASTEXITCODE -ne 0){throw "$name simulation compile failed"}
+        & $vvp (Join-Path $cache ($name+'.vvp'))
+        if($LASTEXITCODE -ne 0){throw "$name simulation failed"}
+    }
 } finally {Pop-Location}

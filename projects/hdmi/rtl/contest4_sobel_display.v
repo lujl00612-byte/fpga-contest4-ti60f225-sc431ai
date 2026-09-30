@@ -1,10 +1,11 @@
-// Contest 4 advanced A2: streaming Canny pipeline with color edge overlay.
+// Basic L1 Sobel and advanced local Canny, with shared streaming line buffers.
 module contest4_sobel_display #(
     parameter integer WIDTH=1920, parameter integer X_BITS=11, parameter integer Y_BITS=11
 )(
     input wire clk, input wire rst_n,
     input wire [7:0] in_r,input wire [7:0] in_g,input wire [7:0] in_b,
     input wire in_de,input wire in_hs,input wire in_vs,input wire [10:0] threshold_i,
+    input wire basic_i,
     output wire [7:0] out_r,output wire [7:0] out_g,output wire [7:0] out_b,
     output wire out_de,output wire out_hs,output wire out_vs
 );
@@ -18,12 +19,12 @@ module contest4_sobel_display #(
     wire nms_de,nms_hs,nms_vs;
 
     median3x3_rgb #(.WIDTH(WIDTH),.X_BITS(X_BITS),.Y_BITS(Y_BITS)) u_median(
-        .clk(clk),.rst_n(rst_n),.in_r(in_r),.in_g(in_g),.in_b(in_b),
+        .clk(clk),.rst_n(rst_n),.in_r(in_r),.in_g(in_g),.in_b(in_b),.bypass_i(basic_i),
         .in_de(in_de),.in_hs(in_hs),.in_vs(in_vs),
         .out_gray(median_gray),.out_rgb(median_rgb),
         .out_de(median_de),.out_hs(median_hs),.out_vs(median_vs));
     gaussian3x3_rgb_aligned #(.WIDTH(WIDTH),.X_BITS(X_BITS),.Y_BITS(Y_BITS)) u_gaussian(
-        .clk(clk),.rst_n(rst_n),.in_gray(median_gray),.in_rgb(median_rgb),
+        .clk(clk),.rst_n(rst_n),.in_gray(median_gray),.in_rgb(median_rgb),.bypass_i(basic_i),
         .in_de(median_de),.in_hs(median_hs),.in_vs(median_vs),
         .out_gray(smooth_gray),.out_rgb(smooth_rgb),.out_de(smooth_de),.out_hs(smooth_hs),.out_vs(smooth_vs));
     sobel_gradient_direction #(.WIDTH(WIDTH),.X_BITS(X_BITS),.Y_BITS(Y_BITS)) u_gradient(
@@ -33,11 +34,11 @@ module contest4_sobel_display #(
         .out_de(grad_de),.out_hs(grad_hs),.out_vs(grad_vs));
     canny_nms_dual_threshold #(.WIDTH(WIDTH),.X_BITS(X_BITS),.Y_BITS(Y_BITS)) u_nms(
         .clk(clk),.rst_n(rst_n),.in_mag(grad_mag),.in_dir(grad_dir),.in_gray(grad_gray),.in_rgb(grad_rgb),
-        .in_de(grad_de),.in_hs(grad_hs),.in_vs(grad_vs),.high_threshold(threshold_i),
+        .in_de(grad_de),.in_hs(grad_hs),.in_vs(grad_vs),.high_threshold(threshold_i),.basic_i(basic_i),
         .out_class(edge_class),.out_gray(nms_gray),.out_rgb(nms_rgb),
         .out_de(nms_de),.out_hs(nms_hs),.out_vs(nms_vs));
     canny_hysteresis_overlay #(.WIDTH(WIDTH),.X_BITS(X_BITS),.Y_BITS(Y_BITS)) u_hysteresis(
-        .clk(clk),.rst_n(rst_n),.in_class(edge_class),.in_gray(nms_gray),.in_rgb(nms_rgb),
+        .clk(clk),.rst_n(rst_n),.in_class(edge_class),.in_gray(nms_gray),.in_rgb(nms_rgb),.basic_i(basic_i),
         .in_de(nms_de),.in_hs(nms_hs),.in_vs(nms_vs),
         .out_r(out_r),.out_g(out_g),.out_b(out_b),.out_de(out_de),.out_hs(out_hs),.out_vs(out_vs));
 endmodule
@@ -50,6 +51,7 @@ module median3x3_rgb #(
     input wire clk, input wire rst_n,
     input wire [7:0] in_r, input wire [7:0] in_g, input wire [7:0] in_b,
     input wire in_de, input wire in_hs, input wire in_vs,
+    input wire bypass_i,
     output reg [7:0] out_gray, output reg [23:0] out_rgb,
     output reg out_de, output reg out_hs, output reg out_vs
 );
@@ -136,6 +138,7 @@ module median3x3_rgb #(
     reg [X_BITS-1:0] merge_x; reg [Y_BITS-1:0] merge_y;
     reg merge_de,merge_hs,merge_vs;
     wire [7:0] median9 = med3(merge_low,merge_mid,merge_high);
+    wire [15:0] center_gray_sum=merge_rgb[23:16]*8'd77+merge_rgb[15:8]*8'd150+merge_rgb[7:0]*8'd29;
 
     always @(posedge clk) begin
         if (!rst_n) begin
@@ -199,7 +202,7 @@ module median3x3_rgb #(
             if (!merge_de || merge_x < 2 || merge_y < 2) begin
                 out_gray<=0; out_rgb<=0;
             end else begin
-                out_gray<=median9; out_rgb<=merge_rgb;
+                out_gray<=bypass_i?center_gray_sum[15:8]:median9; out_rgb<=merge_rgb;
             end
         end
     end
@@ -210,6 +213,7 @@ module gaussian3x3_rgb_aligned #(
 )(
     input wire clk,input wire rst_n,input wire [7:0] in_gray,input wire [23:0] in_rgb,
     input wire in_de,input wire in_hs,input wire in_vs,
+    input wire bypass_i,
     output reg [7:0] out_gray,output reg [23:0] out_rgb,
     output reg out_de,output reg out_hs,output reg out_vs
 );
@@ -248,7 +252,7 @@ module gaussian3x3_rgb_aligned #(
             wx<=(sx==0)?0:sx-1'b1;wy<=(sy==0)?0:sy-1'b1;wde<=sde;whs<=shs;wvs<=svs;
             out_de<=wde;out_hs<=whs;out_vs<=wvs;
             if(!wde||wx<2||wy<2)begin out_gray<=0;out_rgb<=0;end
-            else begin out_gray<=sum[11:4];out_rgb<=rm1;end
+            else begin out_gray<=bypass_i?m1:sum[11:4];out_rgb<=rm1;end
         end
     end
 endmodule
@@ -271,8 +275,7 @@ module sobel_gradient_direction #(
     wire signed [11:0] gy=$signed({4'd0,b0})+($signed({4'd0,b1})<<<1)+$signed({4'd0,b2})
                          -$signed({4'd0,t0})-($signed({4'd0,t1})<<<1)-$signed({4'd0,t2});
     wire [11:0] ax=gx[11]?-gx:gx;wire [11:0] ay=gy[11]?-gy:gy;
-    wire [11:0] mx=(ax>=ay)?ax:ay;wire [11:0] mn=(ax>=ay)?ay:ax;
-    wire [12:0] mag={1'b0,mx}+{2'b0,mn[11:1]};
+    wire [12:0] mag={1'b0,ax}+{1'b0,ay};
     wire [1:0] dir=(ay<=(ax>>1))?2'd0:((ax<=(ay>>1))?2'd2:((gx[11]==gy[11])?2'd1:2'd3));
     always @(posedge clk) begin
         if(!rst_n)begin
@@ -300,6 +303,7 @@ module canny_nms_dual_threshold #(
     input wire clk,input wire rst_n,input wire [12:0] in_mag,input wire [1:0] in_dir,
     input wire [7:0] in_gray,input wire [23:0] in_rgb,input wire in_de,input wire in_hs,input wire in_vs,
     input wire [10:0] high_threshold,
+    input wire basic_i,
     output reg [1:0] out_class,output reg [7:0] out_gray,output reg [23:0] out_rgb,
     output reg out_de,output reg out_hs,output reg out_vs
 );
@@ -321,8 +325,8 @@ module canny_nms_dual_threshold #(
             default:begin n1=t2;n2=b0;end
         endcase
     end
-    wire [12:0] nms_mag=((m1>=n1)&&(m1>=n2))?m1:13'd0;
-    wire [1:0] classified=(nms_mag>={2'b00,high_threshold})?2'd2:((nms_mag>=low_threshold)?2'd1:2'd0);
+    wire [12:0] nms_mag=basic_i?m1:(((m1>=n1)&&(m1>=n2))?m1:13'd0);
+    wire [1:0] classified=(nms_mag>={2'b00,high_threshold})?2'd2:((!basic_i&&nms_mag>=low_threshold)?2'd1:2'd0);
     always @(posedge clk)begin
         if(!rst_n)begin
             x<=0;y<=0;de_d<=0;vs_d<=0;st<=0;sm<=0;sb<=0;sdt<=0;sdm<=0;sdb<=0;sgt<=0;sgm<=0;sgb<=0;srt<=0;srm<=0;srb<=0;sx<=0;sy<=0;sde<=0;shs<=0;svs<=0;
@@ -358,6 +362,7 @@ module canny_hysteresis_overlay #(
 )(
     input wire clk,input wire rst_n,input wire [1:0] in_class,input wire [7:0] in_gray,input wire [23:0] in_rgb,
     input wire in_de,input wire in_hs,input wire in_vs,
+    input wire basic_i,
     output reg [7:0] out_r,output reg [7:0] out_g,output reg [7:0] out_b,
     output reg out_de,output reg out_hs,output reg out_vs
 );
@@ -368,6 +373,8 @@ module canny_hysteresis_overlay #(
     reg [23:0] rt0,rt1,rt2,rm0,rm1,rm2,rb0,rb1,rb2;reg [X_BITS-1:0] wx;reg [Y_BITS-1:0] wy;reg wde,whs,wvs;
     wire neighbor_strong=(t0==2)||(t1==2)||(t2==2)||(m0==2)||(m2==2)||(b0==2)||(b1==2)||(b2==2);
     wire keep_edge=(m1==2)||((m1==1)&&neighbor_strong);
+    wire [15:0] original_gray_sum=rm1[23:16]*8'd77+rm1[15:8]*8'd150+rm1[7:0]*8'd29;
+    wire [7:0] original_gray=original_gray_sum[15:8];
     always @(posedge clk)begin
         if(!rst_n)begin
             x<=0;y<=0;de_d<=0;vs_d<=0;st<=0;sm<=0;sb<=0;sgt<=0;sgm<=0;sgb<=0;srt<=0;srm<=0;srb<=0;sx<=0;sy<=0;sde<=0;shs<=0;svs<=0;
@@ -384,7 +391,8 @@ module canny_hysteresis_overlay #(
             wx<=(sx==0)?0:sx-1'b1;wy<=(sy==0)?0:sy-1'b1;wde<=sde;whs<=shs;wvs<=svs;
             out_de<=wde;out_hs<=whs;out_vs<=wvs;
             if(!wde||wx<2||wy<2)begin out_r<=0;out_g<=0;out_b<=0;end
-            else if(wx<WIDTH/2)begin out_r<=gm1;out_g<=gm1;out_b<=gm1;end
+            else if(wx<WIDTH/2)begin out_r<=original_gray;out_g<=original_gray;out_b<=original_gray;end
+            else if(basic_i)begin out_r<=(m1==2)?8'hff:0;out_g<=(m1==2)?8'hff:0;out_b<=(m1==2)?8'hff:0;end
             else if(keep_edge)begin out_r<=8'hff;out_g<=0;out_b<=0;end
             else begin out_r<=rm1[23:16];out_g<=rm1[15:8];out_b<=rm1[7:0];end
         end

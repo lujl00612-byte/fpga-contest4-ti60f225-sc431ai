@@ -1,0 +1,4 @@
+*.bit -text
+*.hex -text
+*.pdf -text
+*.png -text
