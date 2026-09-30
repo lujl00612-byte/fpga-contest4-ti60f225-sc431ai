@@ -1,0 +1,545 @@
+{
+  "current_profile": {
+    "path": "projects\\mipi_diag\\ti60f225_oob.peri.xml",
+    "sha256": "C956CDD8F8D63E00D7EDBF98A1DF5D9782A2AEBC31E526FA7BF568AA9D5DC911",
+    "ports": [
+      {
+        "name": "CLK_25M",
+        "gpio_def": "GPIOL_P_08",
+        "mode": "input",
+        "bus_name": "",
+        "io_standard": "1.8 V LVCMOS"
+      },
+      {
+        "name": "LCD_POWER",
+        "gpio_def": "GPIOL_06",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "LCD_POWER1",
+        "gpio_def": "GPIOR_15",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "LCD_RST_P",
+        "gpio_def": "GPIOL_04",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "LCD_RST_P1",
+        "gpio_def": "GPIOR_12",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "ddr_addr[0]",
+        "gpio_def": "GPIOR_N_05",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[10]",
+        "gpio_def": "GPIOR_P_08",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[11]",
+        "gpio_def": "GPIOR_N_03",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[12]",
+        "gpio_def": "GPIOR_P_01",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[13]",
+        "gpio_def": "GPIOR_N_04",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[14]",
+        "gpio_def": "GPIOR_P_06",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[15]",
+        "gpio_def": "GPIOB_N_11",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[1]",
+        "gpio_def": "GPIOR_N_01",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[2]",
+        "gpio_def": "GPIOR_P_04",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[3]",
+        "gpio_def": "GPIOB_N_04",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[4]",
+        "gpio_def": "GPIOR_P_00",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[5]",
+        "gpio_def": "GPIOB_P_11",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[6]",
+        "gpio_def": "GPIOR_P_03",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[7]",
+        "gpio_def": "GPIOR_N_06",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[8]",
+        "gpio_def": "GPIOR_N_00",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_addr[9]",
+        "gpio_def": "GPIOR_N_07",
+        "mode": "output",
+        "bus_name": "ddr_addr",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_ba[0]",
+        "gpio_def": "GPIOB_N_06",
+        "mode": "output",
+        "bus_name": "ddr_ba",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_ba[1]",
+        "gpio_def": "GPIOB_N_10",
+        "mode": "output",
+        "bus_name": "ddr_ba",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_ba[2]",
+        "gpio_def": "GPIOR_P_07",
+        "mode": "output",
+        "bus_name": "ddr_ba",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_cas_n",
+        "gpio_def": "GPIOR_N_02",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_ck",
+        "gpio_def": "GPIOR_P_09",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "1.5 V Differential SSTL"
+      },
+      {
+        "name": "ddr_cke[0]",
+        "gpio_def": "GPIOB_N_09",
+        "mode": "output",
+        "bus_name": "ddr_cke",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_cs_n[0]",
+        "gpio_def": "GPIOB_N_08",
+        "mode": "output",
+        "bus_name": "ddr_cs_n",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dm[0]",
+        "gpio_def": "GPIOB_P_10",
+        "mode": "output",
+        "bus_name": "ddr_dm",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dm[1]",
+        "gpio_def": "GPIOB_P_07",
+        "mode": "output",
+        "bus_name": "ddr_dm",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[0]",
+        "gpio_def": "GPIOB_P_12",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[10]",
+        "gpio_def": "GPIOB_P_01",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[11]",
+        "gpio_def": "GPIOB_P_08",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[12]",
+        "gpio_def": "GPIOB_N_01",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[13]",
+        "gpio_def": "GPIOB_P_03",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[14]",
+        "gpio_def": "GPIOB_P_00",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[15]",
+        "gpio_def": "GPIOB_N_00",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[1]",
+        "gpio_def": "GPIOB_N_13",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[2]",
+        "gpio_def": "GPIOB_P_14",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[3]",
+        "gpio_def": "GPIOB_N_12",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[4]",
+        "gpio_def": "GPIOB_N_17",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[5]",
+        "gpio_def": "GPIOB_P_13",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[6]",
+        "gpio_def": "GPIOB_N_14",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[7]",
+        "gpio_def": "GPIOB_P_17",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[8]",
+        "gpio_def": "GPIOB_N_07",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dq[9]",
+        "gpio_def": "GPIOB_N_03",
+        "mode": "inout",
+        "bus_name": "ddr_dq",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_dqs[0]",
+        "gpio_def": "GPIOB_P_15",
+        "mode": "inout",
+        "bus_name": "ddr_dqs",
+        "io_standard": "1.5 V Differential SSTL"
+      },
+      {
+        "name": "ddr_dqs[1]",
+        "gpio_def": "GPIOB_P_02",
+        "mode": "inout",
+        "bus_name": "ddr_dqs",
+        "io_standard": "1.5 V Differential SSTL"
+      },
+      {
+        "name": "ddr_odt[0]",
+        "gpio_def": "GPIOB_P_06",
+        "mode": "output",
+        "bus_name": "ddr_odt",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_ras_n",
+        "gpio_def": "GPIOR_P_02",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_reset_n",
+        "gpio_def": "GPIOR_N_08",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "ddr_we_n",
+        "gpio_def": "GPIOR_P_05",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "i_arstn",
+        "gpio_def": "GPIOL_07",
+        "mode": "input",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "io_cam_scl",
+        "gpio_def": "GPIOR_20",
+        "mode": "inout",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "io_cam_sda",
+        "gpio_def": "GPIOR_18",
+        "mode": "inout",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "led[0]",
+        "gpio_def": "GPIOR_27",
+        "mode": "output",
+        "bus_name": "led",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "led[1]",
+        "gpio_def": "GPIOR_24",
+        "mode": "output",
+        "bus_name": "led",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "o_cam_rst_p",
+        "gpio_def": "GPIOR_16",
+        "mode": "output",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "verf0",
+        "gpio_def": "GPIOB_P_09",
+        "mode": "input",
+        "bus_name": "",
+        "io_standard": "1.5 V SSTL"
+      },
+      {
+        "name": "verf1",
+        "gpio_def": "GPIOB_P_04",
+        "mode": "input",
+        "bus_name": "",
+        "io_standard": "1.5 V SSTL"
+      }
+    ]
+  },
+  "V4_reference": {
+    "path": "E:\\EE design\\FPGA\\嵌入式比赛 4\\Ti60F225_DemoBoard_v4完整资料包\\Ti60F225_DemoBoard_v4\\01_Ti60F225_Key_led_osc_demo\\01_Ti60F225_key_demo\\LED_8bit_Test.peri.xml",
+    "sha256": "021267A827233684FCE6109B6DD8755D95D77B85B5997F8F1FD0E150936CD67E",
+    "ports": [
+      {
+        "name": "gpio_clk_25m",
+        "gpio_def": "GPIOL_P_08",
+        "mode": "input",
+        "bus_name": "",
+        "io_standard": "1.8 V LVCMOS"
+      },
+      {
+        "name": "gpio_clk_27m",
+        "gpio_def": "GPIOL_P_10",
+        "mode": "input",
+        "bus_name": "",
+        "io_standard": "1.8 V LVCMOS"
+      },
+      {
+        "name": "gpio_clk_50m",
+        "gpio_def": "GPIOR_29",
+        "mode": "input",
+        "bus_name": "",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "key_i[0]",
+        "gpio_def": "GPIOL_07",
+        "mode": "input",
+        "bus_name": "key_i",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "key_i[1]",
+        "gpio_def": "GPIOR_22",
+        "mode": "input",
+        "bus_name": "key_i",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "key_i[2]",
+        "gpio_def": "GPIOR_21",
+        "mode": "input",
+        "bus_name": "key_i",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "key_i[3]",
+        "gpio_def": "GPIOL_03",
+        "mode": "input",
+        "bus_name": "key_i",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "led_data[0]",
+        "gpio_def": "GPIOR_27",
+        "mode": "output",
+        "bus_name": "led_data",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "led_data[1]",
+        "gpio_def": "GPIOR_24",
+        "mode": "output",
+        "bus_name": "led_data",
+        "io_standard": "3.3 V LVCMOS"
+      },
+      {
+        "name": "led_data[2]",
+        "gpio_def": "GPIOL_P_12",
+        "mode": "output",
+        "bus_name": "led_data",
+        "io_standard": "1.8 V LVCMOS"
+      },
+      {
+        "name": "led_data[3]",
+        "gpio_def": "GPIOL_P_02",
+        "mode": "output",
+        "bus_name": "led_data",
+        "io_standard": "1.8 V LVCMOS"
+      },
+      {
+        "name": "led_data[4]",
+        "gpio_def": "GPIOL_N_12",
+        "mode": "output",
+        "bus_name": "led_data",
+        "io_standard": "1.8 V LVCMOS"
+      },
+      {
+        "name": "led_data[5]",
+        "gpio_def": "GPIOL_P_15",
+        "mode": "output",
+        "bus_name": "led_data",
+        "io_standard": "1.8 V LVCMOS"
+      },
+      {
+        "name": "led_data[6]",
+        "gpio_def": "GPIOL_N_15",
+        "mode": "output",
+        "bus_name": "led_data",
+        "io_standard": "1.8 V LVCMOS"
+      },
+      {
+        "name": "led_data[7]",
+        "gpio_def": "GPIOL_N_02",
+        "mode": "output",
+        "bus_name": "led_data",
+        "io_standard": "1.8 V LVCMOS"
+      }
+    ]
+  },
+  "direction_conflicts": [],
+  "shared_key_inputs": [],
+  "actual_PCB_version_confirmed": false,
+  "hardware_levels_measured": false,
+  "GPIO_cause_of_no_image_confirmed": false,
+  "scope": "Offline profile comparison only; no programming or GPIO access."
+}

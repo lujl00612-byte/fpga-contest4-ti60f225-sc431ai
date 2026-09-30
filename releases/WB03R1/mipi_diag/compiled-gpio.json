@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "source": "WB03R1.pinout.rpt",
+  "source_sha256": "E50C8250A0854178AA42A2DB6203B21E795F63BBDC2FD9185123BEAEC7BE1BFC",
+  "ports": {
+    "i_arstn": {
+      "package_pin": "C4",
+      "GPIO": "GPIOL_07",
+      "direction": "Input",
+      "io_standard": "3.3 V LVCMOS",
+      "configured_bank_voltage": "3.3 V"
+    },
+    "led[1]": {
+      "package_pin": "N13",
+      "GPIO": "GPIOR_24",
+      "direction": "Output",
+      "io_standard": "3.3 V LVCMOS",
+      "configured_bank_voltage": "3.3 V"
+    },
+    "led[0]": {
+      "package_pin": "P13",
+      "GPIO": "GPIOR_27",
+      "direction": "Output",
+      "io_standard": "3.3 V LVCMOS",
+      "configured_bank_voltage": "3.3 V"
+    }
+  },
+  "actual_PCB_version_confirmed": false,
+  "hardware_levels_measured": false,
+  "scope": "Compiler assignments, not physical board identification or measurements."
+}

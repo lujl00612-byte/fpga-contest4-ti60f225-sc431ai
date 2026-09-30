@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "Full 1920x1080 pattern test inherited from WB03-attempt; generator, top wiring, wrapper, table, peri and SDC unchanged. The panel controller has new timer logic and is tested again.",
+  "unchanged_sources": [
+    {
+      "path": "projects/mipi_diag/rtl/mipi_diagnostic_rgb2.v",
+      "sha256": "A6B59152E3055EC77F69257C73FC85C85C888B97C78A2E89559D99CFA3930095",
+      "matches_WB03_attempt": true
+    },
+    {
+      "path": "projects/mipi_diag/rtl/ti60f225_oob_top.v",
+      "sha256": "181D03DD125E6E7B16DC9BCAD02C7A3435782D060BCA0B9F7913D8923B125A89",
+      "matches_WB03_attempt": true
+    },
+    {
+      "path": "projects/mipi_diag/rtl/dsi_tx/dsi_tx_top.v",
+      "sha256": "08F515DAC7498D98831CCACEA9D25F33259E35962D256DD38CCDECE0904A7361",
+      "matches_WB03_attempt": true
+    },
+    {
+      "path": "projects/mipi_diag/Panel_1080p_reg.mem",
+      "sha256": "09FDA88756E62E10F7A3558D8CDA7DBB0E14B8F6E912FFAF14032E0EE907A32B",
+      "matches_WB03_attempt": true
+    },
+    {
+      "path": "projects/mipi_diag/ti60f225_oob.peri.xml",
+      "sha256": "C956CDD8F8D63E00D7EDBF98A1DF5D9782A2AEBC31E526FA7BF568AA9D5DC911",
+      "matches_WB03_attempt": true
+    },
+    {
+      "path": "projects/mipi_diag/ti60f225_oob.sdc",
+      "sha256": "4166CE8F3AAEA49F9D0AE0A5F09EBD9943253949E88A571A168C9C94E1F359F5",
+      "matches_WB03_attempt": true
+    }
+  ]
+}

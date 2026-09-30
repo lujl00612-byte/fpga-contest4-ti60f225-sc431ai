@@ -58,6 +58,9 @@ def main():
     original = REPO / 'projects/mipi/Panel_1080p_reg.mem'
     candidate = PROJECT / 'Panel_1080p_reg.mem'
     assert candidate.read_bytes() == original.read_bytes(), 'Panel write table or hardware delays changed'
+    controller = (PROJECT / 'rtl/mipi_config/panel_config.v').read_text(encoding='utf-8')
+    assert re.search(r'reg\s+\[31:0\]\s*r_timer', controller), 'Panel delay counter loses high bits'
+    assert 'r_timer == w_reg[31:0]' in controller, 'Panel delay comparison loses high bits'
     for line in (PROJECT / 'all_sources.f').read_text(encoding='utf-8').splitlines():
         local = REPO / line.replace('\\', '/').removeprefix('H:/')
         assert local.is_file(), line
@@ -67,6 +70,7 @@ def main():
               'constrained_pixel_clock_period_ns': period_ns,
               'derived_frame_rate_hz': 1e9/(period_ns*frame_clocks),
               'panel_table_sha256': hashlib.sha256(candidate.read_bytes()).hexdigest().upper(),
+              'panel_delay_counter_bits': 32,
               'DSI_channels': channels, 'GPIO_count': len(gpios),
               'board_profile': json.loads((PROJECT / 'diagnostic-profile.json').read_text(encoding='utf-8')),
               'physical_video_validation': 'pending',

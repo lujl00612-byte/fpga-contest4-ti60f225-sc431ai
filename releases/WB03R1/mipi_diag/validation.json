@@ -1,0 +1,52 @@
+{
+  "version": "WB03R1",
+  "git_tag": "WB03R1",
+  "status": "OFFLINE_VERIFIED_HARDWARE_PENDING",
+  "candidate_not_programmed": true,
+  "new_regression": {
+    "status": "PASS",
+    "clock_pixel_protocol_checks": 254437,
+    "log": "regression.log"
+  },
+  "AXI_simulation": {
+    "status": "PASS",
+    "completed_runs": 3,
+    "writes_per_run": 119,
+    "status_reads_per_run": 357,
+    "stall_cycles": 1472,
+    "clock_checks": 14911,
+    "reset_during_read": "PASS",
+    "real_write_payloads": true,
+    "fixture_delay_clocks": 3,
+    "physical_delays_simulated": false
+  },
+  "delay_boundary": {
+    "status": "PASS",
+    "short_second_AW_cycle": 28,
+    "long_second_AW_cycle": 4194332,
+    "observed_and_expected_difference_clocks": 4194304,
+    "payloads_unchanged": true,
+    "internal_counter_forcing": false
+  },
+  "full_RGB_frame": {
+    "status": "PASS_INHERITED_UNCHANGED_SOURCE",
+    "clock_checks": 3614865,
+    "pixel_checks": 6220806,
+    "source_version": "WB03-attempt",
+    "original_log_sha256": "BA8B49D7C5F6D106737ADAE6FBFD55FA317C455F1DB621E29278F0417942A9F6",
+    "copied_log": "inherited-full-frame-WB03.log",
+    "source_equivalence_report": "unchanged-pattern-provenance.json"
+  },
+  "static_integration": "PASS",
+  "GPIO_xml_vs_V4_direction_conflicts": 0,
+  "compiler_GPIO_assignments": "PASS",
+  "timing_status": "PASS",
+  "min_setup_slack_ns": 0.244,
+  "min_hold_slack_ns": 0.026,
+  "actual_PCB_version_confirmed": false,
+  "hardware_levels_measured": false,
+  "DSI_PHY_waveform_simulation": false,
+  "physical_display_validation": "pending",
+  "white_balance_display_validation": "pending",
+  "scope": "Internal RGB sources, AXI protocol and timer boundary verified; physical frame rate, RGB order, panel startup, PCB identity, HDMI/DDR acceptance and demonstration video remain pending."
+}

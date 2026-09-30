@@ -1,0 +1,7 @@
+tools/test.ps1 # includes new DelayBoundary gate
+C:\Python314\python.exe tools/check_mipi_diagnostic.py --output .cache/WB03R1-integration.json
+C:\Python314\python.exe tools/check_dsi_constraints.py --project projects/mipi_diag
+C:\Python314\python.exe tools/audit_mipi_gpio.py --project projects/mipi_diag --output .cache/WB03R1-gpio-audit.json
+tools/build.ps1 -Target mipi_diag -Version WB03R1
+Full RGB-frame test inherited from WB03-attempt only after unchanged source byte/SHA comparison (see provenance JSON).
+BIT and HEX freshly built; both differ from WB03. No JTAG operations this iteration.

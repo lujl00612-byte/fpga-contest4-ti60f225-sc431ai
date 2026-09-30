@@ -1,5 +1,5 @@
 {
-  "version": "WB03",
+  "version": "WB03R1",
   "status": "offline candidate; do not program before confirming actual PCB",
   "actual_PCB_version_confirmed": false,
   "hardware_levels_measured": false,
@@ -39,5 +39,11 @@
     "debayer",
     "white balance"
   ],
-  "carrier_scope": "Original CSI/DDR/I2C carrier remains; synthesis can prune unused video logic. Not a standalone PHY design."
+  "carrier_scope": "Original CSI/DDR/I2C carrier remains; synthesis can prune unused video logic. Not a standalone PHY design.",
+  "panel_initialization": {
+    "status_read_address": "0x24 set before ARVALID",
+    "delay_counter_bits": 32,
+    "ROM_delays_preserved": true,
+    "physical_initialization_verified": false
+  }
 }

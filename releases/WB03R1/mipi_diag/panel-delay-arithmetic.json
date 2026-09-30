@@ -1,0 +1,12 @@
+{
+  "table_sha256": "09FDA88756E62E10F7A3558D8CDA7DBB0E14B8F6E912FFAF14032E0EE907A32B",
+  "delay_rows": 50,
+  "maximum_delay_clocks": 80000000,
+  "sum_requested_delay_clocks": 82088320,
+  "legacy_22_bit_sum_clocks": 2396544,
+  "constrained_core_clock_period_ns": 10.0,
+  "maximum_delay_seconds_from_constraint": 0.8,
+  "requested_sum_seconds_from_constraint": 0.8208832,
+  "legacy_sum_seconds_from_constraint": 0.02396544,
+  "scope": "Arithmetic from the unchanged table and SDC; controller overhead, status waiting and physical clock measurements excluded."
+}

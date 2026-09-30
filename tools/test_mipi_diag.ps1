@@ -1,4 +1,4 @@
-param([switch]$FullFrame,[switch]$OriginalAddressRegression)
+param([switch]$FullFrame,[switch]$OriginalAddressRegression,[switch]$DelayBoundary)
 $ErrorActionPreference='Stop'
 $repoRoot=Split-Path $PSScriptRoot -Parent
 $env:PATH='E:\msys2\ucrt64\bin;'+$env:PATH
@@ -26,6 +26,13 @@ try {
     if($LASTEXITCODE -ne 0){throw 'Panel AXI compile failed'}
     & $vvp (Join-Path $cache 'panel_axi.vvp')
     if($LASTEXITCODE -ne 0){throw 'Panel AXI simulation failed'}
+    if($DelayBoundary){
+        & $iverilog -g2012 -s tb_panel_delay -o (Join-Path $cache 'panel_delay.vvp') `
+            tests/tb_panel_delay.sv projects/mipi_diag/rtl/mipi_config/panel_config.v projects/mipi_diag/rtl/true_dual_port_ram.v
+        if($LASTEXITCODE -ne 0){throw 'Panel delay boundary compile failed'}
+        & $vvp (Join-Path $cache 'panel_delay.vvp')
+        if($LASTEXITCODE -ne 0){throw 'Panel delay boundary simulation failed'}
+    }
     if($OriginalAddressRegression){
         & $iverilog -g2012 -s tb_panel_axi -o (Join-Path $cache 'panel_axi_original.vvp') `
             tests/tb_panel_axi.sv projects/mipi/rtl/mipi_config/panel_config.v projects/mipi/rtl/true_dual_port_ram.v

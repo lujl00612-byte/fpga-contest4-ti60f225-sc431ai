@@ -47,7 +47,9 @@ localparam	POST_READ 	= 4'b1100;
 reg 	[3:0]r_state;
 reg 	r_done;
 reg 	r_confdone;
-reg 	[21:0]r_timer;
+// Delay-only ROM entries carry a full unsigned 32-bit cycle count. The
+// factory table contains 80,000,000, which does not fit the legacy 22 bits.
+reg 	[31:0]r_timer;
 reg 	[15:0]r_addr;
 reg 	[31:0]r_read_reg;
 reg		[2:0]r_cnt;
@@ -98,7 +100,7 @@ begin
 		o_axi_rready	<= 1'b0;
 		r_done			<= 1'b1;
 		r_confdone		<= 1'b0;
-		r_timer			<= {22{1'b0}};
+		r_timer			<= {32{1'b0}};
 		r_addr			<= {16{1'b0}};
 		r_read_reg		<= {32{1'b0}};
 		r_cnt			<= 3'b0;
@@ -114,11 +116,11 @@ begin
 				begin
 					if (~r_done)
 					begin
-						if (r_timer == w_reg[21:0])
+						if (r_timer == w_reg[31:0])
 						begin
 							r_done	<= 1'b1;
 							r_addr	<= r_addr + 1'b1;
-							r_timer	<= {22{1'b0}};
+							r_timer	<= {32{1'b0}};
 						end
 						else
 							r_timer 	<= r_timer + 1'b1;
