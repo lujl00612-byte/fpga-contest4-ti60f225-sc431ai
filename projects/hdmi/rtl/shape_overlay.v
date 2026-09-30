@@ -5,7 +5,7 @@ module shape_overlay #(
     parameter integer MIN_SIZE=50,parameter integer MIN_EDGES=100,parameter integer CORNER_MARGIN=12
 )(
     input wire clk,input wire rst_n,input wire [7:0] in_r,input wire [7:0] in_g,input wire [7:0] in_b,
-    input wire basic_i,
+    input wire basic_i,input wire edge_i,
     input wire in_de,input wire in_hs,input wire in_vs,
     output reg [7:0] out_r,output reg [7:0] out_g,output reg [7:0] out_b,
     output reg out_de,output reg out_hs,output reg out_vs,output reg [1:0] shape_class
@@ -18,7 +18,7 @@ module shape_overlay #(
     reg [X_BITS:0] width_pipe;
     reg [Y_BITS:0] height_pipe;
     reg width_ok_pipe,height_ok_pipe,edges_ok_pipe,squareish_pipe,flat_top_pipe;
-    wire edge_pixel=in_de&&!basic_i&&(x>=WIDTH/2)&&(in_r>=8'd224)&&(in_g<=8'd32)&&(in_b<=8'd32);
+    wire edge_pixel=in_de&&!basic_i&&(x>=WIDTH/2)&&edge_i;
     wire [X_BITS:0] cur_width={1'b0,cur_max_x}-{1'b0,cur_min_x}+1'b1;
     wire [Y_BITS:0] cur_height={1'b0,cur_max_y}-{1'b0,cur_min_y}+1'b1;
     wire squareish=(({2'b0,width_pipe}<<2)>=(({2'b0,height_pipe}<<1)+{2'b0,height_pipe}))&&

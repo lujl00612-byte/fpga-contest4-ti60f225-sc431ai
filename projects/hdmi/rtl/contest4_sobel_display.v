@@ -5,9 +5,9 @@ module contest4_sobel_display #(
     input wire clk, input wire rst_n,
     input wire [7:0] in_r,input wire [7:0] in_g,input wire [7:0] in_b,
     input wire in_de,input wire in_hs,input wire in_vs,input wire [10:0] threshold_i,
-    input wire basic_i,
+    input wire basic_i,input wire freeze_i,
     output wire [7:0] out_r,output wire [7:0] out_g,output wire [7:0] out_b,
-    output wire out_de,output wire out_hs,output wire out_vs
+    output wire out_de,output wire out_hs,output wire out_vs,output wire out_edge
 );
     wire [7:0] median_gray; wire [23:0] median_rgb;
     wire median_de,median_hs,median_vs;
@@ -17,6 +17,10 @@ module contest4_sobel_display #(
     wire grad_de,grad_hs,grad_vs;
     wire [1:0] edge_class; wire [7:0] nms_gray; wire [23:0] nms_rgb;
     wire nms_de,nms_hs,nms_vs;
+    wire [7:0] local_r,local_g,local_b;wire local_de,local_hs,local_vs,local_edge;
+    wire [23:0] exact_rgb;wire exact_de,exact_hs,exact_vs,exact_edge;
+    wire exact_selected=freeze_i&&!basic_i;
+    wire exact_ready,exact_busy,exact_error;wire [31:0] exact_cycles;wire [19:0] exact_count;
 
     median3x3_rgb #(.WIDTH(WIDTH),.X_BITS(X_BITS),.Y_BITS(Y_BITS)) u_median(
         .clk(clk),.rst_n(rst_n),.in_r(in_r),.in_g(in_g),.in_b(in_b),.bypass_i(basic_i),
@@ -40,7 +44,15 @@ module contest4_sobel_display #(
     canny_hysteresis_overlay #(.WIDTH(WIDTH),.X_BITS(X_BITS),.Y_BITS(Y_BITS)) u_hysteresis(
         .clk(clk),.rst_n(rst_n),.in_class(edge_class),.in_gray(nms_gray),.in_rgb(nms_rgb),.basic_i(basic_i),
         .in_de(nms_de),.in_hs(nms_hs),.in_vs(nms_vs),
-        .out_r(out_r),.out_g(out_g),.out_b(out_b),.out_de(out_de),.out_hs(out_hs),.out_vs(out_vs));
+        .out_r(local_r),.out_g(local_g),.out_b(local_b),.out_de(local_de),.out_hs(local_hs),.out_vs(local_vs),.out_edge(local_edge));
+    canny_snapshot_exact #(.WIDTH(WIDTH),.X_BITS(X_BITS),.Y_BITS(Y_BITS)) u_exact(
+        .clk(clk),.rst_n(rst_n),.enable_i(exact_selected),.threshold_i(threshold_i),
+        .class_i(edge_class),.rgb_i(nms_rgb),.de_i(nms_de),.hs_i(nms_hs),.vs_i(nms_vs),
+        .rgb_o(exact_rgb),.de_o(exact_de),.hs_o(exact_hs),.vs_o(exact_vs),.edge_o(exact_edge),
+        .result_ready(exact_ready),.engine_busy(exact_busy),.engine_error(exact_error),
+        .processing_cycles(exact_cycles),.accepted_pixels(exact_count));
+    assign {out_r,out_g,out_b}=exact_selected?exact_rgb:{local_r,local_g,local_b};
+    assign {out_de,out_hs,out_vs,out_edge}=exact_selected?{exact_de,exact_hs,exact_vs,exact_edge}:{local_de,local_hs,local_vs,local_edge};
 endmodule
 
 module median3x3_rgb #(
@@ -364,7 +376,7 @@ module canny_hysteresis_overlay #(
     input wire in_de,input wire in_hs,input wire in_vs,
     input wire basic_i,
     output reg [7:0] out_r,output reg [7:0] out_g,output reg [7:0] out_b,
-    output reg out_de,output reg out_hs,output reg out_vs
+    output reg out_de,output reg out_hs,output reg out_vs,output reg out_edge
 );
     reg [1:0] co[0:WIDTH-1],cn[0:WIDTH-1];reg [7:0] go[0:WIDTH-1],gn[0:WIDTH-1];reg [23:0] ro[0:WIDTH-1],rn[0:WIDTH-1];
     reg [X_BITS-1:0] x;reg [Y_BITS-1:0] y;reg de_d,vs_d;reg [1:0] st,sm,sb;reg [7:0] sgt,sgm,sgb;reg [23:0] srt,srm,srb;
@@ -380,7 +392,7 @@ module canny_hysteresis_overlay #(
             x<=0;y<=0;de_d<=0;vs_d<=0;st<=0;sm<=0;sb<=0;sgt<=0;sgm<=0;sgb<=0;srt<=0;srm<=0;srb<=0;sx<=0;sy<=0;sde<=0;shs<=0;svs<=0;
             t0<=0;t1<=0;t2<=0;m0<=0;m1<=0;m2<=0;b0<=0;b1<=0;b2<=0;gt0<=0;gt1<=0;gt2<=0;gm0<=0;gm1<=0;gm2<=0;gb0<=0;gb1<=0;gb2<=0;
             rt0<=0;rt1<=0;rt2<=0;rm0<=0;rm1<=0;rm2<=0;rb0<=0;rb1<=0;rb2<=0;wx<=0;wy<=0;wde<=0;whs<=0;wvs<=0;
-            out_r<=0;out_g<=0;out_b<=0;out_de<=0;out_hs<=0;out_vs<=0;
+            out_r<=0;out_g<=0;out_b<=0;out_de<=0;out_hs<=0;out_vs<=0;out_edge<=0;
         end else begin
             de_d<=in_de;vs_d<=in_vs;if(in_de)x<=x+1'b1;else x<=0;if(in_vs&&!vs_d)y<=0;else if(de_d&&!in_de)y<=y+1'b1;
             if(in_de&&x<WIDTH)begin st<=co[x];sm<=cn[x];sb<=in_class;sgt<=go[x];sgm<=gn[x];sgb<=in_gray;srt<=ro[x];srm<=rn[x];srb<=in_rgb;co[x]<=cn[x];cn[x]<=in_class;go[x]<=gn[x];gn[x]<=in_gray;ro[x]<=rn[x];rn[x]<=in_rgb;end
@@ -390,6 +402,7 @@ module canny_hysteresis_overlay #(
             else begin t0<=0;t1<=0;t2<=0;m0<=0;m1<=0;m2<=0;b0<=0;b1<=0;b2<=0;gt0<=0;gt1<=0;gt2<=0;gm0<=0;gm1<=0;gm2<=0;gb0<=0;gb1<=0;gb2<=0;rt0<=0;rt1<=0;rt2<=0;rm0<=0;rm1<=0;rm2<=0;rb0<=0;rb1<=0;rb2<=0;end
             wx<=(sx==0)?0:sx-1'b1;wy<=(sy==0)?0:sy-1'b1;wde<=sde;whs<=shs;wvs<=svs;
             out_de<=wde;out_hs<=whs;out_vs<=wvs;
+            out_edge<=wde&&wx>=WIDTH/2&&wx>=2&&wy>=2&&!basic_i&&keep_edge;
             if(!wde||wx<2||wy<2)begin out_r<=0;out_g<=0;out_b<=0;end
             else if(wx<WIDTH/2)begin out_r<=original_gray;out_g<=original_gray;out_b<=original_gray;end
             else if(basic_i)begin out_r<=(m1==2)?8'hff:0;out_g<=(m1==2)?8'hff:0;out_b<=(m1==2)?8'hff:0;end

@@ -1,0 +1,16 @@
+{
+  "version": "A8",
+  "status": "FAILED_CANDIDATE",
+  "stage": "map",
+  "reason": "RAM was mapped into logic: incompatible read/write address ports",
+  "terminated_by_agent": true,
+  "programming_files_generated": false,
+  "hardware_downloaded": false,
+  "simulation": {
+    "existing_regression": 92222,
+    "exact_connectivity_pixels": 18432,
+    "snapshot_timing": 52059,
+    "snapshot_colors": 13440,
+    "result": "PASS"
+  }
+}

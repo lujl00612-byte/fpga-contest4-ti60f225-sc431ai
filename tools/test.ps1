@@ -14,7 +14,9 @@ try {
     $suites=@(
         @{name='filters';sources=@('projects/hdmi/rtl/contest4_sobel_display.v')},
         @{name='controls';sources=@('projects/hdmi/rtl/threshold_control.v','projects/hdmi/rtl/frame_freeze_control.v')},
-        @{name='shapes';sources=@('projects/hdmi/rtl/shape_overlay.v')}
+        @{name='shapes';sources=@('projects/hdmi/rtl/shape_overlay.v')},
+        @{name='hysteresis_exact';sources=@('projects/hdmi/rtl/canny_hysteresis_exact.v')},
+        @{name='snapshot';sources=@('projects/hdmi/rtl/canny_hysteresis_exact.v','projects/hdmi/rtl/canny_tag_memory.v','projects/hdmi/rtl/canny_snapshot_exact.v')}
     )
     foreach($suite in $suites){
         $name=$suite.name

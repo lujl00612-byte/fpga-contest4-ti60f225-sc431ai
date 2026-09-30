@@ -969,6 +969,7 @@ wire [7:0] contest4_r, contest4_g, contest4_b;
 wire [1:0] contest4_shape_class;
 wire contest4_freeze;
 wire contest4_basic_mode;
+wire contest4_edge;
 wire contest4_shape_de, contest4_shape_hs, contest4_shape_vs;
 wire contest4_de, contest4_hs, contest4_vs;
 wire [10:0] contest4_threshold;
@@ -990,14 +991,14 @@ contest4_sobel_display #(.WIDTH(1920)) contest4_processing (
     .in_r(hdmi_tx_rdata), .in_g(hdmi_tx_gdata), .in_b(hdmi_tx_bdata),
     .in_de(hdmi_tx_de), .in_hs(hdmi_tx_hs), .in_vs(hdmi_tx_vs),
     .threshold_i(contest4_threshold),
-    .basic_i(contest4_basic_mode),
+    .basic_i(contest4_basic_mode),.freeze_i(contest4_freeze),
     .out_r(contest4_raw_r), .out_g(contest4_raw_g), .out_b(contest4_raw_b),
-    .out_de(contest4_de), .out_hs(contest4_hs), .out_vs(contest4_vs)
+    .out_de(contest4_de), .out_hs(contest4_hs), .out_vs(contest4_vs),.out_edge(contest4_edge)
 );
 
 shape_overlay #(.WIDTH(1920)) contest4_shape_recognition (
     .clk(hdmi_tx_slow_clk), .rst_n(vid_rst_n),
-    .basic_i(contest4_basic_mode),
+    .basic_i(contest4_basic_mode),.edge_i(contest4_edge),
     .in_r(contest4_raw_r), .in_g(contest4_raw_g), .in_b(contest4_raw_b),
     .in_de(contest4_de), .in_hs(contest4_hs), .in_vs(contest4_vs),
     .out_r(contest4_r), .out_g(contest4_g), .out_b(contest4_b),
