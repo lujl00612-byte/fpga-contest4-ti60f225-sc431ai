@@ -1,0 +1,26 @@
+{
+  "name": "A3_all_advanced_integrated",
+  "label": "进阶整合 A3",
+  "features": "中值 + 高斯 + Canny + 冻结回放 + 形状框",
+  "project": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_advanced\\A3_canny_freeze_shape",
+  "bit": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A3_all_advanced_integrated\\A3_all_advanced_integrated.bit",
+  "hex": "E:\\EE design\\FPGA\\嵌入式比赛 4\\contest4_work\\Ti60f225_sc431hai2hdmi_v6\\contest4_releases\\A3_all_advanced_integrated\\A3_all_advanced_integrated.hex",
+  "bit_sha256": "5F7DF54F1E1895921AFCEB050806B1BC59EBF44B6E434B477F287CF251CA9966",
+  "hex_sha256": "E2AC0E556BBEC04B26E01AAA720CD32815DDA5311419FE1E285BFFCEF3AC365F",
+  "resources": {
+    "EFX_LUT4": 11583,
+    "EFX_FF": 9306,
+    "EFX_RAM10": 134,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 3
+  },
+  "hdmi_148_5mhz_setup_slack_ns": 1.609,
+  "hdmi_148_5mhz_hold_slack_ns": 0.026,
+  "build": [
+    "map PASS",
+    "interface PASS",
+    "pnr PASS",
+    "pgm PASS"
+  ],
+  "hardware_video_validation": "未进行；当前未连接 HDMI 显示器"
+}
