@@ -23,6 +23,9 @@ module canny_tag_memory #(
     reg [19:0] victim_word_q;
     reg [WORD_BITS-1:0] victim_addr_q;
     reg victim_valid;
+    // Cell bases keep the request divide out of cache-hit and lane selection.
+    // The extra offset bit prevents a below-base address from wrapping to a hit.
+    reg [ADDR_BITS-1:0] primary_base_q,victim_base_q;
     localparam integer BANKS=(WORDS+511)/512;
     localparam integer BANK_BITS=(BANKS>1)?$clog2(BANKS):1;
     localparam integer GROUPS=(BANKS+7)/8;
@@ -39,12 +42,14 @@ module canny_tag_memory #(
     wire [19:0] read_word=group_tree[0];
     wire [WORD_BITS-1:0] requested_word=req_addr/5;
     wire cache_allowed=!(capture_we||video_en||video_en_q);
-    wire primary_hit=cache_valid&&(requested_word==word_addr)&&cache_allowed;
-    wire victim_hit=victim_valid&&(requested_word==victim_addr_q)&&cache_allowed;
+    wire [ADDR_BITS:0] primary_offset={1'b0,req_addr}-{1'b0,primary_base_q};
+    wire [ADDR_BITS:0] victim_offset={1'b0,req_addr}-{1'b0,victim_base_q};
+    wire primary_hit=cache_valid&&(primary_offset<5)&&cache_allowed;
+    wire victim_hit=victim_valid&&(victim_offset<5)&&cache_allowed;
     wire cache_hit=primary_hit||victim_hit;
     wire [19:0] engine_word=read_word;
     wire [19:0] hit_word=primary_hit?write_word_q:victim_word_q;
-    wire [2:0] request_lane=req_addr-requested_word*5;
+    wire [2:0] request_lane=primary_hit?primary_offset[2:0]:victim_offset[2:0];
     reg [19:0] hit_updated_word;reg [3:0] hit_tag;
     always @* begin
         hit_tag=0;hit_updated_word=hit_word;
@@ -130,6 +135,7 @@ module canny_tag_memory #(
             state<=IDLE;word_addr<=0;cell_addr<=0;write_latched<=0;tag_latched<=0;write_word_q<=0;
             cache_valid<=0;req_ready<=0;req_rdata<=0;
             victim_word_q<=0;victim_addr_q<=0;victim_valid<=0;
+            primary_base_q<=0;victim_base_q<=0;
         end else begin
             req_ready<=0;
             case(state)
@@ -138,6 +144,8 @@ module canny_tag_memory #(
                         // Retain the old MRU on a miss, or swap it into the
                         // victim entry when the victim responds immediately.
                         victim_word_q<=write_word_q;victim_addr_q<=word_addr;victim_valid<=cache_valid;
+                        victim_base_q<=primary_base_q;
+                        if(victim_hit)primary_base_q<=victim_base_q;
                     end
                     word_addr<=requested_word;cell_addr<=req_addr;write_latched<=req_write;tag_latched<=req_wdata;
                     if(cache_hit)begin
@@ -150,6 +158,7 @@ module canny_tag_memory #(
                     req_rdata<=selected_tag;
                     // A read must cache the unchanged word, including all neighbors.
                     write_word_q<=write_latched?updated_word:engine_word;
+                    primary_base_q<=word_addr*5;
                     cache_valid<=1;req_ready<=1;state<=ACK;
                 end
                 ACK:state<=IDLE;

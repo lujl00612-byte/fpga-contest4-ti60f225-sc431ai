@@ -1,0 +1,29 @@
+{
+  "version": "A15",
+  "resources": {
+    "EFX_LUT4": 14255,
+    "EFX_FF": 9819,
+    "EFX_RAM10": 250,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 12,
+    "EFX_DSP48": 4
+  },
+  "setup_groups": 18,
+  "hold_groups": 18,
+  "min_setup_ns": 0.308,
+  "min_hold_ns": 0.026,
+  "pixel_setup_ns": 1.241,
+  "pixel_hold_ns": 0.026,
+  "pixel_analysis_fmax_MHz": 182.05,
+  "actual_pixel_clock_MHz": 148.5,
+  "pixel_critical_path": {
+    "Path Begin": "contest4_processing/u_exact/memory/bank[34].ram|RCLK",
+    "Path End": "contest4_processing/u_exact/mem_rdata[3]~FF|D",
+    "Slack": "1.241 (required time - arrival time)",
+    "Delay": "4.003",
+    "Logic Level": "9"
+  },
+  "pixel_clock_to_q_plus_data_ns": 5.367,
+  "bit_sha256": "BF7EE43EC6EA563732CB5EE3A9FAC0B655556A108D0704BDB0A5BE689265FF2D",
+  "hex_sha256": "3F5B13FDAD824B570DC9595D6BD7D972FFFEBE896591383B794E34C0E0154E14"
+}

@@ -116,6 +116,16 @@ module tb_tag_cache #(parameter CACHE_WORDS=2,HIT_CYCLES=2);
         access(0,0,0,4);access(2560,0,0,4);
         abort_write(2,CACHE_WORDS==2?HIT_CYCLES:4); // displaced-entry write aborted before ACK
         abort_write(2562,4);             // RAM miss write aborted before ACK
+        // Independent address-range guards: immediately below a base, the next
+        // word, and both sides of the last word must not alias a cached lane.
+        capture(511,20'h2468a);capture(513,20'h86420);capture(1038,20'hf9630);
+        access(2560,0,0,4);access(2559,0,0,4);
+        access(2564,0,0,CACHE_WORDS==2?HIT_CYCLES:4);
+        access(2565,0,0,4);access(2564,1,4'hd,CACHE_WORDS==2?HIT_CYCLES:4);
+        access(2559,0,0,4);access(0,0,0,4);access(5199,0,0,4);
+        access(5195,0,0,HIT_CYCLES);access(5194,0,0,4);
+        access(5195,0,0,CACHE_WORDS==2?HIT_CYCLES:4);
+        video(511);video(513);video(1038);
         for(r=0;r<120;r=r+1)begin
             case($urandom_range(0,2))0:word_index=0;1:word_index=512;default:word_index=1039;endcase
             access(word_index*5+$urandom_range(0,4),$urandom_range(0,1),$urandom_range(0,15),-1);

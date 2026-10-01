@@ -1,0 +1,29 @@
+{
+  "version": "A14",
+  "resources": {
+    "EFX_LUT4": 14287,
+    "EFX_FF": 9737,
+    "EFX_RAM10": 250,
+    "EFX_DPRAM10": 4,
+    "EFX_DSP24": 12,
+    "EFX_DSP48": 4
+  },
+  "setup_groups": 18,
+  "hold_groups": 18,
+  "min_setup_ns": 0.256,
+  "min_hold_ns": 0.026,
+  "pixel_setup_ns": 0.551,
+  "pixel_hold_ns": 0.028,
+  "pixel_analysis_fmax_MHz": 161.734,
+  "actual_pixel_clock_MHz": 148.5,
+  "pixel_critical_path": {
+    "Path Begin": "contest4_processing/u_exact/engine/state[2]~FF|CLK",
+    "Path End": "contest4_processing/u_exact/memory/write_word_q[16]~FF|CE",
+    "Slack": "0.551 (required time - arrival time)",
+    "Delay": "5.823",
+    "Logic Level": "19"
+  },
+  "pixel_clock_to_q_plus_data_ns": 6.057,
+  "bit_sha256": "6537A7032498E0AA5DA39814E41E20EC46BA2AC1A6A9392C89D0A467BE88DB9F",
+  "hex_sha256": "51916F65399F722AC5EE7AF6E2749A0971493118C2FA848F30FF1B4642C1DBBF"
+}
