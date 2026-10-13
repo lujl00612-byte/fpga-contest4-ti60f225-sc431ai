@@ -1,0 +1,83 @@
+{
+  "package": "public-package-20261013",
+  "date": "2026-10-13",
+  "source_commit": "64df1a89e802d5f644a4b33fe46969b80e1ab1c6",
+  "historical_commits": 26,
+  "historical_tags": 26,
+  "RTL_constraints_tests_releases_snapshots_changed": false,
+  "new_Efinity_build_performed": false,
+  "hardware_accessed": false,
+  "toolchain": {
+    "Efinity": "2025.1.110",
+    "Icarus_bin_override_tested": true,
+    "Python_executable_override_tested": true,
+    "Efinity_home_override_tested": true
+  },
+  "command": "tools/test.ps1",
+  "regression_checks": 320951,
+  "cache_checks": 388,
+  "panel_delay_bit22_difference": 4194304,
+  "regression_log_sha256": "F9E5357C9709C79CC5548FBE99898A1213B44C655C4F3F3462F7661BA60729BE",
+  "saved_releases": [
+    {
+      "version": "A15",
+      "target": "hdmi",
+      "integrity": "PASS",
+      "artifacts": [
+        "releases/A15/hdmi/A15.bit",
+        "releases/A15/hdmi/A15.hex"
+      ],
+      "evidence_files": 33,
+      "saved_timing_status": "PASS",
+      "hardware_acceptance": "not checked by this command"
+    },
+    {
+      "version": "WB03R1",
+      "target": "mipi_diag",
+      "integrity": "PASS",
+      "artifacts": [
+        "releases/WB03R1/mipi_diag/WB03R1.bit",
+        "releases/WB03R1/mipi_diag/WB03R1.hex"
+      ],
+      "evidence_files": 0,
+      "saved_timing_status": "PASS",
+      "hardware_acceptance": "not checked by this command"
+    }
+  ],
+  "PowerShell_parse": "PASS",
+  "Python_parse": "PASS",
+  "MIPI_constraint_checks": [
+    "projects/mipi",
+    "projects/mipi_diag"
+  ],
+  "history_secret_pattern_matches": 0,
+  "history_blobs_checked": 771,
+  "largest_history_blob_MiB": 2.37,
+  "hardware_acceptance": "pending",
+  "changed_entry_files": [
+    {
+      "path": "tools/toolchain.ps1",
+      "sha256": "ECAB3227E3925BAAFFD90F6F27ADEEDC82CFC8624F310B0C75E22BA432571D5E"
+    },
+    {
+      "path": "tools/test.ps1",
+      "sha256": "81626D6415876010E9EEECDFDD2244EC11E22C1B1F6F90367AB7FA936AF39FC1"
+    },
+    {
+      "path": "tools/test_mipi_diag.ps1",
+      "sha256": "6FF178057D93575B1C1EE1F19D6BDDBE54AE5AE407C1666F8331C6C62C5629D5"
+    },
+    {
+      "path": "tools/build.ps1",
+      "sha256": "23242FB511FD42F47AAD45ECA46838000E27A28A918C8260B1B5474CA631705E"
+    },
+    {
+      "path": "tools/check_dsi_constraints.py",
+      "sha256": "8982639BCD1734D0C00ED718D2C664D744436BB293C6B0CB343CC394047B3CFE"
+    },
+    {
+      "path": "tools/verify_release.py",
+      "sha256": "5899B6FD75733926289AD9860E2FE9C4433DDF6FE3D494EB09C48C8C13A27508"
+    }
+  ]
+}

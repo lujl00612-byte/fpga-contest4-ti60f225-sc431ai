@@ -1,13 +1,16 @@
 param([switch]$FullFrame,[switch]$OriginalAddressRegression,[switch]$DelayBoundary)
 $ErrorActionPreference='Stop'
 $repoRoot=Split-Path $PSScriptRoot -Parent
-$env:PATH='E:\msys2\ucrt64\bin;'+$env:PATH
-$iverilog='E:\msys2\ucrt64\bin\iverilog.exe'
-$vvp='E:\msys2\ucrt64\bin\vvp.exe'
+. (Join-Path $PSScriptRoot 'toolchain.ps1')
+$localToolchain=Get-ContestToolchain -Simulation -Python
+$iverilog=$localToolchain.iverilog
+$vvp=$localToolchain.vvp
+$pythonExe=$localToolchain.python
 $cache=Join-Path $repoRoot '.cache'
+New-Item -ItemType Directory -Path $cache -Force | Out-Null
 Push-Location -LiteralPath $repoRoot
 try {
-    & 'C:\Python314\python.exe' tools/prepare_panel_fixture.py
+    & $pythonExe tools/prepare_panel_fixture.py
     if($LASTEXITCODE -ne 0){throw 'Panel AXI fixture preparation failed'}
     $patternArgs=@('-g2012','-s','tb_mipi_diagnostic','-o',
         (Join-Path $cache 'mipi_diagnostic.vvp'),'tests/tb_mipi_diagnostic.sv',

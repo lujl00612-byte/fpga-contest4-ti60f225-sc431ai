@@ -8,3 +8,7 @@ builds/
 *.vcd
 *.fst
 *.vvp
+/.env
+/.env.*
+/*.bundle
+/dist/

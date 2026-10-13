@@ -5,11 +5,14 @@ param(
 )
 $ErrorActionPreference='Stop'
 $repoRoot=Split-Path $PSScriptRoot -Parent
-$toolRoot=Join-Path (Split-Path $repoRoot -Parent) 'efinity2025_clean\PFiles\Efinity\2025.1'
+. (Join-Path $PSScriptRoot 'toolchain.ps1')
+$localToolchain=Get-ContestToolchain -Python -Efinity
+$toolRoot=$localToolchain.efinity
+$pythonExe=$localToolchain.python
 $projectDir=Join-Path $repoRoot ('projects\'+$Target)
 $isMipi=$Target -in @('mipi','mipi_diag')
 if($isMipi){
-    & 'C:\Python314\python.exe' (Join-Path $PSScriptRoot 'check_dsi_constraints.py') --project $projectDir
+    & $pythonExe (Join-Path $PSScriptRoot 'check_dsi_constraints.py') --project $projectDir --efinity-home $toolRoot
     if($LASTEXITCODE -ne 0){throw 'DSI clock-lane constraint applicability check failed'}
 }
 $out=Join-Path $repoRoot ('builds\'+$Version+'\'+$Target)

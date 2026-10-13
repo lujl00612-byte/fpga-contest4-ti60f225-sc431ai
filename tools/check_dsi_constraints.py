@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import os
 import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -9,9 +10,13 @@ import xml.etree.ElementTree as ET
 repo = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--project', type=Path, default=repo / 'projects/mipi')
-project = parser.parse_args().project.resolve()
-reference = (repo.parent / "efinity2025_clean/PFiles/Efinity/2025.1/ipm/ip/efx_dsi"
-             / "fpga/constraint/ti60f225_demo.sdc")
+parser.add_argument('--efinity-home', type=Path,
+                    default=Path(os.environ.get('EFINITY_HOME', str(
+                        repo.parent / 'efinity2025_clean/PFiles/Efinity/2025.1'))))
+args = parser.parse_args()
+project = args.project.resolve()
+reference = (args.efinity_home.resolve() / 'ipm/ip/efx_dsi'
+             / 'fpga/constraint/ti60f225_demo.sdc')
 reference_hash = hashlib.sha256(reference.read_bytes()).hexdigest().upper()
 assert reference_hash == "C7E778BF1CAEF44C56EE0E38F16C8F5C3ED1D7006425A6BDF4DB83C1542AE745", "Vendor reference changed; review before using its exception"
 sdc = project.joinpath("ti60f225_oob.sdc").read_text(encoding="utf-8-sig")
